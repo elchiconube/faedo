@@ -1,0 +1,133 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-3.jpg";
+
+const title = "El cuento de Haeda del Faedo de Ciñera";
+const description =
+  "Relato popular ambientado en el hayedo del Faedo de Ciñera (León). Versión breve, valores y cómo contarlo durante la visita con niños.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ShortStory",
+  name: title,
+  description,
+  inLanguage: "es-ES",
+  image: cover.src,
+  mainEntityOfPage: canonical,
+  author: { "@type": "Person", name: "Tradición oral" },
+  publisher: {
+    "@type": "Organization",
+    name: "Faedo de Ciñera (sitio no oficial)",
+  },
+};
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="article"
+    jsonLd={jsonLd}
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/historia-naturaleza", label: "Historia y Naturaleza" },
+      { href: "/haeda", label: "El cuento de Haeda" },
+    ]}
+  />
+  <section class="container py-8 grid lg:grid-cols-3 gap-8">
+    <article class="prose prose-slate max-w-none lg:col-span-2">
+      <h1>{title}</h1>
+      <h2>Origen y creación del cuento</h2>
+      <ul>
+        <li>
+          La historia fue escrita por <strong>Josefina Díaz del Cuadro</strong> en
+          1993 como un regalo para su primera nieta.
+        </li>
+        <li>
+          Surgió de un concurso de relatos vinculados al carbón, organizado por
+          la Hullera Vasco Leonesa.
+        </li>
+        <li>
+          Con el tiempo se convirtió en una leyenda popular muy apreciada en la
+          zona.
+        </li>
+      </ul>
+
+      <h2>La leyenda resumida</h2>
+      <ol>
+        <li>
+          <strong>Haeda, la bruja del Faedo</strong><br />
+          Vivía en el hayedo de Ciñera con poderes mágicos que solo podía usar para
+          el mal. Si los usaba para hacer el bien, moriría en tres días.
+        </li>
+        <li>
+          <strong>La familia en apuros</strong><br />
+          Una familia numerosa, refugiada en la “cueva de los Infantes”, sufría el
+          frío y la nieve de los duros inviernos.
+        </li>
+        <li>
+          <strong>Acto de bondad de Haeda</strong><br />
+          Compadecida, la bruja encendió hogueras mágicas con rocas para darles calor
+          durante la noche.
+        </li>
+        <li>
+          <strong>Más días de ayuda y sacrificio</strong><br />
+          Repitió su ayuda varias noches. Finalmente creó hogueras por todo el valle
+          para que muchas familias se refugiaran, dando origen a Ciñera.
+        </li>
+        <li>
+          <strong>La muerte de Haeda y su legado</strong><br />
+          Tras su último acto de bondad murió en el bosque. La leyenda dice que su
+          espíritu aún protege el Faedo y que de aquellas rocas surgieron las vetas
+          de carbón.
+        </li>
+      </ol>
+
+      <h2>Significado y vínculo con Ciñera</h2>
+      <ul>
+        <li>
+          Relato fundacional que explica de forma poética el origen de Ciñera y
+          su riqueza minera.
+        </li>
+        <li>
+          Transmite valores de compasión, altruismo y conexión con la
+          naturaleza.
+        </li>
+        <li>
+          Hoy se representa en actividades y rutas familiares por el Faedo.
+        </li>
+      </ul>
+
+      <p class="mt-6">
+        ¿Planeas visitarlo? <a href="/ruta/faedo-de-cinera">Consulta la ruta</a>
+        o <a href="/gpx/faedo.gpx">descarga el GPX</a>.
+      </p>
+    </article>
+
+    <aside class="space-y-4">
+      <div class="rounded-lg overflow-hidden ring-1 ring-black/5">
+        <Image
+          src={cover}
+          alt="Hayedo del Faedo de Ciñera"
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+      <div class="border rounded-lg p-4 text-sm text-gray-700">
+        <p>
+          <strong>Nota:</strong> Este es un resumen divulgativo sin pretensión académica.
+          Si conoces versiones locales, puedes compartirlas con tu grupo antes de
+          la visita.
+        </p>
+      </div>
+    </aside>
+  </section>
+</Layout>
