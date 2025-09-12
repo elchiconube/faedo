@@ -1,0 +1,30 @@
+---
+import Layout from '../components/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Seo from '../components/Seo.astro';
+---
+<Layout title="Guía para visitantes del Faedo" description="Alojamientos, restaurantes, otras rutas cercanas y normas ambientales para visitar el Faedo de Ciñera (León)">
+  <Seo slot="head" title="Guía para visitantes del Faedo" description="Alojamientos, restaurantes, otras rutas cercanas y normas ambientales para visitar el Faedo de Ciñera (León)" />
+  <Breadcrumbs items={[{ href: '/', label: 'Inicio' }, { href: '/guia-visitantes', label: 'Guía para visitantes' }]} />
+  <section class="container prose prose-slate max-w-none py-8">
+    <h1>Guía para visitantes</h1>
+    <h2>Alojamientos</h2>
+    <p>Buscar alojamientos en La Robla, Ciñera o Pola de Gordón. Prioriza opciones locales para apoyar la economía de la zona.</p>
+    <h2>Restaurantes</h2>
+    <p>Cocina tradicional leonesa en los bares y restaurantes de los pueblos cercanos. Reserva fines de semana y festivos.</p>
+    <h2>Otras rutas cercanas</h2>
+    <ul>
+      <li>Valles mineros de Gordón</li>
+      <li>Hoces de Vegacervera (a media hora en coche)</li>
+      <li>Trayectos del antiguo ferrocarril minero</li>
+    </ul>
+    <h2>Normas ambientales</h2>
+    <ul>
+      <li>No dejar residuos. Usa los contenedores del pueblo.</li>
+      <li>Respeta la flora y fauna; no abandones los senderos.</li>
+      <li>Perros con correa en todo el recorrido.</li>
+      <li>Evita el ruido excesivo; es un entorno sensible.</li>
+    </ul>
+  </section>
+</Layout>
+

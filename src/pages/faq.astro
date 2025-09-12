@@ -1,0 +1,21 @@
+---
+import Layout from '../components/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQ from '../components/FAQ.astro';
+---
+<Layout title="FAQ: Faedo de Ciñera" description="Preguntas frecuentes sobre la Ruta del Faedo de Ciñera: accesibilidad, mascotas, época, meteorología, prohibiciones y más.">
+  <Breadcrumbs items={[{ href: '/', label: 'Inicio' }, { href: '/faq', label: 'FAQ' }]} />
+  <FAQ items={[
+    { question: '¿Cuál es la mejor época para ir?', answer: 'Otoño y primavera por clima suave y colores del hayedo.' },
+    { question: '¿Es apta para niños?', answer: 'Sí, es una ruta corta y sencilla. Vigila cerca del arroyo.' },
+    { question: '¿Se puede ir con perros?', answer: 'Sí, siempre con correa y respetando a otros visitantes.' },
+    { question: '¿Hay aparcamiento?', answer: 'Sí, en Ciñera, junto al inicio del sendero.' },
+    { question: '¿Es accesible?', answer: 'Hay tramos de pasarelas, pero no es una ruta accesible universalmente.' },
+    { question: '¿Cuánto se tarda?', answer: 'Entre 1 y 2 horas según ritmo y paradas.' },
+    { question: '¿Puedo descargar el GPX?', answer: 'Sí, disponible en la página de la ruta.' },
+    { question: '¿Qué llevar?', answer: 'Calzado cómodo, agua, chubasquero y protección solar.' },
+    { question: '¿Está permitido hacer fuego?', answer: 'No. Prohibido encender fuego en todo el entorno.' },
+    { question: '¿Hay cobertura móvil?', answer: 'Variable según zonas. Descarga mapas y GPX previamente.' }
+  ]} />
+</Layout>
+

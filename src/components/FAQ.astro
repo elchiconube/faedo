@@ -1,0 +1,26 @@
+---
+interface QA { question: string; answer: string; }
+const { items = [] as QA[] } = Astro.props;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((q) => ({
+    '@type': 'Question',
+    name: q.question,
+    acceptedAnswer: { '@type': 'Answer', text: q.answer },
+  })),
+};
+---
+<section class="container py-8">
+  <h2 class="text-2xl mb-4">Preguntas frecuentes</h2>
+  <dl class="divide-y divide-gray-200 border border-gray-200 rounded-lg bg-white">
+    {items.map((q) => (
+      <div class="p-4">
+        <dt class="font-medium">{q.question}</dt>
+        <dd class="mt-2 text-gray-700">{q.answer}</dd>
+      </div>
+    ))}
+  </dl>
+  <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+</section>
+

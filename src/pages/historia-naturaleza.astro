@@ -1,0 +1,21 @@
+---
+import Layout from '../components/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Seo from '../components/Seo.astro';
+---
+<Layout title="Historia y Naturaleza del Faedo de Ciñera" description="Hayedo, fauna, flora y patrimonio minero alrededor del Faedo de Ciñera (León)">
+  <Seo slot="head" title="Historia y Naturaleza del Faedo de Ciñera" description="Hayedo, fauna, flora y patrimonio minero alrededor del Faedo de Ciñera (León)" />
+  <Breadcrumbs items={[{ href: '/', label: 'Inicio' }, { href: '/historia-naturaleza', label: 'Historia y Naturaleza' }]} />
+  <section class="container prose prose-slate max-w-none py-8">
+    <h1>Historia y Naturaleza</h1>
+    <h2>El hayedo</h2>
+    <p>El Faedo es un hayedo bien conservado que ofrece sombra y humedad durante todo el año. Sus colores otoñales son el principal atractivo.</p>
+    <h2>Fauna y flora</h2>
+    <p>Entre las especies más comunes se encuentran el <em>haya</em>, el <em>acebo</em> y líquenes asociados a bosques maduros. Es posible avistar aves forestales y pequeños mamíferos.</p>
+    <h2>Patrimonio minero</h2>
+    <p>La zona conserva restos del pasado minero del valle: antiguas estructuras, vías y elementos interpretativos que contextualizan la historia local.</p>
+    <h2>Curiosidades</h2>
+    <p>Varios tramos del sendero discurren por pasarelas de madera que protegen el entorno sensible del hayedo.</p>
+  </section>
+</Layout>
+

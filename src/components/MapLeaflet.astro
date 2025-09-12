@@ -1,0 +1,50 @@
+---
+interface Props { lat: number; lng: number; zoom?: number; height?: string; }
+const { lat, lng, zoom = 14, height = '320px' } = Astro.props as Props;
+const mapId = `map-${Math.random().toString(36).slice(2, 9)}`;
+---
+<div class="w-full" style={`height: ${height};`}>
+  <div id={mapId} class="w-full h-full rounded-md overflow-hidden" data-lat={lat} data-lng={lng} data-zoom={zoom}></div>
+  <noscript>
+    <p class="p-3 text-sm text-gray-600">Mapa interactivo disponible con JavaScript habilitado. Coordenadas: {lat}, {lng}</p>
+  </noscript>
+</div>
+
+<style is:global>
+  @import "leaflet/dist/leaflet.css";
+</style>
+
+<script is:inline>{`
+  (function(){
+    const el = document.getElementById('${mapId}');
+    if(!el) return;
+    const init = async () => {
+      const L = await import('leaflet');
+      const lat = parseFloat(el.dataset.lat || '0');
+      const lng = parseFloat(el.dataset.lng || '0');
+      const zoom = parseInt(el.dataset.zoom || '14');
+      const map = L.map(el).setView([lat, lng], zoom);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contrib.'
+      }).addTo(map);
+      L.marker([lat, lng]).addTo(map);
+    };
+    const obs = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          init();
+          obs.disconnect();
+          break;
+        }
+      }
+    });
+    obs.observe(el);
+  })();
+`}</script>
+
+---
+{
+  /* Inject id value */
+}
+<script is:inline>// Map element ID: {mapId}</script>

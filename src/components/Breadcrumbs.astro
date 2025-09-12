@@ -1,0 +1,18 @@
+---
+interface Crumb { href: string; label: string; }
+const { items = [] as Crumb[] } = Astro.props;
+---
+<nav aria-label="Migas de pan" class="container py-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
+  <ol class="flex flex-wrap gap-1 text-gray-600">
+    {items.map((item, i) => (
+      <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" class="flex items-center gap-1">
+        <a href={item.href} itemProp="item" class="hover:underline">
+          <span itemProp="name">{item.label}</span>
+        </a>
+        <meta itemProp="position" content={String(i + 1)} />
+        {i < items.length - 1 && <span aria-hidden="true" class="mx-1">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
