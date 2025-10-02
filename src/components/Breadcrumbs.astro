@@ -1,6 +1,18 @@
 ---
 interface Crumb { href: string; label: string; }
 const { items = [] as Crumb[] } = Astro.props;
+
+// Generar JSON-LD para breadcrumbs
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href, Astro.site).toString()
+  }))
+};
 ---
 <nav aria-label="Migas de pan" class="container py-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
   <ol class="flex flex-wrap gap-1 text-gray-600">
@@ -15,4 +27,7 @@ const { items = [] as Crumb[] } = Astro.props;
     ))}
   </ol>
 </nav>
+
+<!-- JSON-LD Schema para breadcrumbs -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 

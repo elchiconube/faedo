@@ -9,7 +9,7 @@ season: "Todo el año (mejor en otoño y primavera)"
 start_coords:
   lat: 42.8205
   lng: -5.6335
-gpx_url: "https://faedodecinera.example/gpx/faedo.gpx"
+gpx_url: "https://faedo.es/gpx/faedo.gpx"
 access: "Desde León, A-66 dirección Oviedo, salida La Robla/Ciñera. En bus (ALSA) hasta Ciñera; tren FEVE hasta La Robla y taxi."
 parking: "Aparcamiento señalizado en Ciñera, junto al inicio de la ruta."
 family_friendly: true

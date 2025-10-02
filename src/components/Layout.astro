@@ -1,22 +1,26 @@
 ---
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_LOCALE } from '../consts';
+import GoogleAnalytics from './GoogleAnalytics.astro';
+
 const {
-  title = 'Ruta del Faedo de Ciñera (León)',
-  description = 'Guía de senderismo del Faedo de Ciñera en León: cómo llegar, mapa, GPX, consejos y naturaleza.',
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
   url = undefined,
   image = undefined,
   type = 'website',
 } = Astro.props;
 ---
 <!doctype html>
-<html lang="es-ES">
+<html lang={SITE_LOCALE}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#349981" />
     <link rel="canonical" href={(url ?? new URL(Astro.url.pathname, Astro.site)).toString()} />
-    <link rel="alternate" hrefLang="es-ES" href={(url ?? new URL(Astro.url.pathname, Astro.site)).toString()} />
+    <link rel="alternate" hreflang={SITE_LOCALE} href={(url ?? new URL(Astro.url.pathname, Astro.site)).toString()} />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <meta property="og:site_name" content="Faedo de Ciñera" />
+    <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -34,11 +38,12 @@ const {
       {JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'Faedo de Ciñera',
-        url: Astro.site?.toString() ?? 'https://faedodecinera.example',
+        name: SITE_NAME,
+        url: Astro.site?.toString(),
       })}
     </script>
     <slot name="head" />
+    <GoogleAnalytics />
     <style is:global>
       @import "../styles/globals.css";
     </style>
@@ -47,7 +52,7 @@ const {
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="border-b border-gray-100">
       <nav class="container flex items-center justify-between py-4" aria-label="Principal">
-        <a href="/" class="text-lg font-semibold text-primary-700 no-underline">Faedo de Ciñera</a>
+        <a href="/" class="text-lg font-semibold text-primary-700 no-underline">{SITE_NAME}</a>
         <ul class="flex gap-4 text-sm">
           <li><a href="/">Home</a></li>
           <li><a href="/ruta/faedo-de-cinera">La Ruta</a></li>
@@ -63,7 +68,7 @@ const {
     </main>
     <footer class="border-t border-gray-100">
       <div class="container py-8 text-sm flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-        <p>&copy; {new Date().getFullYear()} Faedo de Ciñera · Proyecto informativo sin ánimo de lucro.</p>
+        <p>&copy; {new Date().getFullYear()} {SITE_NAME} · Proyecto informativo sin ánimo de lucro.</p>
         <nav aria-label="Secundario">
           <ul class="flex gap-4">
             <li><a href="/">Inicio</a></li>

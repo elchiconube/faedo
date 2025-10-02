@@ -1,62 +1,135 @@
-# Astro Starter Kit: Blog
+# Faedo de Ciñera - Sitio Web Informativo
 
-```sh
-npm create astro@latest -- --template blog
-```
+Sitio web informativo sobre la ruta de senderismo del **Faedo de Ciñera** en León, España. Construido con Astro para máximo rendimiento y SEO.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🌐 **URL**: [https://faedo.es](https://faedo.es)
 
-Features:
+## 📋 Descripción
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+Guía completa de senderismo del Faedo de Ciñera que incluye:
 
-## 🚀 Project Structure
+- 🗺️ Mapa interactivo con datos GPS reales (Leaflet + PNOA)
+- 📍 Puntos de interés georreferenciados
+- 📥 Descarga de track GPX
+- 📖 Información sobre historia, naturaleza y patrimonio
+- 🥾 Guía práctica para visitantes
+- ❓ FAQ con preguntas frecuentes
+- 📝 Blog de senderismo en León
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Características Técnicas
+
+- ✅ **Rendimiento**: Astro con generación estática (SSG)
+- ✅ **SEO optimizado**: Schema.org (HikingTrail + TouristAttraction + BreadcrumbList), meta tags completos
+- ✅ **Analytics**: Google Analytics 4 integrado (configurable)
+- ✅ **Accesibilidad**: ARIA labels, navegación semántica, skip links
+- ✅ **Responsive**: TailwindCSS con diseño mobile-first
+- ✅ **Mapas interactivos**: Leaflet (npm) con ortofoto PNOA del IGN
+- ✅ **Content Collections**: Tipado estricto con Zod
+- ✅ **Sitemap**: Generación automática con prioridades
+- ✅ **PWA Ready**: Meta theme-color, manifest.webmanifest
+
+## 🚀 Estructura del Proyecto
 
 ```text
 ├── public/
+│   ├── gpx/              # Archivos GPX descargables
+│   ├── images/           # Imágenes estáticas
+│   ├── fonts/            # Fuentes web
+│   ├── robots.txt
+│   └── manifest.webmanifest
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── assets/           # Imágenes optimizadas por Astro
+│   ├── components/       # Componentes reutilizables
+│   │   ├── Cards/        # Tarjetas (POI, Posts)
+│   │   ├── Breadcrumbs.astro
+│   │   ├── FAQ.astro
+│   │   ├── GoogleAnalytics.astro
+│   │   ├── Hero.astro
+│   │   ├── Layout.astro
+│   │   ├── MapLeaflet.astro
+│   │   └── Seo.astro
+│   ├── content/          # Content Collections
+│   │   ├── blog/         # Artículos del blog
+│   │   ├── rutas/        # Información de rutas
+│   │   └── config.ts     # Schemas de validación
+│   ├── layouts/          # Layouts base
+│   ├── pages/            # Páginas del sitio
+│   │   ├── index.astro
+│   │   ├── ruta/faedo-de-cinera.astro
+│   │   ├── historia-naturaleza.astro
+│   │   ├── guia-visitantes.astro
+│   │   ├── faq.astro
+│   │   ├── haeda.astro
+│   │   └── blog/
+│   ├── styles/           # Estilos globales
+│   └── consts.ts         # Constantes del sitio
 ├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+├── tailwind.config.mjs
+├── tsconfig.json
+└── .env.example          # Variables de entorno (Analytics)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Stack Tecnológico
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Framework**: [Astro](https://astro.build) v5.13.4
+- **Estilos**: [TailwindCSS](https://tailwindcss.com) v6.0.2
+- **Mapas**: [Leaflet](https://leafletjs.com) v1.9.4
+- **Contenido**: Astro Content Collections + MDX
+- **Optimización de imágenes**: Sharp
+- **Analytics**: Google Analytics 4
+- **TypeScript**: Configuración estricta
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## 🧞 Comandos
 
-Any static assets, like images, can be placed in the `public/` directory.
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-## 🧞 Commands
+| Comando                   | Acción                                              |
+| :------------------------ | :-------------------------------------------------- |
+| `npm install`             | Instala las dependencias                            |
+| `npm run dev`             | Inicia servidor de desarrollo en `localhost:4321`   |
+| `npm run build`           | Genera el sitio estático en `./dist/`               |
+| `npm run preview`         | Previsualiza el build localmente                    |
+| `npm run astro ...`       | Ejecuta comandos CLI de Astro                       |
 
-All commands are run from the root of the project, from a terminal:
+## 📦 Instalación y Desarrollo
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+# Clonar el repositorio
+git clone https://github.com/elchiconube/faedo.git
+cd faedo
 
-## 👀 Want to learn more?
+# Instalar dependencias
+npm install
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Configurar variables de entorno (opcional)
+cp .env.example .env
+# Edita .env y añade tu Google Analytics ID
 
-## Credit
+# Iniciar servidor de desarrollo
+npm run dev
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+# Construir para producción
+npm run build
+```
+
+> 📖 **Guía completa de configuración**: Ver [SETUP.md](./SETUP.md) para instrucciones detalladas sobre Analytics, mapas, contenido y más.
+
+## 🗺️ Mapa Interactivo
+
+El mapa utiliza:
+- **Capa base**: PNOA Máxima Actualidad (ortofoto del IGN)
+- **Capa superpuesta**: IGN Base Orto (nombres y etiquetas)
+- **Track GPS**: 108 puntos reales del GPX de la ruta circular
+- **Puntos de interés**: Entrada al Faedo, Corazón del Faedo, Mirador del Beso, Pozo Ibarra
+
+## 📄 Licencia
+
+Proyecto informativo sin ánimo de lucro sobre el Faedo de Ciñera.
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir cambios importantes.
+
+---
+
+**Desarrollado con ❤️ para los amantes del senderismo en León**

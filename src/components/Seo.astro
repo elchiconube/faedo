@@ -1,4 +1,6 @@
 ---
+import { SITE_NAME, SITE_LOCALE } from '../consts';
+
 interface Props {
   title: string;
   description: string;
@@ -14,8 +16,8 @@ const canonical = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  <link rel="alternate" hrefLang="es-ES" href={canonical} />
-  <meta property="og:site_name" content="Faedo de Ciñera" />
+  <link rel="alternate" hreflang={SITE_LOCALE} href={canonical} />
+  <meta property="og:site_name" content={SITE_NAME} />
   <meta property="og:type" content={type} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
