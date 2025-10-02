@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_LOCALE } from '../consts';
 import GoogleAnalytics from './GoogleAnalytics.astro';
+import GoogleSiteVerification from './GoogleSiteVerification.astro';
 import { ViewTransitions } from 'astro:transitions';
 
 const {
@@ -44,6 +45,7 @@ const {
       })}
     </script>
     <slot name="head" />
+    <GoogleSiteVerification />
     <GoogleAnalytics />
     <ViewTransitions />
     <style is:global>

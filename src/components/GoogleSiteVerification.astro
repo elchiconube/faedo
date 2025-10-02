@@ -1,0 +1,10 @@
+---
+import { GA_MEASUREMENT_ID } from '../consts';
+
+// Google Search Console verification
+const GSC_VERIFICATION = import.meta.env.PUBLIC_GSC_VERIFICATION || '';
+---
+
+{GSC_VERIFICATION && (
+  <meta name="google-site-verification" content={GSC_VERIFICATION} />
+)}
