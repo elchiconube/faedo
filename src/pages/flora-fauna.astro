@@ -1,0 +1,269 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-2.jpg";
+
+const title = "Flora y Fauna del Faedo de Ciñera | Guía Natural Completa";
+const description =
+  "Descubre la biodiversidad del Faedo de Ciñera: hayas centenarias, encinas, robles, el desmán ibérico, buitre leonado y más especies únicas del bosque de León.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+
+const bioSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description,
+  image: cover.src,
+  author: {
+    "@type": "Organization",
+    name: "Faedo de Ciñera"
+  }
+};
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="article"
+    jsonLd={bioSchema}
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/historia-naturaleza", label: "Historia y Naturaleza" },
+      { href: "/flora-fauna", label: "Flora y Fauna" },
+    ]}
+  />
+  
+  <section class="container py-8">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose prose-slate max-w-none">
+        <h1>{title}</h1>
+        
+        <p class="lead">
+          El <strong>Faedo de Ciñera</strong> se encuentra en un enclave privilegiado que marca la transición 
+          entre dos regiones biogeográficas: la mediterránea y la eurosiberiana. Esta ubicación fronteriza 
+          le otorga una biodiversidad excepcional, albergando especies de ambos ecosistemas.
+        </p>
+
+        <h2>Los Tres Árboles Protagonistas del Faedo</h2>
+        <p>
+          En el bosque de Ciñera conviven tres especies arbóreas que representan ecosistemas muy diferentes, 
+          cada una adaptada a condiciones específicas de luz, humedad y suelo.
+        </p>
+
+        <h3>🌳 El Haya (Fagus sylvatica) - La Reina del Bosque Húmedo</h3>
+        <p>
+          Si la encina es la reina del bosque mediterráneo, <strong>el haya lo es de las regiones más húmedas</strong>. 
+          Los suelos donde habita son frescos y ricos, dentro de un clima suave y húmedo, sin apenas sequía estival. 
+          En el Faedo de Ciñera, el hayedo ocupa los lugares de mayor riqueza climática y ambiental, en la ladera 
+          norte del valle que conforma el Arroyo de Ciñera.
+        </p>
+        <p>
+          El hayedo del Faedo se desarrolla entre los 800 y los 1.100 metros de altitud en laderas de fuerte 
+          inclinación. Una característica especial de los hayedos es la <strong>densa sombra que los cubre</strong>, 
+          unido al porte misterioso de las hayas cubiertas de líquenes, lo que hace de estos parajes lugares 
+          propicios a la invención de cuentos y leyendas.
+        </p>
+        <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-4">
+          <p class="text-sm">
+            <strong>Destacado:</strong> Entre todos los árboles destaca 
+            <a href="/haya-fagus" class="text-primary-700 underline">El Haya Fagus</a>, 
+            un gigante de más de 500 años que se sitúa entre el escaso club de árboles singulares 
+            centenarios de España.
+          </p>
+        </div>
+
+        <h3>🌲 La Encina (Quercus ilex) - Resistencia Mediterránea</h3>
+        <p>
+          En las laderas más secas y soleadas del entorno de Ciñera se sitúa la reina de las plantas: 
+          <strong>la encina castellana</strong> (Quercus rotundifolia). Constituye la especie arbórea más 
+          extensa y representativa de toda la región mediterránea.
+        </p>
+        <p>
+          Su capacidad de aguante ante el duro frío invernal y las fuertes sequías del verano la convierten 
+          prácticamente en un organismo sin competencia en estas condiciones. Para ello, desarrolla un 
+          <strong>poderoso y profundo sistema de raíces</strong> que le permite bombear agua desde las zonas 
+          más profundas del suelo.
+        </p>
+        <p>
+          El encinar que rodea al Faedo está en su etapa madura y corresponde a un bosque de talla media. 
+          Su sotobosque es muy rico y se desarrollan un buen número de arbustos y plantas herbáceas, 
+          acompañado de aulagares, pastizales, piornales y brezales.
+        </p>
+
+        <h3>🍂 El Rebollo o Melojo (Quercus pyrenaica) - El Árbol de Terciopelo</h3>
+        <p>
+          El rebollo se adapta también a las fuertes heladas, pero su resistencia a la sequía es moderada. 
+          Una buena prueba de su "debilidad" ante el sol y la sequía son <strong>sus hojas cubiertas de densos 
+          pelillos</strong>, semejantes a terciopelo blanco, que evita el calentamiento de sus hojas y la 
+          excesiva transpiración del agua.
+        </p>
+        <p>
+          Habita en laderas y faldas de montaña de los alrededores de Ciñera, sustituyendo a la encina al 
+          ascender en altitud. Su vigorosa capacidad para brotar de cepa y de raíz es una de sus principales 
+          características, formando extensas manchas de pequeñas varas o arbolillos.
+        </p>
+        <p>
+          El melojar aparece en zona de solana ocupando estaciones complementarias al bosque de hayas. 
+          El robledal conforma un bosque de tipo mixto acompañado de espino albar, peral silvestre, avellano, 
+          zarzas, escobas y brezos.
+        </p>
+
+        <h2 id="desman">Fauna del Faedo: El Desmán Ibérico</h2>
+        <p>
+          El <strong>Desmán Ibérico</strong> (Galemys pyrenaicus) es un mamífero insectívoro de la familia 
+          de los topos, pero con adaptaciones extraordinarias al medio acuático que se desarrollaron hace 
+          unos 15 millones de años.
+        </p>
+
+        <h3>Un Endemismo Ibérico Amenazado</h3>
+        <p>
+          Se trata no sólo de una especie autóctona, sino además de un <strong>endemismo ibérico</strong>, 
+          lo que hace de él un particular tesoro biológico. El Catálogo Nacional de Especies Amenazadas lo 
+          incluye entre las especies de interés especial, y en las listas rojas de la UICN se le atribuye 
+          la categoría EN (endangered, en peligro).
+        </p>
+
+        <h3>Características Únicas del Desmán</h3>
+        <p>
+          Este pequeño habitante de nuestros ríos posee un <strong>aspecto característico</strong>, casi 
+          sorprendente:
+        </p>
+        <ul>
+          <li><strong>Trompa flexible:</strong> Aplanada dorsoventralmente, con vibrisas táctiles para detectar 
+          presas y cambios de presión en el agua, funcionando como "ecolocalizador"</li>
+          <li><strong>Cola escamosa:</strong> Con gruesos pelos fuertes y aplanada lateralmente, actúa como 
+          timón y hélice</li>
+          <li><strong>Pies palmeados:</strong> Con membranas interdigitales y pelos rígidos que funcionan 
+          como "remos"</li>
+          <li><strong>Pelaje impermeable:</strong> Denso y largo, atrapa burbujas de aire proporcionando 
+          aislamiento térmico y flotabilidad</li>
+          <li><strong>Tamaño:</strong> 11-14 cm de cuerpo + cola similar, pesando 50-80 gramos</li>
+        </ul>
+
+        <h3>Hábitat y Costumbres</h3>
+        <p>
+          El desmán exige <strong>aguas limpias, muy bien oxigenadas</strong> y de flujo regular todo el año, 
+          preferentemente arroyos de montaña, no muy profundos, de fuerte pendiente y agua pura. Por ello es 
+          un excelente <strong>indicador de la calidad de los ecosistemas fluviales</strong>.
+        </p>
+        <p>
+          Se alimenta de larvas de insectos, oligoquetos, crustáceos, gusanos y moluscos que captura "barriendo" 
+          con su sensible trompa el lecho de los ríos. Es un animal fundamentalmente nocturno y muy territorial, 
+          que marca sus límites con secreciones almizcladas.
+        </p>
+
+        <h2>El Buitre Leonado (Gyps fulvus)</h2>
+        <p>
+          El <strong>Buitre leonado</strong> es la segunda mayor ave rapaz de la península, sólo superada por 
+          el buitre negro. Este pacífico carroñero llega a superar los <strong>2,75 metros de envergadura</strong> 
+          y puede alcanzar los 8 kg de peso.
+        </p>
+
+        <h3>Identificación</h3>
+        <p>
+          Resulta inconfundible por su porte:
+        </p>
+        <ul>
+          <li><strong>En vuelo:</strong> Cabeza retraída, grandes alas anchas y rectas blanquecinas, orladas 
+          en negro por las remeras, cola negra de perfil cuadrado</li>
+          <li><strong>En reposo:</strong> Plumaje del color de la tierra, elegante gorguera clara, hermosa 
+          cabeza y cuello recubiertos de fino plumón blanquecino</li>
+        </ul>
+
+        <h3>Comportamiento</h3>
+        <p>
+          El buitre es un <strong>ave gregaria</strong> que vive, se alimenta y cría en grupos. Planea 
+          incansable a gran altura en su búsqueda de cadáveres, describiendo grandes círculos mientras 
+          desciende cuando los ha avistado, avisando así a sus congéneres para compartir su hallazgo.
+        </p>
+        <p>
+          Las parejas conviven para sacar adelante una cría al año, fruto de un único huevo que ponen 
+          de noviembre a febrero. Los dos progenitores se turnan para incubarlo durante unos dos meses, 
+          y el pollo se mantendrá en el nido hasta cuatro meses.
+        </p>
+
+        <h3>Recuperación de Poblaciones</h3>
+        <p>
+          Sus poblaciones se están recuperando en las hoces calizas de la zona, aunque todavía se encuentra 
+          calificado como especie de interés especial en el Catálogo Nacional de Especies Amenazadas.
+        </p>
+
+        <h2>Otras Especies del Faedo</h2>
+        <p>
+          La gran biodiversidad del Faedo de Ciñera se debe a la elevada variedad de nichos ecológicos y al 
+          alto grado de conservación del medio:
+        </p>
+
+        <h3>Aves del Bosque</h3>
+        <ul>
+          <li><strong>Pito real</strong> - Pájaro carpintero común en hayedos</li>
+          <li><strong>Trepador azul</strong> - Especialista en cortezas</li>
+          <li><strong>Carboneros</strong> - Habitantes de los huecos de las hayas</li>
+          <li><strong>Agateadores</strong> - Expertos escaladores de troncos</li>
+          <li><strong>Herrerillos</strong> - Pequeños acróbatas del bosque</li>
+        </ul>
+
+        <h3>Mamíferos</h3>
+        <ul>
+          <li><strong>Ardillas</strong> - Guardianas de los hayucos</li>
+          <li><strong>Zorros</strong> - Depredadores oportunistas</li>
+          <li><strong>Corzos</strong> - Herbívoros del bosque</li>
+          <li><strong>Jabalíes</strong> - Se alimentan de hayucos en invierno</li>
+          <li><strong>Lirones</strong> - Habitantes de huecos en troncos</li>
+        </ul>
+
+        <h3>Flora del Sotobosque</h3>
+        <ul>
+          <li><strong>Acebo</strong> (Ilex aquifolium) - Árbol protegido</li>
+          <li><strong>Avellano</strong> - Arbusto de ribera</li>
+          <li><strong>Helechos</strong> - Típicos de ambientes húmedos</li>
+          <li><strong>Líquenes</strong> - Indicadores de aire puro</li>
+          <li><strong>Musgos</strong> - Cubren rocas y troncos</li>
+          <li><strong>Epipactis helleborine</strong> - Orquídea del hayedo</li>
+          <li><strong>Cephalantera rubra</strong> - Orquídea rosa</li>
+          <li><strong>Mercurialis perennis</strong> - Planta perenne</li>
+        </ul>
+
+        <h2>Conservación y Observación Responsable</h2>
+        <p>
+          La presencia de especies amenazadas como el desmán ibérico nos recuerda la importancia de 
+          <strong>conservar la calidad de las aguas</strong> y respetar el entorno natural. Durante tu 
+          visita al Faedo de Ciñera:
+        </p>
+        <ul>
+          <li>✓ Permanece en las pasarelas y senderos señalizados</li>
+          <li>✓ No te acerques a los arroyos para no enturbiar el agua</li>
+          <li>✓ Evita el ruido excesivo, especialmente al amanecer y atardecer</li>
+          <li>✓ No recojas plantas ni molestes a los animales</li>
+          <li>✓ Lleva toda tu basura de vuelta</li>
+        </ul>
+
+        <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+          <h3 class="text-lg font-semibold mb-3">Explora más sobre el Faedo</h3>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/haya-fagus" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">El Haya Fagus</span>
+              <p class="text-gray-600 mt-1">Árbol de 500 años</p>
+            </a>
+            <a href="/geologia" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Geología</span>
+              <p class="text-gray-600 mt-1">400 millones de años</p>
+            </a>
+            <a href="/ruta/faedo-de-cinera" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Planifica tu ruta</span>
+              <p class="text-gray-600 mt-1">Mapa y GPX</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

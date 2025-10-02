@@ -3,23 +3,215 @@ import Layout from '../components/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Seo from '../components/Seo.astro';
 ---
-<Layout title="Historia y Naturaleza del Faedo de Ciñera" description="Hayedo, fauna, flora y patrimonio minero alrededor del Faedo de Ciñera (León)">
-  <Seo slot="head" title="Historia y Naturaleza del Faedo de Ciñera" description="Hayedo, fauna, flora y patrimonio minero alrededor del Faedo de Ciñera (León)" />
+<Layout title="Historia y Naturaleza del Faedo de Ciñera" description="Hayedo, fauna, flora, patrimonio minero y geología del Faedo de Ciñera (León). 400 millones de años de historia natural y cultural.">
+  <Seo slot="head" title="Historia y Naturaleza del Faedo de Ciñera" description="Hayedo, fauna, flora, patrimonio minero y geología del Faedo de Ciñera (León). 400 millones de años de historia natural y cultural." />
   <Breadcrumbs items={[{ href: '/', label: 'Inicio' }, { href: '/historia-naturaleza', label: 'Historia y Naturaleza' }]} />
   <section class="container prose prose-slate max-w-none py-8">
     <h1>Historia y Naturaleza del Faedo de Ciñera</h1>
-    <h2>El hayedo del Faedo de Ciñera</h2>
-    <p>El <strong>Faedo de Ciñera</strong> es un hayedo centenario bien conservado que ofrece sombra y humedad durante todo el año. Sus colores otoñales son el principal atractivo de la <a href="/ruta/faedo-de-cinera">ruta del Faedo de Ciñera</a>. Este bosque de hayas es uno de los más meridionales de Europa y alberga ejemplares de más de 500 años de antigüedad.</p>
-    <h2>Fauna y flora del Faedo de Ciñera</h2>
-    <p>En el <strong>Faedo de Ciñera</strong> encontrarás una rica biodiversidad. Entre las especies más comunes se encuentran el <em>haya</em> (<em>Fagus sylvatica</em>), el <em>acebo</em>, helechos y líquenes asociados a bosques maduros. Durante la <a href="/ruta/faedo-de-cinera">ruta por el Faedo de Ciñera</a> es posible avistar aves forestales como el pito real, el trepador azul y pequeños mamíferos como ardillas y zorros.</p>
-    <h2>Patrimonio minero del Faedo de Ciñera</h2>
-    <p>El <strong>Faedo de Ciñera</strong> se encuentra en el valle de Gordón, una zona con un importante pasado minero. Durante la ruta del <strong>Faedo de Ciñera</strong> podrás ver restos de antiguas estructuras mineras, vías del ferrocarril minero y elementos interpretativos que contextualizan la historia de la minería del carbón en León. La leyenda de <a href="/haeda">Haeda, la bruja del Faedo</a>, conecta el origen del carbón con la magia del bosque.</p>
-    <h2>Curiosidades del Faedo de Ciñera</h2>
-    <p>Varios tramos del sendero del <strong>Faedo de Ciñera</strong> discurren por pasarelas de madera elevadas que protegen el entorno sensible del hayedo. Estas pasarelas permiten recorrer el <strong>Faedo de Ciñera</strong> sin dañar el ecosistema del suelo, donde crecen musgos, helechos y hongos fundamentales para el bosque. El nombre "Faedo" proviene del latín <em>fagus</em>, que significa haya.</p>
-    <h2>El cuento de Haeda del Faedo de Ciñera</h2>
-    <p>
-      La tradición local recoge un relato popular ambientado en el <strong>Faedo de Ciñera</strong> que puede ayudar a niñas y niños a conectar con el bosque. La leyenda cuenta la historia de Haeda, una bruja que vivía en el <strong>Faedo de Ciñera</strong> y que sacrificó su vida para ayudar a las familias del valle, dando origen al pueblo de Ciñera y a las vetas de carbón.
-      Lee el <a href="/haeda">cuento completo de Haeda del Faedo de Ciñera</a> para una versión detallada y sugerencias educativas para contar durante la <a href="/ruta/faedo-de-cinera">visita al Faedo</a>.
+    
+    <p class="lead">
+      El <strong>Faedo de Ciñera</strong> es mucho más que un hayedo: es un espacio donde confluyen 
+      400 millones de años de historia geológica, un ecosistema único de transición mediterránea-atlántica, 
+      un patrimonio minero centenario y la dedicación de un pueblo por conservar su tesoro natural.
     </p>
+
+    <h2>El Origen del Nombre: "Faedo"</h2>
+    <p>
+      El nombre <strong>"Faedo"</strong> proviene del latín <em>fagus</em> (haya) más el sufijo abundancial 
+      <em>-etum</em>, que evolucionó a <strong>faedo</strong> en asturleonés, significando "lugar abundante 
+      en hayas" o "hayedo". La conservación de la /f-/ inicial (en lugar de evolucionar a /h-/ como en 
+      castellano "hayedo") es evidencia de la <strong>influencia del asturleonés</strong> en la comarca de Gordón.
+    </p>
+    <p>
+      <a href="/blog/origen-nombre-faedo">Descubre la fascinante historia del nombre "Faedo"</a> y su evolución 
+      lingüística desde el latín hasta nuestros días.
+    </p>
+
+    <h2>El Hayedo del Faedo de Ciñera</h2>
+    <p>
+      El <strong>Faedo de Ciñera</strong> es un hayedo centenario bien conservado que ofrece sombra y humedad 
+      durante todo el año. Sus colores otoñales son el principal atractivo de la 
+      <a href="/ruta/faedo-de-cinera">ruta del Faedo de Ciñera</a>. Este bosque de hayas es uno de los 
+      <strong>más meridionales de Europa</strong> y alberga ejemplares de más de 500 años de antigüedad.
+    </p>
+    <p>
+      El hayedo se desarrolla en la <strong>ladera norte (umbría)</strong> del valle del Arroyo de Ciñera, 
+      entre los 800 y 1.100 metros de altitud, aprovechando la humedad y la sombra. Las hayas crean un 
+      sombrío denso característico que hace del Faedo un lugar especialmente mágico.
+    </p>
+
+    <h2>El Haya Fagus: 500 Años de Historia</h2>
+    <p>
+      Entre todas las hayas del bosque destaca <strong><a href="/haya-fagus">El Haya Fagus</a></strong>, 
+      un gigante de más de <strong>500 años de edad</strong> que se sitúa entre el escaso club de árboles 
+      singulares centenarios de España. Con 6,32m de perímetro y 23m de altura, fue incluido en el libro 
+      <em>"Árboles, Leyendas Vivas"</em> como uno de los <strong>100 árboles más singulares de España</strong>.
+    </p>
+    <p>
+      Este árbol ha sido testigo de la historia minera del valle, viendo pasar cada día a los trabajadores 
+      que se dirigían a las minas del Grupo Ciñera. Su forma característica de "copa de vino" lo hace 
+      único entre las hayas españolas.
+    </p>
+
+    <h2>Flora y Fauna del Faedo de Ciñera</h2>
+    <p>
+      En el <strong>Faedo de Ciñera</strong> encontrarás una rica biodiversidad resultado de su posición 
+      fronteriza entre dos regiones biogeográficas: la mediterránea y la eurosiberiana.
+    </p>
+
+    <h3>Los Tres Árboles Protagonistas</h3>
+    <p>
+      El bosque alberga tres especies arbóreas principales que representan ecosistemas diferentes:
+    </p>
+    <ul>
+      <li><strong>Haya (Fagus sylvatica)</strong>: Domina el corazón húmedo del bosque en la umbría</li>
+      <li><strong>Encina (Quercus ilex)</strong>: Ocupa las zonas secas y soleadas de la solana</li>
+      <li><strong>Rebollo o Melojo (Quercus pyrenaica)</strong>: Se encuentra en posiciones intermedias</li>
+    </ul>
+    <p>
+      <a href="/blog/arboles-del-faedo-de-cinera">Aprende a identificar cada árbol durante tu visita</a> 
+      con nuestra guía práctica.
+    </p>
+
+    <h3>Fauna Destacada</h3>
+    <p>
+      Durante la <a href="/ruta/faedo-de-cinera">ruta por el Faedo de Ciñera</a> es posible avistar:
+    </p>
+    <ul>
+      <li><strong>Desmán ibérico</strong> (<em>Galemys pyrenaicus</em>): Endemismo ibérico en peligro, 
+      indicador de aguas puras. <a href="/blog/desman-iberico-faedo-de-cinera">Conoce a este pequeño mamífero único</a></li>
+      <li><strong>Buitre leonado</strong> (<em>Gyps fulvus</em>): Segunda mayor ave rapaz de la península</li>
+      <li><strong>Aves forestales</strong>: Pito real, trepador azul, carboneros, agateadores, herrerillos</li>
+      <li><strong>Mamíferos</strong>: Ardillas, zorros, corzos, jabalíes, lirones</li>
+    </ul>
+    <p>
+      Consulta la página completa de <a href="/flora-fauna">Flora y Fauna del Faedo</a> para información 
+      detallada sobre todas las especies.
+    </p>
+
+    <h2>Geología: 400 Millones de Años</h2>
+    <p>
+      La geología del Faedo de Ciñera explica tanto su biodiversidad como su historia minera. Hace 
+      <strong>400 millones de años</strong>, esta zona era el fondo de un mar paleozoico del hemisferio sur.
+    </p>
+    <p>
+      El paisaje actual muestra una alternancia característica de dos tipos de roca:
+    </p>
+    <ul>
+      <li><strong>Rocas detríticas</strong>: Forman valles verdes donde crece vegetación abundante</li>
+      <li><strong>Calizas</strong>: Crean peñas grises donde las hayas abrazan literalmente las rocas</li>
+    </ul>
+    <p>
+      Las <strong>capas de carbón</strong> de la Formación Pastora (310 millones de años) fueron el origen 
+      de la minería de Ciñera. <a href="/geologia">Descubre la fascinante historia geológica del Faedo</a>.
+    </p>
+
+    <h2>Patrimonio Minero del Faedo de Ciñera</h2>
+    <p>
+      El <strong>Faedo de Ciñera</strong> se encuentra en el valle de Gordón, una zona con un importante 
+      pasado minero. Durante la ruta del <strong>Faedo de Ciñera</strong> podrás ver:
+    </p>
+    <ul>
+      <li><strong>Bocamina "Menos 50" rehabilitada</strong>: Punto de encuentro anual cada primer sábado de julio</li>
+      <li><strong>Castillete del Pozo Ibarra</strong>: Estructura metálica de 1930, visible desde varios puntos</li>
+      <li><strong>Puente de Palos</strong>: Construcción histórica utilizada por los mineros</li>
+      <li><strong>Vías del ferrocarril minero</strong>: Restos del antiguo tren de carbón</li>
+    </ul>
+    <p>
+      El <strong>Pozo Ibarra</strong>, inaugurado en 1930 y cerrado en 1996, fue el corazón económico de 
+      Ciñera durante casi 70 años. Su castillete de 31,5 metros sigue en pie como símbolo del patrimonio 
+      industrial. <a href="/patrimonio-minero">Conoce la historia completa del Pozo Ibarra</a>.
+    </p>
+
+    <h2>La Leyenda de Haeda: Del Mito al Carbón</h2>
+    <p>
+      La tradición local recoge un relato popular ambientado en el <strong>Faedo de Ciñera</strong> que 
+      conecta mágicamente el bosque con el carbón. La leyenda cuenta la historia de <strong>Haeda</strong>, 
+      una bruja que vivía en el hayedo y que sacrificó su vida para ayudar a las familias del valle.
+    </p>
+    <p>
+      Según el relato, las rocas que Haeda encendió mágicamente para dar calor a las familias se transformaron 
+      en las <strong>vetas de carbón</strong> que después explotarían los mineros. Así, la leyenda une el 
+      mito con la historia real, el bosque con la minería, la magia con la geología.
+    </p>
+    <p>
+      Lee el <a href="/haeda">cuento completo de Haeda del Faedo de Ciñera</a> para una versión detallada 
+      y sugerencias educativas para contar durante la visita al Faedo con niños.
+    </p>
+
+    <h2>Conservación: El Bosque Mejor Cuidado de España</h2>
+    <p>
+      En el año <strong>2007</strong>, el Faedo de Ciñera fue galardonado con el premio al 
+      <strong>"Bosque Mejor Cuidado de España"</strong> concedido por el <strong>Ministerio de Medio Ambiente</strong> 
+      y la ONG Bosques sin Fronteras.
+    </p>
+    <p>
+      La iniciativa partió del AMPA del Colegio Público San Miguel Arcángel de Ciñera, presentando las 
+      actividades que llevan a cabo todos los sectores sociales del municipio:
+    </p>
+    <ul>
+      <li><strong>A.DEL.FA.</strong> (Asociación de Amigos del Faedo): 300 socios dedicados a la conservación</li>
+      <li>Ayuntamiento de La Pola de Gordón</li>
+      <li>Junta Vecinal de Ciñera</li>
+      <li>Vecinos que participan en las actividades de conservación</li>
+    </ul>
+    <p>
+      Este premio reconoce décadas de trabajo colectivo: limpiar, repoblar, reconstruir puentes, mantener 
+      las pasarelas... <strong>Un pueblo unido por su bosque</strong>. Y eso, en sí mismo, es mágico.
+    </p>
+
+    <h2>Curiosidades del Faedo de Ciñera</h2>
+    <p>
+      Varios tramos del sendero del <strong>Faedo de Ciñera</strong> discurren por 
+      <strong>pasarelas de madera elevadas</strong> que protegen el entorno sensible del hayedo. Estas 
+      pasarelas permiten recorrer el bosque sin dañar el ecosistema del suelo, donde crecen musgos, 
+      helechos y hongos fundamentales para el bosque.
+    </p>
+    <p>
+      Las hayas del Faedo crecen sobre sustrato calizo. Como las calizas no generan suelo, las raíces de 
+      las hayas <strong>literalmente abrazan las rocas</strong>, creando formas tortuosas y caprichosas 
+      que añaden magia al paisaje.
+    </p>
+
+    <h2>Un Mundo Maravilloso que Respira Paz</h2>
+    <p>
+      El Faedo de Ciñera es un lugar donde se respira paz. En el silencio del paraje, entenderás fácilmente 
+      cómo la naturaleza ha sido aquí especialmente generosa: aguas de pureza original, variedad de árboles 
+      en perfecto equilibrio, y un pueblo que cuida con mimo ejemplar su patrimonio natural.
+    </p>
+    <p>
+      <a href="/blog/la-magia-del-faedo-de-cinera">Descubre por qué el Faedo es un bosque mágico</a> donde 
+      druidas, hayas centenarias y la dedicación de un pueblo crean un espacio único.
+    </p>
+
+    <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+      <h3 class="text-lg font-semibold mb-4">Explora Más sobre el Faedo</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="/haya-fagus" class="block p-4 border rounded-md hover:shadow">
+          <h4 class="font-medium mb-2">El Haya Fagus</h4>
+          <p class="text-sm text-gray-600">Árbol de 500 años, uno de los 100 más singulares de España</p>
+        </a>
+        <a href="/flora-fauna" class="block p-4 border rounded-md hover:shadow">
+          <h4 class="font-medium mb-2">Flora y Fauna</h4>
+          <p class="text-sm text-gray-600">Biodiversidad completa del bosque y sus alrededores</p>
+        </a>
+        <a href="/geologia" class="block p-4 border rounded-md hover:shadow">
+          <h4 class="font-medium mb-2">Geología</h4>
+          <p class="text-sm text-gray-600">400 millones de años de historia en las rocas</p>
+        </a>
+        <a href="/patrimonio-minero" class="block p-4 border rounded-md hover:shadow">
+          <h4 class="font-medium mb-2">Pozo Ibarra</h4>
+          <p class="text-sm text-gray-600">Historia minera y el castillete de 1930</p>
+        </a>
+        <a href="/haeda" class="block p-4 border rounded-md hover:shadow">
+          <h4 class="font-medium mb-2">Leyenda de Haeda</h4>
+          <p class="text-sm text-gray-600">Cuento popular del Faedo para leer con niños</p>
+        </a>
+        <a href="/ruta/faedo-de-cinera" class="block p-4 border rounded-md hover:shadow">
+          <h4 class="font-medium mb-2">Planifica tu Visita</h4>
+          <p class="text-sm text-gray-600">Mapa, GPX, puntos de interés y consejos</p>
+        </a>
+      </div>
+    </div>
   </section>
 </Layout>

@@ -50,12 +50,133 @@ const attractionLd = {
       <article class="prose prose-slate max-w-none">
         <h1>Ruta del Faedo de Ciñera</h1>
         <p>{data.summary}</p>
+        
+        <h2>El Recorrido Paso a Paso</h2>
+        <p>
+          La ruta comienza en la <strong>plaza de la iglesia de Ciñera</strong> (San Miguel Arcángel). 
+          Desde aquí, un camino señalizado te guía a través de un valle estrecho con abundante vegetación, 
+          regado por El Arroyo, protagonista de esta historia que marca el itinerario.
+        </p>
+
+        <h3>1. Inicio: Bocamina "Menos 50" Rehabilitada</h3>
+        <p>
+          Pronto llegarás a una explanada donde encontrarás una <strong>bocamina rehabilitada</strong> 
+          por los vecinos. Este lugar tiene una dimensión especial: aquí se inicia, con una misa, el 
+          encuentro que cada primer sábado de julio congrega en el Faedo a vecinos y amigos de Ciñera. 
+          Un encuentro entrañable en un lugar mágico.
+        </p>
+        <p>
+          Pocos metros después, verás el <strong>castillete del Pozo Ibarra</strong> sobre la escombrera 
+          restaurada, símbolo del pasado minero de la zona.
+        </p>
+
+        <h3>2. Primer Puente Artesanal</h3>
+        <p>
+          Cruzarás un puente artesanal y vigoroso que te sitúa en otro mundo. El paisaje cambia: 
+          el praderío ofrece una <strong>zona de mesas para el descanso y la comida</strong>, 
+          lugar capital del encuentro vecinal de julio.
+        </p>
+        <p>
+          Aquí la naturaleza muestra su generosidad: aguas de pureza original, variedad de árboles 
+          en perfecto equilibrio. Es frecuente ver caballos, yeguas o potros buscando el frescor de la arboleda.
+        </p>
+
+        <h3>3. Entrada al Corazón del Hayedo</h3>
+        <p>
+          El camino se vuelve inevitable. Notarás el <strong>sombrío característico del haya</strong> 
+          y el humus esponjoso por el que caminas. Un mundo cercanamente misterioso lleno de árboles 
+          con formas curiosas, brazos sugerentes, y nombres grabados en las cortezas que hablan de 
+          historias de amor a lo largo del tiempo.
+        </p>
+        <p>
+          <em>¡Qué espacio éste para soñar y amar!</em>
+        </p>
+
+        <h3>4. El Haya Fagus (500 años)</h3>
+        <p>
+          Un panel explicativo te presentará a <strong><a href="/haya-fagus">el Haya Fagus</a></strong>, 
+          el ejemplar más viejo del bosque, con unos quinientos años a sus espaldas. Con 6,32m de perímetro 
+          y 23m de altura, este árbol singular está entre los 100 ejemplares más singulares de España.
+        </p>
+        <p>
+          El panel cuenta historias y leyendas, habla de <a href="/flora-fauna">flora y fauna</a> 
+          (lirones, trepadores, carboneros), y narra protagonismos del hombre y el trabajo minero.
+        </p>
+
+        <h3>5. La Hoz y el Puente de Palos</h3>
+        <p>
+          Apenas salido del bosque, te espera otro deslumbramiento: una <strong>hoz estrecha</strong> 
+          tajada por el agua del arroyo que ha ido labrando la piedra durante siglos. El agua abastece 
+          al pueblo de Ciñera y sigue dibujando canales, pozas, remansos y pequeñas cascadas en una 
+          sinfonía de elegancia.
+        </p>
+        <p>
+          Aquí está el <strong>Puente de Palos</strong>, construcción práctica que permitía a los 
+          trabajadores llegar desde Villar y Vegacervera a las minas de Ciñera por el camino más corto. 
+          La historia cuenta que un alud de nieve sepultó a un minero aquí en los primeros años del 
+          siglo pasado, y su cuerpo permaneció días bajo la nieve.
+        </p>
+
+        <h3>6. Las Marmitas de Gigante</h3>
+        <p>
+          Siguiendo el curso del agua, puedes llegar a las <strong>marmitas de gigante</strong>, 
+          formaciones geológicas fascinantes. Muchos niños y algún adulto valiente las utilizan como 
+          bañeras relajantes en verano.
+        </p>
+
+        <h3>7. Conexión con Valporquero (opcional)</h3>
+        <p>
+          Más arriba, a hora y media de camino, encontrarás las <strong>Cuevas de Valporquero</strong>. 
+          También puedes continuar hasta la carretera que conduce a Villar, Valle, Coladilla y Vegacervera.
+        </p>
       </article>
 
       <section aria-labelledby="mapa">
         <h2 id="mapa" class="text-xl font-semibold mb-2">Mapa de la ruta</h2>
         <MapLeaflet lat={data.start_coords.lat} lng={data.start_coords.lng} zoom={14} height="380px" />
         <p class="mt-2 text-sm">Descarga el GPX: <a href="/gpx/faedo.gpx" download>faedo.gpx</a></p>
+      </section>
+
+      <section aria-labelledby="puntos-interes">
+        <h2 id="puntos-interes" class="text-xl font-semibold mb-4">Puntos de Interés Destacados</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold mb-2">🏛️ Bocamina "Menos 50"</h3>
+            <p class="text-sm text-gray-700">
+              Entrada rehabilitada por los vecinos. Punto de encuentro anual cada primer sábado de julio.
+            </p>
+          </div>
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold mb-2">🌳 <a href="/haya-fagus">Haya Fagus</a></h3>
+            <p class="text-sm text-gray-700">
+              Árbol de 500 años, 6,32m de perímetro. Uno de los 100 árboles más singulares de España.
+            </p>
+          </div>
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold mb-2">🌉 Puente de Palos</h3>
+            <p class="text-sm text-gray-700">
+              Construcción histórica utilizada por mineros. Lugar de memoria y homenaje.
+            </p>
+          </div>
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold mb-2">🏔️ Marmitas de Gigante</h3>
+            <p class="text-sm text-gray-700">
+              Formaciones geológicas excavadas por el agua. Piscinas naturales en verano.
+            </p>
+          </div>
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold mb-2">⛏️ Castillete Pozo Ibarra</h3>
+            <p class="text-sm text-gray-700">
+              Estructura metálica de 1930, símbolo del patrimonio minero de Ciñera.
+            </p>
+          </div>
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold mb-2">🦌 <a href="/flora-fauna">Fauna Silvestre</a></h3>
+            <p class="text-sm text-gray-700">
+              Desmán ibérico, buitre leonado, corzos, jabalíes y aves del bosque.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section aria-labelledby="galeria">
@@ -72,11 +193,12 @@ const attractionLd = {
       <section class="border rounded-lg p-4">
         <h2 class="font-semibold">Datos rápidos</h2>
         <ul class="mt-2 text-sm text-gray-700 space-y-1">
-          <li><strong>Distancia:</strong> {data.distance_km} km</li>
+          <li><strong>Distancia:</strong> {data.distance_km} km (circular)</li>
           <li><strong>Desnivel:</strong> {data.elevation_m} m</li>
           <li><strong>Duración:</strong> {data.duration_h} h</li>
           <li><strong>Dificultad:</strong> {data.difficulty}</li>
           <li><strong>Temporada:</strong> {data.season}</li>
+          <li><strong>Tipo:</strong> Sendero circular con pasarelas</li>
         </ul>
         <a href="#como-llegar" class="mt-3 inline-block text-sm">Cómo llegar</a>
       </section>
@@ -91,20 +213,35 @@ const attractionLd = {
       <section class="border rounded-lg p-4">
         <h2 class="font-semibold">Consejos</h2>
         <ul class="mt-2 text-sm text-gray-700 list-disc pl-5">
-          <li>Ropa y calzado para terreno húmedo.</li>
-          <li>Evita salirse de las pasarelas.</li>
-          <li>Ruta apta para niños; vigilar cerca del arroyo.</li>
+          <li>Calzado cómodo e impermeable (pasarelas pueden estar húmedas)</li>
+          <li>No salirse de las pasarelas señalizadas</li>
+          <li>Llevar agua y snacks</li>
+          <li>Respetar la fauna y flora</li>
+          <li>Recoger toda la basura</li>
+          <li>En otoño, llegar antes de las 10:00 para aparcar</li>
         </ul>
       </section>
 
+      <section class="border rounded-lg p-4 bg-primary-50">
+        <h2 class="font-semibold">Premio 2007</h2>
+        <p class="mt-2 text-sm text-gray-700">
+          El Faedo de Ciñera fue premiado por el <strong>Ministerio de Medio Ambiente</strong> 
+          como el <strong>"Bosque mejor cuidado de España"</strong> en 2007, gracias al trabajo 
+          de ADELFA y el AMPA del colegio.
+        </p>
+      </section>
+
       <section class="border rounded-lg p-4">
-        <h2 class="font-semibold">Rutas cercanas</h2>
-        <ul class="mt-2 text-sm text-gray-700 list-disc pl-5">
-          <li><a href="/guia-visitantes">Otras rutas en la zona</a></li>
-          <li><a href="/blog">Consejos para otoño</a></li>
+        <h2 class="font-semibold">Explora más</h2>
+        <ul class="mt-2 text-sm text-gray-700 space-y-2">
+          <li><a href="/haya-fagus" class="underline">El Haya Fagus de 500 años</a></li>
+          <li><a href="/flora-fauna" class="underline">Flora y Fauna del Faedo</a></li>
+          <li><a href="/geologia" class="underline">Geología: 400 millones de años</a></li>
+          <li><a href="/haeda" class="underline">La leyenda de Haeda</a></li>
+          <li><a href="/blog/la-magia-del-faedo-de-cinera" class="underline">La magia del Faedo</a></li>
+          <li><a href="/guia-visitantes" class="underline">Otras rutas cercanas</a></li>
         </ul>
       </section>
     </aside>
   </section>
 </Layout>
-

@@ -1,0 +1,239 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-4.jpg";
+
+const title = "Pozo Ibarra: Historia Minera del Faedo de Ciñera | Castillete 1930";
+const description =
+  "Descubre la historia del Pozo Ibarra, el castillete metálico de 1930 que simboliza el patrimonio minero de Ciñera. De la Hullera Vasco-Leonesa al cierre de 1996.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="article"
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/historia-naturaleza", label: "Historia y Naturaleza" },
+      { href: "/patrimonio-minero", label: "Patrimonio Minero" },
+    ]}
+  />
+  
+  <section class="container py-8">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose prose-slate max-w-none">
+        <h1>{title}</h1>
+        
+        <p class="lead">
+          Ciñera entra en la historia de León de la mano de la minería del carbón para constituirse en un 
+          <strong>núcleo obrero de importancia</strong> alrededor de la explotación minera del Grupo Ciñera. 
+          En 1913, lo que denominaban "el barrio obrero de la mina" albergaba unos 300 habitantes.
+        </p>
+
+        <h2>Los Orígenes: Finales del Siglo XIX</h2>
+        <p>
+          Las primeras minas y las primeras instalaciones ya habían comenzado a <strong>finales del siglo XIX</strong> 
+          en terrenos de la concesión denominada <strong>Bernesga 3ª</strong>. Sin embargo, estas explotaciones 
+          iniciales eran pequeñas y no contaban con la infraestructura necesaria para una extracción a gran escala.
+        </p>
+        <p>
+          El carbón extraído provenía de las capas de la <a href="/geologia">Formación Pastora</a>, formadas 
+          hace 310 millones de años en antiguos pantanos del Carbonífero Superior. Estas mismas capas de carbón 
+          son las que inspiraron <a href="/haeda">la leyenda de Haeda</a>, conectando magia, geología y historia minera.
+        </p>
+
+        <h2>1919: El Gran Proyecto de Hullera Vasco-Leonesa</h2>
+        <p>
+          Hasta 1919, <strong>Hullera Vasco-Leonesa</strong> no se decide a comenzar los trabajos para la 
+          instalación de un pozo maestro de extracción. Fueron trabajos complicados que no se finalizarían 
+          hasta 1930.
+        </p>
+
+        <h3>Características técnicas del pozo:</h3>
+        <ul>
+          <li><strong>Profundidad:</strong> 150 metros</li>
+          <li><strong>Sala de máquinas:</strong> Construida entre 1919-1930</li>
+          <li><strong>Oficinas:</strong> Completadas en 1930</li>
+          <li><strong>Explanada:</strong> Terrenos allanados para el castillete</li>
+        </ul>
+
+        <h2>El Castillete: Símbolo de una Época</h2>
+        <p>
+          El <strong>castillete del Pozo Ibarra</strong> fue construido por la Constructora Gijonesa, que 
+          cobró 84 céntimos por kilogramo para toda la obra montada y pintada. Una construcción que se 
+          convertiría en el símbolo del pueblo durante casi 70 años.
+        </p>
+
+        <h3>Características del castillete:</h3>
+        <ul>
+          <li><strong>Altura:</strong> 31,5 metros</li>
+          <li><strong>Peso:</strong> 60 toneladas de hierro</li>
+          <li><strong>Estructura:</strong> Torre en forma de paralelepípedo</li>
+          <li><strong>Columnas:</strong> Cuatro de hierro divididas en seis tramos</li>
+          <li><strong>Uniones:</strong> Cartelas de chapa roblonadas</li>
+        </ul>
+
+        <h2>Noviembre de 1930: La Inauguración</h2>
+        <p>
+          La inauguración del pozo y del flamante y brillante castillete tuvo lugar en <strong>noviembre de 1930</strong>, 
+          siendo presidente de Hullera Vasco-Leonesa <strong>Francisco de Ibarra</strong>, del que toma el pozo 
+          el nombre con el que es conocido.
+        </p>
+        <p>
+          En una fría mañana, unos 25 invitados entre autoridades provinciales, directivos de la empresa y 
+          empleados, subieron hasta la explanada del pozo en un Hispano y una camioneta y quedaron inmortalizados 
+          para la posteridad en una fotografía a los pies del castillete.
+        </p>
+
+        <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-6">
+          <p class="text-sm">
+            <strong>Dato histórico:</strong> Desde 1930 hasta su cierre en 1996, el pozo y su castillete han 
+            sido testigos mudos del paso del tiempo. Generaciones de mineros de Hullera Vasco-Leonesa se han 
+            retratado a sus pies como quien busca el cobijo de un haya centenaria.
+          </p>
+        </div>
+
+        <h2>La Guerra Civil: Resistencia bajo el Fuego</h2>
+        <p>
+          Durante los años fratricidas de la Guerra Civil española, <strong>el castillete resistió la dinamita 
+          que quiso tumbarlo</strong>. Este intento de destrucción quedó como testimonio de los tiempos convulsos 
+          que vivió la comarca.
+        </p>
+        <p>
+          Rodeado de robledales y canchales, el castillete siguió en pie, impertérrito ante las tormentas, 
+          con profundas raíces en la tierra gordonesa, como las hayas del Faedo.
+        </p>
+
+        <h2>Décadas de Actividad: El Corazón Económico de Ciñera</h2>
+        <p>
+          Durante casi 70 años, el Pozo Ibarra fue <strong>el corazón económico de Ciñera</strong>. Miles de 
+          mineros bajaron cada día por el pozo, trabajando en condiciones duras para extraer el carbón que 
+          alimentaba la industria española.
+        </p>
+
+        <h3>La vida de los mineros</h3>
+        <p>
+          Los trabajadores que se dirigían a las minas pasaban cada día junto al <a href="/haya-fagus">Haya Fagus</a> 
+          de 500 años. El árbol centenario ha sido testigo de:
+        </p>
+        <ul>
+          <li>Las caminatas diarias de los mineros al trabajo</li>
+          <li>Los aludes que cobraron vidas en el Puente de Palos</li>
+          <li>Las "hacenderas" cuando las mujeres y niños abrían camino en la nieve</li>
+          <li>Las jornadas de duro trabajo en el interior de la tierra</li>
+        </ul>
+
+        <p>
+          Como cuenta el Haya Fagus: <em>"En honor a ellos nuestros troncos y raíces crecen tortuosos en vez 
+          de rectos y altivos. Recuerdo el sonar de las campanas de los pueblos vecinos tocando a 'hacendera' 
+          y mujeres y niños venían a hacer camino en la nieve para que, tras la jornada en la mina y la gran nevada, 
+          papás y maridos pudiesen volver a casa a pasar la noche."</em>
+        </p>
+
+        <h2>1996: El Cierre del Pozo</h2>
+        <p>
+          En <strong>1996</strong>, el Pozo Ibarra cerró definitivamente sus puertas. La crisis de la minería 
+          del carbón en España, junto con la reconversión industrial, marcó el fin de una era para Ciñera.
+        </p>
+        <p>
+          El castillete quedó en pie como <strong>testigo mudo de la historia minera</strong> del valle de Gordón. 
+          Hoy, desde la ruta del Faedo, se puede ver su silueta recortada contra el cielo, recordando a las 
+          generaciones que trabajaron bajo tierra.
+        </p>
+
+        <h2>El Legado: De la Minería a la Naturaleza</h2>
+        <p>
+          Con el cierre de las minas, Ciñera podría haber quedado como tantos otros pueblos mineros: abandonado 
+          y olvidado. Sin embargo, los vecinos decidieron que su futuro estaría ligado a la <strong>conservación 
+          del Faedo</strong>.
+        </p>
+        <p>
+          La creación de <strong>ADELFA</strong> (Asociación de Amigos del Faedo) y el trabajo de conservación 
+          que llevó al premio como "Bosque mejor cuidado de España" en 2007 demuestran que Ciñera supo 
+          reinventarse: del carbón a la naturaleza, de la explotación a la conservación.
+        </p>
+
+        <h2>Hoy: Patrimonio Industrial Protegido</h2>
+        <p>
+          El castillete del Pozo Ibarra es hoy un elemento de <strong>patrimonio industrial</strong> que merece 
+          ser conservado y valorado. Forma parte de la ruta del Faedo como testimonio histórico de la vida 
+          que durante un siglo se desarrolló en torno a las minas.
+        </p>
+        <p>
+          Visible desde algunos puntos de la ruta, especialmente desde la zona de la bocamina rehabilitada, 
+          el castillete nos recuerda que el paisaje del Faedo no es sólo natural: es también un paisaje 
+          cultural, modelado por generaciones de trabajadores.
+        </p>
+
+        <h2>Visitar el Pozo Ibarra durante tu Ruta</h2>
+        <p>
+          Durante tu <a href="/ruta/faedo-de-cinera">recorrido por el Faedo</a>, presta atención a:
+        </p>
+        <ul>
+          <li><strong>La bocamina "menos 50" rehabilitada:</strong> Primer contacto con el patrimonio minero</li>
+          <li><strong>El castillete visible desde la explanada:</strong> Sobre la escombrera restaurada</li>
+          <li><strong>El Puente de Palos:</strong> Donde los mineros cruzaban el arroyo</li>
+          <li><strong>Los caminos históricos:</strong> Usados por trabajadores desde Villar y Vegacervera</li>
+        </ul>
+
+        <h2>Conexión con la Leyenda de Haeda</h2>
+        <p>
+          La <a href="/haeda">leyenda de Haeda</a> conecta mágicamente el bosque con el carbón: según el relato, 
+          las rocas encendidas por la bruja buena para dar calor a las familias se transformaron en las vetas 
+          de carbón que después explotarían los mineros.
+        </p>
+        <p>
+          Así, la historia del Pozo Ibarra cierra el círculo: de la leyenda al trabajo real, del mito a la 
+          industria, y finalmente, con el cierre de la mina, de vuelta a la conservación del bosque que todo 
+          lo origina.
+        </p>
+
+        <h2>Un Monumento a los Mineros</h2>
+        <p>
+          El castillete del Pozo Ibarra es más que una estructura de hierro. Es un <strong>monumento a todos 
+          los trabajadores</strong> que durante casi un siglo bajaron a las profundidades de la tierra, 
+          arriesgando sus vidas para sacar el carbón que alimentaba el progreso.
+        </p>
+        <p>
+          A ellos, y a sus familias, el Haya Fagus dedica su recuerdo y admiración. Y el castillete, erguido 
+          sobre la escombrera, sigue montando guardia sobre el valle, con la misma dignidad con la que 
+          <a href="/haya-fagus">el Haya de 500 años</a> se alza sobre el bosque.
+        </p>
+
+        <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+          <h3 class="text-lg font-semibold mb-3">Explora la historia completa del Faedo</h3>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/haeda" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Leyenda de Haeda</span>
+              <p class="text-gray-600 mt-1">Del mito al carbón</p>
+            </a>
+            <a href="/geologia" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Geología</span>
+              <p class="text-gray-600 mt-1">El origen del carbón</p>
+            </a>
+            <a href="/ruta/faedo-de-cinera" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Visita la ruta</span>
+              <p class="text-gray-600 mt-1">Ve el castillete</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="not-prose bg-gray-50 border rounded-lg p-4 mt-6 text-sm">
+          <p class="text-gray-600">
+            <strong>Fuente:</strong> Contenido basado en el trabajo del historiador 
+            <strong>José Andrés González Pedraza</strong>, investigador del patrimonio minero de la comarca de Gordón.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

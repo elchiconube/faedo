@@ -1,0 +1,198 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-3.jpg";
+
+const title = "El Haya Fagus: Árbol de 500 Años en el Faedo de Ciñera";
+const description =
+  "Conoce al Haya Fagus, el árbol centenario de 500 años del Faedo de Ciñera. Uno de los 100 árboles más singulares de España con 6,32m de perímetro y 23m de altura.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+
+const landmarkSchema = {
+  "@context": "https://schema.org",
+  "@type": "LandmarksOrHistoricalBuildings",
+  name: "Haya Fagus de Ciñera",
+  description: "Árbol centenario de 500 años, uno de los 100 árboles más singulares de España",
+  image: cover.src,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 42.8862,
+    longitude: -5.6113
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ciñera de Gordón",
+    addressRegion: "León",
+    addressCountry: "ES"
+  }
+};
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="place"
+    jsonLd={landmarkSchema}
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/historia-naturaleza", label: "Historia y Naturaleza" },
+      { href: "/haya-fagus", label: "El Haya Fagus" },
+    ]}
+  />
+  
+  <section class="container py-8 grid lg:grid-cols-3 gap-8">
+    <article class="prose prose-slate max-w-none lg:col-span-2">
+      <h1>{title}</h1>
+      
+      <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-6">
+        <p class="text-sm text-gray-700">
+          <strong>Datos del árbol:</strong> 500 años de edad • 6,32m de perímetro • 23m de altura • 
+          Incluido en "Árboles, Leyendas Vivas" como uno de los 100 árboles más singulares de España
+        </p>
+      </div>
+
+      <h2>Bienvenidos al Haya más antigua del Faedo</h2>
+      <p>
+        Me llamo <strong>Fagus</strong> y tengo 500 años, no lo recuerdo muy bien ¡es tanto tiempo!. 
+        Dicen que soy una de las hayas más ancianas de España.
+      </p>
+      <p>
+        También soy peculiar por mi forma, me dicen. Tengo un perímetro de 6,32m en mi base y mido 23m de altura. 
+        Lo normal es que mis hermanas, las hayas, sean árboles grandes, imponentes, hasta de 30m. Con las copas anchas 
+        y abombadas, la mía tiene forma de copa de vino. No recuerdo, pero es probable que alguna tormenta me arrancase 
+        la guía, o.... ¡quizás algún vecino!.
+      </p>
+
+      <h2>Un árbol singular reconocido en toda España</h2>
+      <p>
+        Estas características y la <a href="/haeda">leyenda de "La bruja Haeda"</a> hacen que me encuentre incluida 
+        en una selección de 100 árboles, los más singulares de España, en el libro 
+        <strong>"Árboles, leyendas vivas"</strong> editado por la Obra Social de Caja Madrid.
+      </p>
+      <p>
+        Mirad a vuestro entorno ¡El Faedo!, aquí vivo. Un bosque en el que se respira magia. Este suelo calizo y 
+        la materia orgánica hacen que nuestros hayucos, los frutos del haya, germinen fácilmente.
+      </p>
+
+      <h2>La vida en el bosque</h2>
+      <p>
+        Los animales que aquí viven esconden nuestros frutos en huecos y grietas, olvidándolas luego, por ello, 
+        hay hayas que aparecen incrustadas en las rocas literalmente. El arroyo de Ciñera nos refresca y humedece 
+        a la vez que produce esta mágica música, que te hace sentir "Paz".
+      </p>
+      <p>
+        Muchos animalillos comparten con nosotras, las hayas, este paraje, aunque no se dejan ver fácilmente por 
+        el hombre ruidoso: <strong>lirones, trepadores, carboneros, agateadores y herrerillos</strong> hacen de los 
+        huecos de nuestros troncos y ramas su hogar. Nuestros hayucos sirven de alimento a <strong>corzos y jabalíes</strong> 
+        durante el invierno. ¡Anímate a madrugar la próxima vez! Disfrutarás al ver al 
+        <a href="/flora-fauna#desman">desmán de los pirineos</a> en su baño matutino.
+      </p>
+
+      <h2>Testigo de la historia minera</h2>
+      <p>
+        Paraje especial sin duda, aquí se respira vida. Hace unos 150 años los hombres de Villar del Puerto y 
+        Valle de Vegacervera, pasaban por aquí diariamente. Su camino, duro en cualquier época del año, terminaba 
+        en la mina. Su sudor regó nuestro bosque durante años.
+      </p>
+      <p>
+        En honor a ellos nuestros troncos y raíces crecen tortuosos en vez de rectos y altivos. Recuerdo el sonar 
+        de las campanas de los pueblos vecinos tocando a "hacendera" y mujeres y niños venían a hacer camino en la 
+        nieve para que, tras la jornada en la mina y la gran nevada, papás y maridos pudiesen volver a casa a pasar 
+        la noche.
+      </p>
+      <p>
+        Un poco más arriba en el antiguo "puente de palos" perdieron varios de estos mineros la vida, víctimas de 
+        los aludes. A ellos y a sus familias mi recuerdo y admiración.
+      </p>
+
+      <h2>Continúa la aventura</h2>
+      <p>
+        Si te encuentras con fuerzas, continua arroyo arriba. <strong>"Las marmitas de gigante"</strong> te contarán 
+        historias de amores y desengaños. Muchos niños y algún adulto valiente, las utilizan como bañeras relajantes. 
+        Más arriba y como a hora y media de camino de aquí, encontrarás las <strong>Cuevas de Valporquero</strong>, 
+        pero eso ya es otra cosa.
+      </p>
+      <p>
+        Sólo me queda animarte a leer la <a href="/haeda">leyenda de "La bruja Haeda"</a>, agradecerte la visita 
+        y el respeto mostrado..... <strong>"hasta siempre"</strong>.
+      </p>
+
+      <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+        <h3 class="text-lg font-semibold mb-3">Planifica tu visita al Haya Fagus</h3>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <a href="/ruta/faedo-de-cinera" class="block p-3 border rounded-md hover:shadow text-sm">
+            <span class="font-medium">Ver la ruta completa</span>
+            <p class="text-gray-600 mt-1">Mapa, GPX y puntos de interés</p>
+          </a>
+          <a href="/flora-fauna" class="block p-3 border rounded-md hover:shadow text-sm">
+            <span class="font-medium">Flora y fauna del Faedo</span>
+            <p class="text-gray-600 mt-1">Descubre más especies del bosque</p>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <aside class="space-y-4">
+      <div class="rounded-lg overflow-hidden ring-1 ring-black/5">
+        <Image
+          src={cover}
+          alt="El Haya Fagus de 500 años en el Faedo de Ciñera"
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+      
+      <div class="border rounded-lg p-4 bg-white">
+        <h3 class="font-semibold mb-3">Características del Haya Fagus</h3>
+        <dl class="space-y-2 text-sm">
+          <div>
+            <dt class="text-gray-600">Edad estimada</dt>
+            <dd class="font-medium">500 años</dd>
+          </div>
+          <div>
+            <dt class="text-gray-600">Perímetro del tronco</dt>
+            <dd class="font-medium">6,32 metros</dd>
+          </div>
+          <div>
+            <dt class="text-gray-600">Altura</dt>
+            <dd class="font-medium">23 metros</dd>
+          </div>
+          <div>
+            <dt class="text-gray-600">Especie</dt>
+            <dd class="font-medium">Fagus sylvatica (Haya común)</dd>
+          </div>
+          <div>
+            <dt class="text-gray-600">Reconocimiento</dt>
+            <dd class="font-medium">Uno de los 100 árboles más singulares de España</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="border rounded-lg p-4 bg-primary-50">
+        <h3 class="font-semibold mb-2">¿Sabías que...?</h3>
+        <ul class="text-sm space-y-2 text-gray-700">
+          <li>✓ El Haya Fagus es uno de los árboles más fotografiados de León</li>
+          <li>✓ Su forma de "copa de vino" es única entre las hayas españolas</li>
+          <li>✓ Ha sido testigo de 5 siglos de historia minera</li>
+          <li>✓ Protagoniza la <a href="/haeda" class="underline">leyenda de Haeda</a></li>
+        </ul>
+      </div>
+
+      <div class="border rounded-lg p-4 text-sm text-gray-700">
+        <p>
+          <strong>Cómo llegar:</strong> El Haya Fagus se encuentra en el corazón del 
+          <a href="/ruta/faedo-de-cinera" class="underline">recorrido del Faedo</a>, 
+          aproximadamente a 20 minutos caminando desde el inicio en Ciñera.
+        </p>
+      </div>
+    </aside>
+  </section>
+</Layout>

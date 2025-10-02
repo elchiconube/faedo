@@ -1,0 +1,253 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-4.jpg";
+
+const title = "Geología del Faedo de Ciñera | 400 Millones de Años de Historia";
+const description =
+  "Descubre la fascinante geología del Faedo de Ciñera: 400 millones de años de historia, formaciones paleozoicas, calizas, rocas detríticas y el sustrato que alimenta al hayedo centenario.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="article"
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/historia-naturaleza", label: "Historia y Naturaleza" },
+      { href: "/geologia", label: "Geología" },
+    ]}
+  />
+  
+  <section class="container py-8">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose prose-slate max-w-none">
+        <h1>{title}</h1>
+        
+        <p class="lead">
+          Hace unos <strong>400 millones de años</strong>, la actual comarca gordonesa constituía el fondo 
+          de un mar de poca profundidad, salpicado de islas y ubicado en el noroeste de un gran continente, 
+          <strong>Gondwana</strong>, situado en el hemisferio sur de nuestro planeta.
+        </p>
+
+        <h2>El Mar Paleozoico: Origen del Faedo</h2>
+        <p>
+          Durante más de 300 millones de años (en la denominada <strong>Era Paleozoica</strong>, que abarca 
+          entre los 600 y los 320 millones de años, aproximadamente), este fondo marino fue testigo de 
+          importantes cambios en la geografía, clima y aspecto del planeta.
+        </p>
+        <p>
+          Al mismo tiempo, asistió al <strong>nacimiento de múltiples y extrañas formas de vida marina</strong>, 
+          muchas de ellas hoy extintas. Todos estos cambios, bióticos y abióticos, han quedado reflejados en 
+          las rocas donde hoy se encuentra enclavada la comarca de Gordón.
+        </p>
+
+        <h2>Dos Tipos de Roca, Un Paisaje Único</h2>
+        <p>
+          Como resultado de los avatares acontecidos en este mar Paleozoico, la geología del Alto Bernesga 
+          muestra dos rasgos característicos que definen el paisaje del Faedo de Ciñera.
+        </p>
+
+        <h3>1. Rocas Detríticas: Los Valles Verdes</h3>
+        <p>
+          Las <strong>rocas detríticas</strong> están constituidas por cantos, arenas y/o limos consolidados. 
+          La mayoría se destruye con facilidad ante elementos como el hielo, la lluvia o los seres vivos, 
+          generando <strong>valles o suaves colinas cubiertas por vegetación</strong>.
+        </p>
+        <p>
+          Estas rocas conforman las zonas bajas donde las formaciones geológicas se ocultan bajo amplios 
+          mantos de vegetación herbácea, permitiendo el crecimiento de praderas y bosques de ribera.
+        </p>
+
+        <h3>2. Calizas: Las Peñas Grises</h3>
+        <p>
+          La roca denominada <strong>caliza</strong> está formada por la precipitación química de carbonatos 
+          de calcio disueltos en el agua del antiguo mar. No se destruye fácilmente aunque el agua ácida la 
+          disuelve lentamente.
+        </p>
+        <p>
+          Como resultado de esta dureza, genera <strong>peñas usualmente desnudas o con una vegetación particular</strong>. 
+          El paisaje revela una alternancia de franjas verdes (los valles detríticos) y peñas grises (las calizas).
+        </p>
+
+        <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-6">
+          <p class="text-sm">
+            <strong>Curiosidad geológica:</strong> Un viaje en avioneta sobre el valle o una fotografía aérea 
+            permitiría observar estos enormes fragmentos alargados en dirección Este-Oeste que se repiten 
+            varias veces a lo largo del valle, resultado de antiguos choques continentales.
+          </p>
+        </div>
+
+        <h2>El Camino Geológico hacia el Faedo</h2>
+        <p>
+          Durante el recorrido al Faedo atravesamos diferentes formaciones geológicas, cada una con su 
+          propia historia de millones de años.
+        </p>
+
+        <h3>Formación Oville (500 millones de años)</h3>
+        <p>
+          La localidad de Ciñera está asentada sobre la <strong>Formación Oville</strong>, delgadas capas 
+          de areniscas y lutitas de edad <strong>Cámbrico</strong> (en torno a 500 millones de años) muy 
+          ricas en fósiles de trilobites.
+        </p>
+        <p>
+          Estas rocas han sido erosionadas durante los últimos miles de años por el Arroyo del Villar, 
+          principal constructor del pequeño valle por el que transcurre el camino al Faedo.
+        </p>
+
+        <h3>Formación Pastora (310 millones de años)</h3>
+        <p>
+          Las rocas marinas se encuentran parcialmente cubiertas por otros materiales geológicos: son los 
+          <strong>conglomerados, arenas y lutitas con capas de carbón</strong> pertenecientes a la Formación 
+          Pastora, de edad <strong>Carbonífero Superior</strong> (sobre 310 millones de años).
+        </p>
+        <p>
+          Como evidencian los abundantes fósiles de vegetales que contienen, estos materiales fueron 
+          depositados en pequeñas cuencas continentales, depresiones intramontañosas ocupadas por lagos 
+          rodeados de vegetación.
+        </p>
+        <p>
+          <strong>Aquí es donde encontramos el carbón</strong> que dio vida a la minería de Ciñera y que 
+          conecta con <a href="/haeda">la leyenda de Haeda</a>, donde las rocas mágicas se transforman 
+          en vetas de carbón.
+        </p>
+
+        <h3>Formación Barcaliente (380 millones de años)</h3>
+        <p>
+          Al avanzar por el camino encontramos un pequeño <strong>farallón calcáreo</strong>. Son calizas 
+          de la Formación Barcaliente del <strong>Devónico</strong> (en torno a 380 millones de años).
+        </p>
+        <p>
+          Tras atravesar este farallón siguiendo un paso horadado por el arroyo, volvemos a caminar por 
+          la Formación Huergas: limolitas con aspecto de pizarras, altamente erosionables que conforman 
+          zonas bajas con vegetación.
+        </p>
+
+        <h2>El Sustrato Calizo del Hayedo</h2>
+        <p>
+          La presencia del <strong>hayedo del Faedo de Ciñera</strong> es ya indicativa de un cambio en 
+          el sustrato rocoso, cuya naturaleza calcárea se evidencia en las rocas que sobresalen entre la 
+          hojarasca o próximas al cauce del río.
+        </p>
+
+        <h3>Cómo las Hayas Crecen sobre Piedra</h3>
+        <p>
+          Las calizas se erosionan por disolución, de tal manera que su alteración <strong>no genera suelo</strong> 
+          excepto por el depósito de diversas arcillas que, en mayor o menor medida, se encuentran en las 
+          rocas calcáreas.
+        </p>
+        <p>
+          Estas arcillas se acumulan en fisuras o pequeñas hondonadas favoreciendo el crecimiento de los 
+          pequeños hayucos. Tras las fases iniciales, <strong>las raíces del árbol deben abrazar estas rocas</strong> 
+          y el haya se sostiene en equilibrio precario sobre ellas.
+        </p>
+        <p>
+          Por eso verás en el Faedo hayas con raíces expuestas que literalmente abrazan las rocas calizas, 
+          creando formas caprichosas y tortuosas que añaden magia al paisaje.
+        </p>
+
+        <h2>Las Marmitas de Gigante</h2>
+        <p>
+          Una de las formaciones geológicas más fascinantes del Faedo son las <strong>"marmitas de gigante"</strong>, 
+          pozas circulares excavadas en la roca caliza por la acción erosiva del agua a lo largo de miles de años.
+        </p>
+        <p>
+          Estas formaciones se crean cuando piedras y cantos rodados son atrapados en pequeñas depresiones 
+          del lecho rocoso. El movimiento del agua hace girar estas piedras, que actúan como "taladros naturales" 
+          puliendo y profundizando la roca hasta crear estas pozas perfectamente circulares.
+        </p>
+        <p>
+          En verano, muchos visitantes las utilizan como <strong>piscinas naturales</strong>, aunque el agua 
+          suele estar bastante fría incluso en los meses más cálidos.
+        </p>
+
+        <h2>Historia Geológica Reciente: El Modelado Glaciar</h2>
+        <p>
+          Aunque las rocas del Faedo tienen cientos de millones de años, el paisaje actual que vemos se formó 
+          mucho más recientemente, durante las <strong>glaciaciones del Cuaternario</strong> (últimos 2 millones 
+          de años).
+        </p>
+        <p>
+          El arroyo de Ciñera ha ido excavando su cauce en las rocas, creando la hoz estrecha que admiramos 
+          cerca del Puente de Palos. Este proceso continúa hoy día, esculpiendo lentamente el paisaje.
+        </p>
+
+        <h2>La Conexión entre Geología y Minería</h2>
+        <p>
+          La geología del Faedo explica por qué Ciñera fue un importante enclave minero. Las capas de carbón 
+          de la <strong>Formación Pastora</strong> se formaron hace 310 millones de años en antiguos pantanos 
+          donde la vegetación se acumulaba y, bajo presión y temperatura, se transformaba lentamente en carbón.
+        </p>
+        <p>
+          El <strong>Pozo Ibarra</strong> y las demás instalaciones mineras explotaban estas vetas de carbón, 
+          que constituyeron la riqueza económica de la zona durante más de un siglo.
+        </p>
+
+        <h2>Geología para Senderistas: Qué Observar</h2>
+        <p>
+          Durante tu <a href="/ruta/faedo-de-cinera">ruta por el Faedo</a>, presta atención a:
+        </p>
+        <ul>
+          <li><strong>Las rocas del camino:</strong> Observa la alternancia entre zonas con piedras calizas 
+          grises y zonas con suelo más oscuro (detríticas)</li>
+          <li><strong>Las raíces de las hayas:</strong> Fíjate cómo abrazan literalmente las rocas calizas</li>
+          <li><strong>El arroyo:</strong> Nota cómo el agua va erosionando y puliendo las rocas</li>
+          <li><strong>Las marmitas:</strong> Busca estas formaciones circulares cerca del Puente de Palos</li>
+          <li><strong>La hoz:</strong> Observa las paredes verticales excavadas por el agua en la caliza</li>
+        </ul>
+
+        <h2>Un Paisaje con 400 Millones de Años de Historia</h2>
+        <p>
+          Cuando camines por el Faedo de Ciñera, estás pisando rocas que se formaron en el fondo de un mar 
+          del hemisferio sur, cuando los continentes tenían una distribución completamente diferente y la vida 
+          en la Tierra apenas comenzaba a colonizar la tierra firme.
+        </p>
+        <p>
+          El paisaje que ves hoy es el resultado de <strong>400 millones de años de historia geológica</strong>: 
+          mares que avanzan y retroceden, continentes que chocan, montañas que se elevan, glaciares que esculpen 
+          valles, y arroyos que pacientemente van tallando la roca.
+        </p>
+        <p>
+          Y sobre todo ello, durante los últimos 500 años, <a href="/haya-fagus">un haya centenaria</a> ha 
+          sido testigo silencioso de esta historia.
+        </p>
+
+        <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+          <h3 class="text-lg font-semibold mb-3">Explora más sobre el Faedo</h3>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/flora-fauna" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Flora y Fauna</span>
+              <p class="text-gray-600 mt-1">Biodiversidad del bosque</p>
+            </a>
+            <a href="/haya-fagus" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">El Haya Fagus</span>
+              <p class="text-gray-600 mt-1">500 años de historia</p>
+            </a>
+            <a href="/ruta/faedo-de-cinera" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Planifica tu ruta</span>
+              <p class="text-gray-600 mt-1">Mapa y GPX</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="not-prose bg-gray-50 border rounded-lg p-4 mt-6 text-sm">
+          <p class="text-gray-600">
+            <strong>Nota técnica:</strong> El contenido geológico está basado en el trabajo de la geóloga 
+            <strong>Esperanza Fernández Martínez</strong>, experta en la geología del Alto Bernesga. 
+            Para información más técnica y detallada, consulta publicaciones especializadas sobre la 
+            geología de la Cordillera Cantábrica.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>
