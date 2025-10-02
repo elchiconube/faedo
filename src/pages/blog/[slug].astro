@@ -18,8 +18,19 @@ const blogLd = {
   headline: data.title,
   description: data.excerpt,
   datePublished: data.date.toISOString(),
+  dateModified: data.date.toISOString(),
   mainEntityOfPage: canonical,
   image: data.coverImage?.src,
+  author: {
+    '@type': 'Organization',
+    name: 'Faedo de Ciñera',
+    url: 'https://faedo.es'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Faedo de Ciñera',
+    url: 'https://faedo.es'
+  }
 };
 export async function getStaticPaths() {
   const posts = await getCollection('blog');

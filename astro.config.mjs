@@ -20,11 +20,23 @@ export default defineConfig({
         },
       },
       serialize(item) {
-        // Destacar la ruta principal en el sitemap
-        if (item.url.endsWith('/ruta/faedo-de-cinera')) {
+        // Prioridades optimizadas para SEO
+        if (item.url === 'https://faedo.es/') {
           return { ...item, priority: 1.0, changefreq: 'weekly' };
         }
-        return { ...item, changefreq: 'monthly' };
+        if (item.url.endsWith('/ruta/faedo-de-cinera')) {
+          return { ...item, priority: 0.9, changefreq: 'weekly' };
+        }
+        if (item.url.includes('/blog/') && !item.url.endsWith('/blog')) {
+          return { ...item, priority: 0.7, changefreq: 'monthly' };
+        }
+        if (item.url.endsWith('/blog')) {
+          return { ...item, priority: 0.8, changefreq: 'weekly' };
+        }
+        if (item.url.includes('/guia-visitantes') || item.url.includes('/historia-naturaleza')) {
+          return { ...item, priority: 0.8, changefreq: 'monthly' };
+        }
+        return { ...item, priority: 0.6, changefreq: 'monthly' };
       },
     }),
   ],

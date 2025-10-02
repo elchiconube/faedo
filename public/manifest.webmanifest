@@ -1,6 +1,7 @@
 {
   "name": "Faedo de Ciñera",
   "short_name": "Faedo",
+  "description": "Guía de senderismo del Faedo de Ciñera en León: mapa, GPX, consejos y naturaleza",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
