@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_LOCALE } from '../consts';
 import GoogleAnalytics from './GoogleAnalytics.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 const {
   title = SITE_TITLE,
@@ -44,13 +45,14 @@ const {
     </script>
     <slot name="head" />
     <GoogleAnalytics />
+    <ViewTransitions />
     <style is:global>
       @import "../styles/globals.css";
     </style>
   </head>
   <body class="min-h-screen flex flex-col">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <header class="border-b border-gray-100">
+    <header class="border-b border-gray-100" transition:persist>
       <nav class="container flex items-center justify-between py-4" aria-label="Principal">
         <a href="/" class="text-lg font-semibold text-primary-700 no-underline">{SITE_NAME}</a>
         <ul class="flex gap-4 text-sm">
@@ -66,7 +68,7 @@ const {
     <main id="contenido" class="flex-1">
       <slot />
     </main>
-    <footer class="border-t border-gray-100">
+    <footer class="border-t border-gray-100" transition:persist>
       <div class="container py-8 text-sm flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <p>&copy; {new Date().getFullYear()} {SITE_NAME} · Proyecto informativo sin ánimo de lucro.</p>
         <nav aria-label="Secundario">
