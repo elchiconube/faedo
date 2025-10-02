@@ -7,4 +7,4 @@ export const SITE_LOCALE = 'es-ES';
 
 // Analytics
 // Reemplaza 'G-XXXXXXXXXX' con tu ID real de Google Analytics 4
-export const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
+export const GA_MEASUREMENT_ID = 'G-ZPEBC66QZE';
