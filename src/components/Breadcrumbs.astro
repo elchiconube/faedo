@@ -1,16 +1,19 @@
 ---
+import { SITE_URL } from '../consts';
+
 interface Crumb { href: string; label: string; }
 const { items = [] as Crumb[] } = Astro.props;
 
 // Generar JSON-LD para breadcrumbs
+const siteUrl = Astro.site?.toString() || SITE_URL;
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: items.map((item, index) => ({
+  itemListElement: items.map((item: Crumb, index: number) => ({
     '@type': 'ListItem',
     position: index + 1,
     name: item.label,
-    item: new URL(item.href, Astro.site).toString()
+    item: new URL(item.href, siteUrl).toString()
   }))
 };
 ---
