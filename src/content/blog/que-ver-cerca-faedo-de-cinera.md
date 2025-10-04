@@ -2,7 +2,7 @@
 title: "Qué ver cerca del Faedo de Ciñera: rutas y pueblos"
 excerpt: "Descubre qué ver cerca del Faedo de Ciñera: rutas de senderismo, pueblos con encanto, patrimonio minero y espacios naturales en la comarca de Gordón y alrededores de León."
 date: 2025-10-02
-tags: ["turismo", "rutas", "león", "alrededores"]
+tags: ["turismo", "rutas", "leon", "alrededores"]
 coverImage: ../../assets/blog-placeholder-4.jpg
 ---
 

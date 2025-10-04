@@ -2,7 +2,7 @@
 title: "Ruta del Faedo de Ciñera con niños: guía completa"
 excerpt: "Guía práctica para visitar el Faedo de Ciñera con niños: consejos de seguridad, qué llevar, actividades educativas y cómo hacer que la ruta sea divertida para toda la familia."
 date: 2025-10-02
-tags: ["familias", "niños", "senderismo", "consejos"]
+tags: ["familias", "ninos", "senderismo", "consejos"]
 coverImage: ../../assets/blog-placeholder-2.jpg
 ---
 

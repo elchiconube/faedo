@@ -2,7 +2,7 @@
 title: "Mejor época para visitar el Faedo de Ciñera"
 excerpt: "Descubre cuál es la mejor época para visitar el Faedo de Ciñera según tus preferencias: otoño para colores espectaculares, primavera para verdor, verano para frescor o invierno para paisajes nevados."
 date: 2025-10-02
-tags: ["otoño", "primavera", "estaciones", "planificación"]
+tags: ["otono", "primavera", "estaciones", "planificacion"]
 coverImage: ../../assets/blog-placeholder-1.jpg
 ---
 

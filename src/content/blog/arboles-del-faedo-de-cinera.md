@@ -2,7 +2,7 @@
 title: "Árboles del Faedo de Ciñera: Guía para Identificarlos"
 excerpt: "Aprende a identificar las hayas, encinas y robles del Faedo de Ciñera durante tu visita. Guía práctica con características, hojas y curiosidades de cada especie arbórea del bosque."
 date: 2025-10-01
-tags: ["árboles", "botánica", "naturaleza", "guía"]
+tags: ["arboles", "botanica", "naturaleza", "guia"]
 coverImage: ../../assets/blog-placeholder-3.jpg
 ---
 

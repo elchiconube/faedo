@@ -2,7 +2,7 @@
 title: "Cómo llegar al Faedo de Ciñera: todas las opciones"
 excerpt: "Guía completa para llegar al Faedo de Ciñera desde León, Madrid, Asturias y otras ciudades. En coche, autobús, tren y taxi. Incluye tiempos, precios y consejos de aparcamiento."
 date: 2025-10-02
-tags: ["transporte", "aparcamiento", "acceso", "guía"]
+tags: ["transporte", "aparcamiento", "acceso", "guia"]
 coverImage: ../../assets/blog-placeholder-3.jpg
 ---
 
