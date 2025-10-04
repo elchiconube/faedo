@@ -36,14 +36,12 @@ const {
     <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
     <link rel="preload" as="style" href="/fonts.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="/fonts.css" /></noscript>
-    <script type="application/ld+json">
-      {JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: SITE_NAME,
-        url: Astro.site?.toString(),
-      })}
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: Astro.site?.toString(),
+    })} />
     <slot name="head" />
     <GoogleSiteVerification />
     <GoogleAnalytics />

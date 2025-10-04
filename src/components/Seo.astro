@@ -27,9 +27,7 @@ const canonical = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
   <meta name="twitter:description" content={description} />
   {image && <meta name="twitter:image" content={image} />}
   {jsonLd && (
-    <script type="application/ld+json">
-      {JSON.stringify(Array.isArray(jsonLd) ? { '@context': 'https://schema.org', '@graph': jsonLd } : jsonLd)}
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(Array.isArray(jsonLd) ? { '@context': 'https://schema.org', '@graph': jsonLd } : jsonLd)} />
   )}
 </fragment>
 
