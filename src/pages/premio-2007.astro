@@ -1,0 +1,282 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-5.jpg";
+
+const title = "Premio 'Bosque Mejor Cuidado de España' 2007 | Faedo de Ciñera";
+const description =
+  "El Faedo de Ciñera recibió en 2007 el premio al Bosque Mejor Cuidado de España del Ministerio de Medio Ambiente. Conoce la historia del galardón y los ganadores.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="article"
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/eventos", label: "Eventos" },
+      { href: "/premio-2007", label: "Premio 2007" },
+    ]}
+  />
+  
+  <section class="container py-8">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose prose-slate max-w-none">
+        <h1>{title}</h1>
+        
+        <p class="lead">
+          En el año <strong>2007</strong>, el Faedo de Ciñera fue galardonado con el premio al 
+          <strong>"Bosque Mejor Cuidado de España"</strong> concedido por el <strong>Ministerio de 
+          Medio Ambiente</strong> y la ONG <strong>Bosques sin Fronteras</strong>. Un reconocimiento 
+          que cambió la historia del pueblo y demostró que el trabajo colectivo puede lograr lo imposible.
+        </p>
+
+        <h2>El Comunicado Oficial de Bosques sin Fronteras</h2>
+        <div class="not-prose bg-gray-50 border-l-4 border-primary-600 p-6 my-6">
+          <p class="text-sm italic">
+            <strong>Comunicado de prensa - 2007</strong>
+          </p>
+          <h3 class="font-semibold mt-4 mb-2">Bosques sin Fronteras hace entrega de los premios "Árbol y Bosque del Año"</h3>
+          <p class="text-sm">
+            Los árboles más sobresalientes de España ya tienen nombre. Los 3000 euros del premio se 
+            destinarán al cuidado de los árboles ganadores.
+          </p>
+          <p class="text-sm mt-3">
+            <strong>Bosques sin Fronteras</strong>, en colaboración con el <strong>Ministerio de Medio Ambiente</strong>, 
+            ha hecho pública la relación de los ganadores de la <strong>I Edición del Premio "Árbol y Bosque del Año 2007"</strong>.
+          </p>
+          <p class="text-sm mt-3">
+            La entrega de premios tuvo lugar en el Ministerio de Medioambiente en un acto que contó con la 
+            presencia de la Subdirectora de Política Forestal, <strong>María Jesús Rodríguez de Sancho</strong> 
+            y el actor <strong>Manuel Aleixandre</strong> como padrino de esta primera edición del certamen.
+          </p>
+        </div>
+
+        <h2>Los Ganadores del Premio 2007</h2>
+        <p>
+          El Faedo de Ciñera compitió con árboles y bosques de toda España en diferentes categorías. 
+          Estos fueron todos los ganadores:
+        </p>
+
+        <h3>🌳 Árbol Gigante</h3>
+        <p>
+          <strong>Castanyer de Can Cuch</strong> (Cánoves, Barcelona)
+        </p>
+        <p class="text-sm">
+          Por sus dimensiones, con 12 m de perímetro de tronco y 16 m de altura, representa de forma perfecta 
+          esta candidatura. Es de destacar que en el interior de su tronco, hueco por el paso de los años, 
+          vivió durante los años 60 un carbonero disponiendo dentro de él de cama, cocina y chimenea.
+        </p>
+
+        <h3>🕰️ Árbol Longevo</h3>
+        <p>
+          <strong>Encina de las Tres Patas</strong> (Mendaza, Navarra)
+        </p>
+        <p class="text-sm">
+          Su edad, datada científicamente entre los 1000 y 2000 años, hacen de él uno de los árboles más 
+          viejos de toda la Península Ibérica. Constituye además para los vecinos de Mendaza un emblema, 
+          un orgullo para todos y cada uno de ellos, que no dejan de acercarse a "saludar" al Encino de 
+          Las Tres Patas, como un vecino más por el que interesarse o preguntar cómo se encuentra.
+        </p>
+
+        <h3>🏆 Bosque Cuidado (GANADOR: FAEDO DE CIÑERA)</h3>
+        <p>
+          <strong>Faedo de Ciñera</strong> (Ciñera, León)
+        </p>
+        <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-4">
+          <p class="text-sm">
+            <strong>Texto oficial del premio:</strong>
+          </p>
+          <p class="text-sm mt-2 italic">
+            "El faedo de Ciñera es un lugar mágico, un bosque de cuento de hadas, donde se respira paz. 
+            El máximo exponente de este refugio de la naturaleza es <strong><a href="/haya-fagus">el Haya de Ciñera</a></strong>, 
+            que con 6,32 m. de perímetro, una altura de 23 m. y 500 años de edad acoge bajo sus enormes ramas 
+            a todo aquel que se acerque a contemplarlo. Este singular entorno es cuidado con mimo por los 
+            habitantes de Ciñera quienes llevan realizando desde hace años meritorias labores de conservación 
+            y educación ambiental."
+          </p>
+        </div>
+
+        <h3>🌟 Árbol Emblemático</h3>
+        <p>
+          <strong>Olmo de Nuevo Baztán</strong> (Madrid)
+        </p>
+        <p class="text-sm">
+          Es uno de los escasos ejemplares vivos de una especie castigada por la terrible enfermedad de la 
+          grafiosis, que ha acabado con millones de olmos en nuestro país. Junto con más ejemplares de esta 
+          especie fue plantado por Juan de Goyeneche en el siglo XVIII, a la vez que nacía en el pueblo de 
+          NUEVO BAZTÁN. Su majestuoso porte y buen estado de conservación hacen de él un emblema único para 
+          esta pequeña localidad.
+        </p>
+
+        <h3>⚠️ Bosque Amenazado</h3>
+        <p>
+          <strong>Bosque de A Fervenza</strong> (Lugo)
+        </p>
+        <p class="text-sm">
+          Formado por varias especies de robles y vegetación típica de ribera, este pequeño bosque, enclavado 
+          en las orillas del río Miño, presenta numerosas lagunas interiores que hace de él un bosque de 
+          especial singularidad. Las diversas talas que han amenazado a este bosque en los últimos años, la 
+          tenacidad y la lucha de sus propietarios para evitar su desaparición, han llevado al jurado a 
+          otorgarle este premio.
+        </p>
+
+        <h3>📜 Árbol Histórico</h3>
+        <p>
+          <strong>Ciprés del Monasterio de Santo Domingo de Silos</strong> (Burgos)
+        </p>
+        <p class="text-sm">
+          Con más de 100 años ha sido testigo de múltiples acontecimientos y aclamado por miles de visitantes. 
+          Es considerado un bastión natural y referencia espiritual y legendaria, así como inspirador de poetas, 
+          músicos y pintores.
+        </p>
+
+        <h2>Mención Especial: Margarita Burón Barrio</h2>
+        <div class="not-prose bg-gray-100 border-l-4 border-gray-400 p-4 my-6">
+          <p class="text-sm">
+            El jurado de los premios estimó conveniente hacer una <strong>mención especial</strong> a 
+            <strong>Dª. Margarita Burón Barrio</strong>, ingeniera forestal que trabajó durante 10 años por 
+            la conservación de los olmos en nuestro país y que falleció en el mes de mayo en un accidente de 
+            tráfico mientras colaboraba en proyectos medioambientales en Etiopía.
+          </p>
+        </div>
+
+        <h2>¿Quién es Bosques sin Fronteras?</h2>
+        <p>
+          <strong>Bosques sin Fronteras</strong>, precursora de la I Edición del Premio Árbol y Bosque del Año, 
+          es una organización sin ánimo de lucro que desde 2002 está llevando a cabo el proyecto de 
+          <strong>Catalogación, conservación y divulgación de los árboles más singulares del territorio español</strong>.
+        </p>
+        <p>
+          Con la colaboración del Ministerio de Medioambiente, Bosques sin Fronteras se embarcó en esta iniciativa 
+          pionera en el mundo, que se aventura a premiar a los árboles, tanto singulares como en su conjunto, 
+          y por tanto a todos aquellos que contribuyen a su cuidado y conservación.
+        </p>
+        <p>
+          Bosques sin fronteras pretende así crear un <strong>modelo de referencia que sirva de ejemplo</strong>, 
+          para cambiar la visión negativa que en estos momentos percibe la sociedad de los árboles, presentes 
+          en los medios de comunicación sólo como protagonistas de tragedias.
+        </p>
+
+        <h2>El Impacto del Premio en Ciñera</h2>
+        <p>
+          El premio al <strong>"Bosque Mejor Cuidado de España"</strong> tuvo un impacto profundo en Ciñera 
+          y toda la comarca de Gordón:
+        </p>
+
+        <h3>Para el Pueblo</h3>
+        <ul>
+          <li><strong>Reconocimiento nacional:</strong> Ciñera pasó de ser un pueblo minero en crisis a ser conocido por su conservación ambiental</li>
+          <li><strong>Orgullo colectivo:</strong> El premio validó décadas de esfuerzo de <a href="/eventos">ADELFA</a> y los vecinos</li>
+          <li><strong>Identidad renovada:</strong> Del carbón a la naturaleza, un pueblo que supo reinventarse</li>
+          <li><strong>Atracción turística:</strong> El Faedo comenzó a recibir más visitantes de toda España</li>
+        </ul>
+
+        <h3>Para ADELFA y el AMPA</h3>
+        <ul>
+          <li><strong>Validación del trabajo:</strong> Años de limpieza, repoblación y mantenimiento fueron reconocidos</li>
+          <li><strong>Motivación renovada:</strong> El premio impulsó nuevas iniciativas de conservación</li>
+          <li><strong>Modelo a seguir:</strong> Otros pueblos comenzaron a seguir el ejemplo de Ciñera</li>
+          <li><strong>Apoyo institucional:</strong> Mayor respaldo del Ayuntamiento y la Junta</li>
+        </ul>
+
+        <h3>Para el Bosque</h3>
+        <ul>
+          <li><strong>Protección garantizada:</strong> El premio aseguró el compromiso de conservación a largo plazo</li>
+          <li><strong>Recursos económicos:</strong> Los 3.000 euros del premio se destinaron al cuidado del Faedo</li>
+          <li><strong>Visibilidad mediática:</strong> Mayor concienciación sobre la importancia de los bosques autóctonos</li>
+          <li><strong>Educación ambiental:</strong> Más colegios y grupos visitando el Faedo para aprender</li>
+        </ul>
+
+        <h2>La Historia detrás del Premio</h2>
+        <p>
+          La iniciativa de presentarse al premio partió del <strong>AMPA del Colegio Público San Miguel Arcángel 
+          de Ciñera de Gordón</strong>. Un grupo de padres y madres decidieron documentar todo el trabajo que 
+          durante años habían llevado a cabo los diferentes sectores sociales del municipio.
+        </p>
+
+        <h3>Los Protagonistas del Premio</h3>
+        <ul>
+          <li><strong>ADELFA (Asociación de Amigos del Faedo):</strong> 300 socios dedicados a la conservación</li>
+          <li><strong>AMPA del Colegio:</strong> Impulsores de la candidatura</li>
+          <li><strong>Ayuntamiento de La Pola de Gordón:</strong> Apoyo institucional</li>
+          <li><strong>Junta Vecinal de Ciñera:</strong> Coordinación local</li>
+          <li><strong>Personas individuales:</strong> Vecinos que participan en todas las actividades</li>
+        </ul>
+
+        <p>
+          Como dice <a href="/haya-fagus">el Haya Fagus</a>: <em>"Este premio a un pueblo que, a pesar de sus 
+          diferencias y problemas, trabaja unido. ¿Es magia o no?"</em>
+        </p>
+
+        <h2>2007-2025: Casi 20 Años Después</h2>
+        <p>
+          Han pasado casi dos décadas desde aquel premio histórico. El Faedo de Ciñera sigue siendo cuidado 
+          con mimo por <a href="/eventos">ADELFA y los vecinos</a>, demostrando que el reconocimiento no fue 
+          un evento puntual, sino el inicio de un compromiso duradero.
+        </p>
+
+        <h3>El Legado del Premio</h3>
+        <ul>
+          <li>El <strong>encuentro anual</strong> cada primer sábado de julio continúa</li>
+          <li>Las <strong>jornadas de limpieza</strong> se mantienen regularmente</li>
+          <li>Nuevas generaciones de niños aprenden a cuidar el bosque</li>
+          <li>El Faedo es ahora <strong>modelo de conservación participativa</strong> en España</li>
+          <li><a href="/haya-fagus">El Haya Fagus</a> sigue acogiendo bajo sus ramas a todos los visitantes</li>
+        </ul>
+
+        <h2>Un Ejemplo para Toda España</h2>
+        <p>
+          El premio al Faedo de Ciñera como <strong>"Bosque Mejor Cuidado de España"</strong> no es solo un 
+          reconocimiento a un pueblo de León. Es un ejemplo de lo que se puede lograr cuando una comunidad 
+          decide cuidar su patrimonio natural.
+        </p>
+        <p>
+          En un mundo donde los bosques desaparecen y los pueblos se vacían, Ciñera demuestra que otra vía 
+          es posible: la vía de la conservación colectiva, del trabajo en equipo, del amor por el territorio.
+        </p>
+
+        <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-6">
+          <p class="text-sm">
+            <strong>¿Quieres formar parte de esta historia?</strong> Visita el <a href="/ruta/faedo-de-cinera">Faedo de Ciñera</a>, 
+            respeta las <a href="/guia-visitantes">normas ambientales</a>, y considera asistir al 
+            <a href="/eventos">encuentro anual de julio</a>. El bosque es de todos, y entre todos lo cuidamos.
+          </p>
+        </div>
+
+        <h2>Más Información</h2>
+        <p>
+          Para información sobre el premio original de Bosques sin Fronteras 2007, la organización ya no 
+          mantiene su web activa. El comunicado reproducido aquí es el texto oficial de la época.
+        </p>
+
+        <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+          <h3 class="text-lg font-semibold mb-3">Descubre el Faedo Premiado</h3>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/haya-fagus" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">El Haya Fagus</span>
+              <p class="text-gray-600 mt-1">500 años, símbolo del bosque</p>
+            </a>
+            <a href="/eventos" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Actividades ADELFA</span>
+              <p class="text-gray-600 mt-1">Cómo participar en la conservación</p>
+            </a>
+            <a href="/ruta/faedo-de-cinera" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Visita el Faedo</span>
+              <p class="text-gray-600 mt-1">Mapa, GPX y consejos</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

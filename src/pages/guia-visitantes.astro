@@ -3,33 +3,296 @@ import Layout from '../components/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Seo from '../components/Seo.astro';
 ---
-<Layout title="Guía para visitantes del Faedo" description="Alojamientos, restaurantes, otras rutas cercanas y normas ambientales para visitar el Faedo de Ciñera (León)">
-  <Seo slot="head" title="Guía para visitantes del Faedo" description="Alojamientos, restaurantes, otras rutas cercanas y normas ambientales para visitar el Faedo de Ciñera (León)" />
+<Layout title="Guía para visitantes del Faedo" description="Alojamientos, restaurantes, itinerarios recomendados y normas ambientales para visitar el Faedo de Ciñera (León)">
+  <Seo slot="head" title="Guía para visitantes del Faedo" description="Alojamientos, restaurantes, itinerarios recomendados y normas ambientales para visitar el Faedo de Ciñera (León)" />
   <Breadcrumbs items={[{ href: '/', label: 'Inicio' }, { href: '/guia-visitantes', label: 'Guía para visitantes' }]} />
   <section class="container prose prose-slate max-w-none py-8">
     <h1>Guía para visitantes del Faedo de Ciñera</h1>
+    
+    <p class="lead">
+      Esta guía te ayudará a planificar tu visita al <strong>Faedo de Ciñera</strong> de forma completa: 
+      desde dónde alojarte y comer, hasta cuatro itinerarios diferentes según tu tiempo y preferencias.
+    </p>
+
+    <h2>Itinerarios Recomendados por Alfonso García</h2>
+    <p>
+      El escritor y conocedor del Faedo <strong>Alfonso García Rodríguez</strong> sugiere cuatro formas 
+      diferentes de disfrutar tu visita al Faedo de Ciñera, adaptadas a distintos perfiles de visitantes:
+    </p>
+
+    <h3>Itinerario 1: Ruta Completa Lineal (Recomendado para grupos con 2 coches)</h3>
+    <p><strong>Duración:</strong> Medio día | <strong>Dificultad:</strong> Fácil-Moderada</p>
+    <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-4">
+      <ol class="list-decimal pl-5 space-y-2 text-sm">
+        <li>Deja un coche en <strong>Vegacervera</strong> (punto de llegada)</li>
+        <li>Ve con el otro coche hasta <strong>Ciñera</strong> (punto de salida)</li>
+        <li>Haz la <a href="/ruta/faedo-de-cinera">ruta del Faedo</a> completa (6 km)</li>
+        <li>Continúa por el <strong>Puente de Palos</strong> siguiendo el arroyo aguas arriba</li>
+        <li>Sal a la carretera que conduce a Villar, Valle, Coladilla y Vegacervera</li>
+        <li>Recoge el primer coche y vuelve juntos</li>
+      </ol>
+      <p class="mt-3 text-sm"><strong>Ventaja:</strong> Ves todo sin repetir camino</p>
+      <p class="text-sm"><strong>Desventaja:</strong> Requiere coordinación con 2 vehículos</p>
+    </div>
+
+    <h3>Itinerario 2: Ida y Vuelta desde Ciñera (El más popular)</h3>
+    <p><strong>Duración:</strong> 2-2,5 horas | <strong>Dificultad:</strong> Fácil</p>
+    <div class="not-prose bg-white border-l-4 border-primary-600 p-4 my-4">
+      <ol class="list-decimal pl-5 space-y-2 text-sm">
+        <li>Aparca en <strong>Ciñera</strong> junto a la iglesia</li>
+        <li>Haz la <a href="/ruta/faedo-de-cinera">ruta circular del Faedo</a> (4,5 km)</li>
+        <li>Vuelve al mismo punto de partida</li>
+        <li>Opcional: Come en un restaurante de Ciñera, La Robla o Pola de Gordón</li>
+      </ol>
+      <p class="mt-3 text-sm"><strong>Ventaja:</strong> Simple, sin complicaciones logísticas</p>
+      <p class="text-sm"><strong>Desventaja:</strong> No llegas hasta las Hoces de Vegacervera</p>
+      <p class="mt-2 text-sm"><strong>Ideal para:</strong> Familias con niños, primera visita, quien busca tranquilidad</p>
+    </div>
+
+    <h3>Itinerario 3: Comida Campestre en el Praderío</h3>
+    <p><strong>Duración:</strong> Medio día completo | <strong>Dificultad:</strong> Fácil</p>
+    <div class="not-prose bg-green-50 border-l-4 border-green-600 p-4 my-4">
+      <ol class="list-decimal pl-5 space-y-2 text-sm">
+        <li>Lleva <strong>comida preparada</strong>: tortilla, ensaladilla, filetes empanados, embutidos</li>
+        <li>Aparca en Ciñera y camina hasta el <strong>praderío con mesas</strong> (15 min)</li>
+        <li>Enfría las bebidas en el arroyo (¡el agua está helada!)</li>
+        <li>Disfruta de una comida al aire libre bajo los árboles</li>
+        <li>Después de comer, recorre el <a href="/ruta/faedo-de-cinera">hayedo del Faedo</a></li>
+        <li>Regresa tranquilamente a Ciñera</li>
+      </ol>
+      <p class="mt-3 text-sm"><strong>Ventaja:</strong> Experiencia completa de día de campo</p>
+      <p class="text-sm"><strong>Ideal para:</strong> Grupos de amigos, familias que quieren hacer un día especial</p>
+      <p class="mt-2 text-sm text-red-700"><strong>Importante:</strong> Recoge TODA tu basura. El Faedo no tiene contenedores.</p>
+    </div>
+
+    <h3>Itinerario 4: Excursión Organizada con ADELFA</h3>
+    <p><strong>Duración:</strong> Variable | <strong>Dificultad:</strong> Fácil</p>
+    <div class="not-prose bg-blue-50 border-l-4 border-blue-600 p-4 my-4">
+      <p class="text-sm mb-3">
+        Este itinerario <strong>no está aún disponible</strong>, pero sería ideal que ADELFA (Asociación de 
+        Amigos del Faedo) o alguna empresa con mentalidad de senderismo lo organizara:
+      </p>
+      <ol class="list-decimal pl-5 space-y-2 text-sm">
+        <li>Excursión guiada desde la <strong>plaza del pueblo de Ciñera</strong></li>
+        <li>Guía experto explica flora, fauna, geología e historia minera</li>
+        <li>Parada en el <a href="/haya-fagus">Haya Fagus de 500 años</a></li>
+        <li>Comida campera organizada en el praderío (previamente convenida)</li>
+        <li>Visita completa con explicaciones detalladas</li>
+      </ol>
+      <p class="mt-3 text-sm"><strong>Ventaja:</strong> Aprendes mucho más sobre el Faedo</p>
+      <p class="text-sm"><strong>Ideal para:</strong> Colegios, grupos turísticos, gente sin coche propio</p>
+      <p class="mt-2 text-sm text-blue-700"><strong>Nota:</strong> Consulta en el Ayuntamiento de La Pola de Gordón 
+      si este servicio está disponible o en desarrollo.</p>
+    </div>
+
     <h2>Alojamientos cerca del Faedo de Ciñera</h2>
-    <p>Si planeas visitar el <strong>Faedo de Ciñera</strong> y quedarte más de un día, encontrarás alojamientos en La Robla, Ciñera y Pola de Gordón. Estos pueblos están a pocos minutos del inicio de la <a href="/ruta/faedo-de-cinera">ruta del Faedo de Ciñera</a>. Hay casas rurales, hostales y hoteles pequeños con encanto. Prioriza opciones locales para apoyar la economía de la zona y disfrutar de la hospitalidad leonesa.</p>
+    <p>
+      Si planeas visitar el <strong>Faedo de Ciñera</strong> y quedarte más de un día, encontrarás alojamientos 
+      en La Robla, Ciñera y Pola de Gordón. Estos pueblos están a pocos minutos del inicio de la 
+      <a href="/ruta/faedo-de-cinera">ruta del Faedo de Ciñera</a>.
+    </p>
+
+    <h3>Opciones de Alojamiento</h3>
+    <ul>
+      <li><strong>Ciñera:</strong> Casas rurales a 5 minutos andando del Faedo</li>
+      <li><strong>La Robla:</strong> Hostales con más servicios (8 km del Faedo)</li>
+      <li><strong>Pola de Gordón:</strong> Alojamientos rurales y centro de información (12 km)</li>
+      <li><strong>León capital:</strong> Hoteles urbanos si prefieres ciudad (35 km, 30 min en coche)</li>
+    </ul>
+    <p>
+      <strong>Consejo:</strong> Prioriza opciones locales para apoyar la economía de la zona y disfrutar 
+      de la hospitalidad leonesa. Reserva con antelación en otoño (octubre-noviembre), la época más 
+      popular para visitar el Faedo.
+    </p>
+
     <h2>Dónde comer cerca del Faedo de Ciñera</h2>
-    <p>Después de recorrer el <strong>Faedo de Ciñera</strong>, puedes disfrutar de cocina tradicional leonesa en los bares y restaurantes de Ciñera, La Robla y Pola de Gordón. Platos típicos: cecina de León, cocido montañés, trucha y embutidos artesanales. Se recomienda reservar en fines de semana y festivos, especialmente en otoño cuando el <strong>Faedo de Ciñera</strong> recibe más visitantes.</p>
+    <p>
+      Después de recorrer el <strong>Faedo de Ciñera</strong>, puedes disfrutar de cocina tradicional 
+      leonesa en los bares y restaurantes de Ciñera, La Robla y Pola de Gordón.
+    </p>
+
+    <h3>Platos Típicos de la Zona</h3>
+    <ul>
+      <li><strong>Cecina de León:</strong> Embutido curado típico (con D.O.P.)</li>
+      <li><strong>Cocido montañés:</strong> Contundente y perfecto después del Faedo</li>
+      <li><strong>Trucha:</strong> De los ríos de la zona</li>
+      <li><strong>Embutidos artesanales:</strong> Chorizo, morcilla, lomo</li>
+      <li><strong>Queso de Valdeón:</strong> De la zona cercana de Picos de Europa</li>
+      <li><strong>Botillo del Bierzo:</strong> Embutido tradicional leonés</li>
+    </ul>
+
+    <h3>Recomendaciones</h3>
+    <ul>
+      <li>Reserva en <strong>fines de semana y festivos</strong></li>
+      <li>Especialmente en <strong>otoño</strong> cuando el Faedo recibe más visitantes</li>
+      <li>En Ciñera solo hay un bar pequeño</li>
+      <li>La Robla y Pola de Gordón tienen más opciones</li>
+      <li>León capital ofrece gastronomía de alto nivel (30 min del Faedo)</li>
+    </ul>
+
     <h2>Otras rutas de senderismo cerca del Faedo de Ciñera</h2>
-    <p>Si te gusta el senderismo y visitas el <strong>Faedo de Ciñera</strong>, aprovecha para conocer otras rutas cercanas en León:</p>
+    <p>
+      Si te gusta el senderismo y visitas el <strong>Faedo de Ciñera</strong>, aprovecha para conocer 
+      otras rutas cercanas en León. Consulta nuestra guía completa: 
+      <a href="/blog/que-ver-cerca-faedo-de-cinera">Qué ver cerca del Faedo de Ciñera</a>.
+    </p>
+
+    <h3>Rutas Recomendadas</h3>
     <ul>
-      <li><strong>Valles mineros de Gordón</strong>: Rutas por el patrimonio industrial cerca del Faedo de Ciñera</li>
-      <li><strong>Hoces de Vegacervera</strong>: Desfiladero espectacular a 30 minutos en coche del Faedo de Ciñera</li>
-      <li><strong>Trayectos del antiguo ferrocarril minero</strong>: Rutas históricas en la zona del Faedo</li>
-      <li><strong>Ruta del Cares</strong>: A 1 hora del Faedo de Ciñera, en los Picos de Europa</li>
+      <li>
+        <strong>Hoces de Vegacervera</strong> (25 km, 30 min en coche)<br>
+        Desfiladero espectacular excavado por el río Torío. 8 km ida y vuelta, 2-3 horas.
+        Combina perfectamente con la visita al Faedo de Ciñera.
+      </li>
+      <li>
+        <strong>Valles mineros de Gordón</strong> (5-10 km del Faedo)<br>
+        Rutas por el patrimonio industrial: ferrocarril minero, <a href="/patrimonio-minero">Pozo Ibarra</a>, 
+        pueblos mineros.
+      </li>
+      <li>
+        <strong>Ruta de las Fuentes (La Robla)</strong> (8 km del Faedo)<br>
+        Ruta urbana-natural que visita varias fuentes históricas. Perfecta para después del Faedo 
+        si buscas algo más tranquilo.
+      </li>
+      <li>
+        <strong>Puerto de Pajares</strong> (20 km del Faedo)<br>
+        Rutas de montaña más exigentes en la frontera entre León y Asturias. Para senderistas 
+        experimentados.
+      </li>
+      <li>
+        <strong>Ruta del Cares</strong> (80 km, 1h 30min en coche)<br>
+        En los Picos de Europa. Si tienes varios días, combina el Faedo con esta ruta emblemática.
+      </li>
     </ul>
+
     <h2>Normas ambientales en el Faedo de Ciñera</h2>
-    <p>Para preservar el <strong>Faedo de Ciñera</strong> y garantizar su disfrute para futuras generaciones, sigue estas normas:</p>
+    <p>
+      Para preservar el <strong>Faedo de Ciñera</strong> y garantizar su disfrute para futuras generaciones, 
+      sigue estas normas. El bosque fue premiado en 2007 como el <strong>"Bosque mejor cuidado de España"</strong> 
+      gracias al esfuerzo colectivo de <a href="/eventos">ADELFA y los vecinos de Ciñera</a>.
+    </p>
+
+    <h3>Normas Obligatorias</h3>
+    <div class="not-prose bg-red-50 border-l-4 border-red-600 p-4 my-4">
+      <ul class="list-disc pl-5 space-y-2 text-sm">
+        <li><strong>❌ Prohibido hacer fuego:</strong> Está totalmente prohibido encender fuego en el Faedo 
+        de Ciñera y sus alrededores. Riesgo de incendio muy alto.</li>
+        <li><strong>❌ No acampar:</strong> No está permitido pernoctar en el bosque</li>
+        <li><strong>❌ No abandonar las pasarelas:</strong> Las pasarelas protegen el ecosistema del suelo. 
+        Quedarse en el sendero señalizado.</li>
+      </ul>
+    </div>
+
+    <h3>Normas de Respeto</h3>
     <ul>
-      <li><strong>No dejar residuos</strong>: Lleva tu basura de vuelta. Usa los contenedores del pueblo de Ciñera.</li>
-      <li><strong>Respeta la flora y fauna del Faedo de Ciñera</strong>: No recojas plantas, no molestes animales, no abandones las pasarelas.</li>
-      <li><strong>Perros con correa</strong>: En todo el recorrido por el Faedo de Ciñera, los perros deben ir atados.</li>
-      <li><strong>Evita el ruido excesivo</strong>: El Faedo de Ciñera es un entorno natural sensible, respeta la tranquilidad del bosque.</li>
-      <li><strong>Prohibido hacer fuego</strong>: Está totalmente prohibido encender fuego en el Faedo de Ciñera y sus alrededores.</li>
+      <li>
+        <strong>No dejar residuos:</strong> Lleva tu basura de vuelta. Usa los contenedores del pueblo de Ciñera. 
+        Ni siquiera dejes restos orgánicos (cáscaras de fruta, etc.).
+      </li>
+      <li>
+        <strong>Respeta la flora y fauna del Faedo de Ciñera:</strong> No recojas plantas, no molestes animales, 
+        no te acerques a nidos. El <a href="/flora-fauna#desman">desmán ibérico</a> es una especie en peligro 
+        que habita el arroyo.
+      </li>
+      <li>
+        <strong>Perros con correa:</strong> En todo el recorrido por el Faedo de Ciñera, los perros deben ir atados. 
+        Recoge sus excrementos.
+      </li>
+      <li>
+        <strong>Evita el ruido excesivo:</strong> El Faedo de Ciñera es un entorno natural sensible, respeta 
+        la tranquilidad del bosque. Especialmente al amanecer y atardecer.
+      </li>
+      <li>
+        <strong>No grabes tu nombre en los árboles:</strong> Daña la corteza y puede matar al árbol. 
+        <a href="/haya-fagus">El Haya Fagus</a> tiene 500 años, respétala.
+      </li>
+      <li>
+        <strong>No te bañes en el arroyo:</strong> El agua abastece al pueblo de Ciñera. Las marmitas de gigante 
+        se pueden usar en verano, pero con cuidado de no contaminar.
+      </li>
     </ul>
-    <p class="mt-4">Consulta más información en nuestra <a href="/faq">sección de preguntas frecuentes sobre el Faedo de Ciñera</a>.</p>
+
+    <h2>Preparativos para tu Visita</h2>
+    <h3>Qué llevar al Faedo de Ciñera</h3>
+    <ul>
+      <li>Calzado cómodo e impermeable (las pasarelas pueden estar húmedas)</li>
+      <li>Agua y snacks (no hay servicios en la ruta)</li>
+      <li>Ropa por capas (el bosque puede ser fresco incluso en verano)</li>
+      <li>Chubasquero (el tiempo en León puede cambiar rápido)</li>
+      <li>Protección solar (gorra y crema)</li>
+      <li>Cámara de fotos (especialmente en otoño)</li>
+      <li>Track GPX descargado: <a href="/gpx/faedo.gpx">descargar aquí</a></li>
+      <li>Bolsa para tu basura</li>
+    </ul>
+
+    <h3>Antes de Salir</h3>
+    <ul>
+      <li>Consulta el <strong>tiempo</strong> (puede llover sin avisar)</li>
+      <li>Descarga el <a href="/gpx/faedo.gpx">GPX</a> (la cobertura móvil puede ser intermitente)</li>
+      <li>Llena el depósito en La Robla o Pola de Gordón (no hay gasolinera en Ciñera)</li>
+      <li>Si vas en otoño, llega <strong>antes de las 10:00</strong> para encontrar aparcamiento</li>
+      <li>Lleva efectivo (algunos lugares no aceptan tarjeta)</li>
+    </ul>
+
+    <h2>Información Práctica</h2>
+    <h3>Servicios en Ciñera</h3>
+    <ul>
+      <li>🏪 Bar/tienda pequeña (horario limitado)</li>
+      <li>🚻 Baños públicos limitados (úsalos antes de empezar la ruta)</li>
+      <li>⛪ Iglesia de San Miguel Arcángel (punto de referencia para aparcar)</li>
+      <li>🅿️ Aparcamiento gratuito junto a la iglesia</li>
+      <li>❌ No hay supermercado ni farmacia</li>
+    </ul>
+
+    <h3>Gasolineras</h3>
+    <ul>
+      <li><strong>La Robla:</strong> 8 km del Faedo de Ciñera</li>
+      <li><strong>Pola de Gordón:</strong> 12 km del Faedo de Ciñera</li>
+    </ul>
+
+    <h3>Ayuntamiento y Turismo</h3>
+    <ul>
+      <li><strong>Ayuntamiento de La Pola de Gordón:</strong> Información turística y eventos</li>
+      <li><strong>Punto de Información:</strong> Pola de Gordón</li>
+      <li><strong>ADELFA:</strong> Asociación de Amigos del Faedo - pregunta en el bar de Ciñera</li>
+    </ul>
+
+    <h2>Combinar el Faedo con Otros Atractivos</h2>
+    <h3>Itinerario de Fin de Semana Completo</h3>
+    <div class="not-prose bg-gray-50 border rounded-lg p-4 my-4">
+      <p class="font-semibold mb-2">Día 1: Faedo de Ciñera</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li><strong>Mañana:</strong> Ruta del Faedo (2 horas)</li>
+        <li><strong>Mediodía:</strong> Comida en La Robla o Pola de Gordón</li>
+        <li><strong>Tarde:</strong> Visita al patrimonio minero (Pozo Ibarra, museo)</li>
+        <li><strong>Noche:</strong> Alojamiento en La Robla</li>
+      </ul>
+      
+      <p class="font-semibold mt-4 mb-2">Día 2: Hoces de Vegacervera</p>
+      <ul class="list-disc pl-5 space-y-1 text-sm">
+        <li><strong>Mañana:</strong> Ruta de las Hoces (3 horas)</li>
+        <li><strong>Mediodía:</strong> Comida en Vegacervera</li>
+        <li><strong>Tarde:</strong> Vuelta a León o continuación hacia Picos de Europa</li>
+      </ul>
+    </div>
+
+    <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-6">
+      <p class="text-sm">
+        <strong>¿Necesitas más información?</strong> Consulta nuestra 
+        <a href="/faq" class="underline">sección de preguntas frecuentes sobre el Faedo de Ciñera</a> o 
+        lee nuestros artículos del <a href="/blog" class="underline">blog de senderismo en León</a>.
+      </p>
+    </div>
+
+    <h2>Enlaces Útiles</h2>
+    <ul>
+      <li><a href="/ruta/faedo-de-cinera">Ruta completa del Faedo con mapa y GPX</a></li>
+      <li><a href="/blog/mejor-epoca-visitar-faedo-de-cinera">Mejor época para visitar el Faedo</a></li>
+      <li><a href="/blog/como-llegar-faedo-de-cinera">Cómo llegar al Faedo de Ciñera</a></li>
+      <li><a href="/blog/faedo-de-cinera-con-ninos">Ruta del Faedo con niños</a></li>
+      <li><a href="/eventos">Eventos y actividades de ADELFA</a></li>
+      <li><a href="/premio-2007">Premio "Bosque mejor cuidado de España" 2007</a></li>
+      <li><a href="/faq">Preguntas frecuentes sobre el Faedo</a></li>
+    </ul>
   </section>
 </Layout>
-

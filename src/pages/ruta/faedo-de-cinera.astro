@@ -10,7 +10,6 @@ const entry = await getEntry('rutas', 'faedo-de-cinera');
 const data = entry.data;
 
 const hikingTrailLd = {
-  '@context': 'https://schema.org',
   '@type': 'HikingTrail',
   name: data.title,
   description: data.summary,
@@ -23,7 +22,6 @@ const hikingTrailLd = {
 };
 
 const attractionLd = {
-  '@context': 'https://schema.org',
   '@type': 'TouristAttraction',
   name: 'Faedo de Ciñera',
   description: data.summary,

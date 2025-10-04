@@ -1,0 +1,275 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import cover from "../assets/blog-placeholder-5.jpg";
+
+const title = "Eventos y Actividades en el Faedo de Ciñera | ADELFA";
+const description =
+  "Descubre los eventos anuales del Faedo de Ciñera: encuentro de julio, actividades de ADELFA, jornadas de limpieza y conservación. 300 socios cuidando el bosque.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={cover.src}
+    url={canonical}
+    type="article"
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/eventos", label: "Eventos" },
+    ]}
+  />
+  
+  <section class="container py-8">
+    <div class="max-w-4xl mx-auto">
+      <article class="prose prose-slate max-w-none">
+        <h1>{title}</h1>
+        
+        <p class="lead">
+          El <strong>Faedo de Ciñera</strong> no es solo un bosque: es un espacio vivo donde los vecinos 
+          de Ciñera se reúnen cada año para celebrar, cuidar y compartir su tesoro natural. Gracias a 
+          <strong>ADELFA</strong> (Asociación de Amigos del Faedo) y la participación activa del pueblo, 
+          el Faedo es hoy el <strong>"Bosque mejor cuidado de España"</strong>.
+        </p>
+
+        <h2>Encuentro Anual: Primer Sábado de Julio</h2>
+        <p>
+          Cada <strong>primer sábado de julio</strong>, el Faedo de Ciñera acoge un encuentro entrañable 
+          que congrega a vecinos y amigos en un lugar mágico que ha sido cuidado con amor durante generaciones.
+        </p>
+
+        <h3>Programa del Encuentro</h3>
+        
+        <h4>Mañana: Misa en la Bocamina</h4>
+        <p>
+          El encuentro se inicia con una <strong>misa en la explanada de la bocamina "menos 50" rehabilitada</strong>, 
+          donde la dimensión religiosa y familiar se une al respeto por el patrimonio minero. Este lugar, que un 
+          día fue entrada a las profundidades de la tierra, es ahora símbolo de la transformación de Ciñera: 
+          del carbón a la naturaleza.
+        </p>
+
+        <h4>Mediodía: Comida en las Mesas del Praderío</h4>
+        <p>
+          Tras atravesar el primer puente artesanal, el praderío ofrece una <strong>zona de mesas para el 
+          descanso y la comida</strong>, lugar capital de este encuentro vecinal. Aquí, bajo la sombra de 
+          robles y encinas, con el murmullo del arroyo de fondo, se comparten:
+        </p>
+        <ul>
+          <li>Comida tradicional leonesa: tortilla, cecina, embutidos</li>
+          <li>Historias y recuerdos del pueblo</li>
+          <li>Planes para el cuidado del Faedo</li>
+          <li>El reencuentro de familias y amigos</li>
+        </ul>
+
+        <h4>Tarde: Paseo por el Hayedo</h4>
+        <p>
+          Después de comer, muchos aprovechan para recorrer el <a href="/ruta/faedo-de-cinera">sendero del Faedo</a>, 
+          visitar <a href="/haya-fagus">el Haya Fagus de 500 años</a> y disfrutar del bosque en compañía.
+        </p>
+
+        <div class="not-prose bg-primary-50 border-l-4 border-primary-600 p-4 my-6">
+          <p class="text-sm">
+            <strong>Importante:</strong> Si quieres participar en el encuentro, lleva tu propia comida y bebida. 
+            No olvides recoger toda tu basura. El Faedo es de todos y entre todos lo cuidamos.
+          </p>
+        </div>
+
+        <h2>ADELFA: 300 Socios Cuidando el Bosque</h2>
+        <p>
+          <strong>ADELFA</strong> (Asociación de Amigos del Faedo) es el alma del cuidado del bosque. 
+          Con <strong>300 socios</strong> y varias actividades a lo largo del año, esta asociación ejemplifica 
+          lo que se puede lograr cuando un pueblo trabaja unido.
+        </p>
+
+        <h3>Actividades de ADELFA</h3>
+
+        <h4>1. Jornadas de Limpieza (durante todo el año)</h4>
+        <p>
+          Varias veces al año, ADELFA organiza <strong>jornadas de limpieza del Faedo</strong>:
+        </p>
+        <ul>
+          <li>Recogida de basura dejada por visitantes</li>
+          <li>Mantenimiento de las pasarelas de madera</li>
+          <li>Limpieza de los cauces del arroyo</li>
+          <li>Retirada de ramas caídas que obstruyen el camino</li>
+        </ul>
+        <p>
+          <strong>¿Quieres participar?</strong> Estos eventos están abiertos a todos. Consulta las fechas 
+          en el Ayuntamiento de La Pola de Gordón o en el bar de Ciñera.
+        </p>
+
+        <h4>2. Repoblación (primavera y otoño)</h4>
+        <p>
+          ADELFA lleva a cabo trabajos de <strong>repoblación</strong> para asegurar el futuro del hayedo:
+        </p>
+        <ul>
+          <li>Plantación de hayucos recogidos del propio bosque</li>
+          <li>Protección de plántulas jóvenes</li>
+          <li>Control de especies invasoras</li>
+          <li>Monitoreo del crecimiento de nuevas hayas</li>
+        </ul>
+
+        <h4>3. Reconstrucción y Mantenimiento de Infraestructuras</h4>
+        <p>
+          El trabajo de ADELFA incluye:
+        </p>
+        <ul>
+          <li><strong>Puentes:</strong> Mantenimiento del Puente de Palos y otros cruces</li>
+          <li><strong>Pasarelas:</strong> Reparación y renovación de las pasarelas de madera</li>
+          <li><strong>Señalización:</strong> Paneles informativos y señales de ruta</li>
+          <li><strong>Bocamina:</strong> Conservación de la bocamina "menos 50" rehabilitada</li>
+        </ul>
+
+        <h4>4. Actividades Educativas</h4>
+        <p>
+          ADELFA organiza:
+        </p>
+        <ul>
+          <li><strong>Rutas guiadas:</strong> Para colegios y grupos</li>
+          <li><strong>Talleres de identificación:</strong> Árboles, plantas, fauna</li>
+          <li><strong>Charlas:</strong> Sobre conservación y patrimonio natural</li>
+          <li><strong>Actividades para niños:</strong> El <a href="/haeda">cuento de Haeda</a> y otras leyendas</li>
+        </ul>
+
+        <h2>Colaboradores del Faedo</h2>
+        <p>
+          El cuidado del Faedo es un trabajo colectivo en el que participan:
+        </p>
+        <ul>
+          <li><strong>ADELFA:</strong> 300 socios activos</li>
+          <li><strong>Ayuntamiento de La Pola de Gordón:</strong> Apoyo institucional</li>
+          <li><strong>Junta Vecinal de Ciñera:</strong> Coordinación local</li>
+          <li><strong>AMPA del Colegio San Miguel Arcángel:</strong> Actividades educativas</li>
+          <li><strong>Vecinos individuales:</strong> Participación voluntaria</li>
+        </ul>
+
+        <h2>El Premio que lo Cambió Todo</h2>
+        <p>
+          En el año <strong>2007</strong>, todo este trabajo fue reconocido cuando el Faedo de Ciñera 
+          fue galardonado con el premio al <strong>"Bosque mejor cuidado de España"</strong> concedido 
+          por el Ministerio de Medio Ambiente y la ONG Bosques sin Fronteras.
+        </p>
+        <p>
+          La iniciativa partió del <strong>AMPA del Colegio Público San Miguel Arcángel de Ciñera</strong>, 
+          que presentó las actividades que a lo largo de años habían llevado a cabo todos los sectores 
+          sociales del municipio.
+        </p>
+        <p>
+          <a href="/premio-2007">Conoce todos los detalles del premio 2007</a> y el comunicado oficial 
+          de Bosques sin Fronteras.
+        </p>
+
+        <h2>La Magia de un Pueblo Unido</h2>
+        <p>
+          Mucho tiene de mágico que hoy en día un pueblo dedique su tiempo y mucho esfuerzo a cuidar 
+          un puñado de árboles y un arroyo. Limpiar, repoblar, reconstruir sus puentes y asociarse 
+          para proteger el bosque.
+        </p>
+        <p>
+          Este es un <strong>premio a un pueblo que, a pesar de sus diferencias y problemas, trabaja unido</strong>. 
+          Y eso, en sí mismo, ¿no es magia?
+        </p>
+
+        <h2>Cómo Participar</h2>
+        <p>
+          Si quieres contribuir al cuidado del Faedo de Ciñera:
+        </p>
+
+        <h3>Durante tu visita</h3>
+        <ul>
+          <li>Respeta las <a href="/guia-visitantes">normas ambientales</a></li>
+          <li>No dejes basura (ni siquiera orgánica)</li>
+          <li>Permanece en las pasarelas señalizadas</li>
+          <li>No recojas plantas ni molestes animales</li>
+          <li>Respeta el silencio del bosque</li>
+        </ul>
+
+        <h3>Hazte socio de ADELFA</h3>
+        <p>
+          Para más información sobre cómo asociarte o participar en las actividades, 
+          pregunta en el Ayuntamiento de La Pola de Gordón o en el bar de Ciñera.
+        </p>
+
+        <h3>Asiste al Encuentro de Julio</h3>
+        <p>
+          <strong>Primer sábado de julio</strong> - Todos son bienvenidos al encuentro anual. 
+          Lleva tu comida, tu respeto por el bosque y tus ganas de compartir un día especial 
+          en la naturaleza.
+        </p>
+
+        <h2>Calendario de Actividades 2025</h2>
+        <div class="not-prose overflow-x-auto">
+          <table class="min-w-full border">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="border px-4 py-2">Mes</th>
+                <th class="border px-4 py-2">Actividad</th>
+                <th class="border px-4 py-2">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">Abril</td>
+                <td class="border px-4 py-2">Jornada de limpieza primaveral</td>
+                <td class="border px-4 py-2">Preparación del Faedo para la temporada</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Mayo</td>
+                <td class="border px-4 py-2">Repoblación</td>
+                <td class="border px-4 py-2">Plantación de hayucos</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Julio (1er sábado)</td>
+                <td class="border px-4 py-2"><strong>ENCUENTRO ANUAL</strong></td>
+                <td class="border px-4 py-2">Misa, comida y convivencia</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Septiembre</td>
+                <td class="border px-4 py-2">Mantenimiento pasarelas</td>
+                <td class="border px-4 py-2">Reparaciones antes del otoño</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Octubre</td>
+                <td class="border px-4 py-2">Jornada de limpieza otoñal</td>
+                <td class="border px-4 py-2">Tras la temporada alta de visitantes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="not-prose bg-gray-50 border rounded-lg p-4 mt-6 text-sm">
+          <p class="text-gray-600">
+            <strong>Nota:</strong> Las fechas de las jornadas de trabajo pueden variar. 
+            Para información actualizada, contacta con el Ayuntamiento de La Pola de Gordón 
+            o pregunta en Ciñera.
+          </p>
+        </div>
+
+        <div class="not-prose border-t border-gray-200 pt-6 mt-8">
+          <h3 class="text-lg font-semibold mb-3">Más sobre el Faedo de Ciñera</h3>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="/premio-2007" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Premio 2007</span>
+              <p class="text-gray-600 mt-1">Bosque mejor cuidado de España</p>
+            </a>
+            <a href="/ruta/faedo-de-cinera" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Planifica tu visita</span>
+              <p class="text-gray-600 mt-1">Mapa, GPX y puntos de interés</p>
+            </a>
+            <a href="/guia-visitantes" class="block p-3 border rounded-md hover:shadow text-sm">
+              <span class="font-medium">Normas y consejos</span>
+              <p class="text-gray-600 mt-1">Respeta el bosque</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>
