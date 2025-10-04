@@ -15,7 +15,7 @@ const { title, excerpt, href, cover, date, tags = [] } = Astro.props as Props;
 ---
 <article class="rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow transition-shadow">
   {cover && (
-    <div class="aspect-[16/9] overflow-hidden">
+    <div class="aspect-video overflow-hidden">
       <Image src={cover} alt={title} widths={[320,480,768,1024]} sizes="(max-width: 768px) 100vw, 480px" />
     </div>
   )}

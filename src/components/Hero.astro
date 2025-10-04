@@ -9,7 +9,7 @@ interface Props {
 }
 const { title, subtitle, ctaHref = '/ruta/faedo-de-cinera', ctaLabel = 'Ver la ruta' } = Astro.props as Props;
 ---
-<section class="bg-gradient-to-b from-primary-50 to-white border-b border-gray-100">
+<section class="bg-linear-to-b from-primary-50 to-white border-b border-gray-100">
   <div class="container grid md:grid-cols-2 gap-8 items-center py-10 md:py-16">
     <div>
       <h1 class="text-3xl md:text-4xl leading-tight">{title}</h1>
@@ -18,7 +18,7 @@ const { title, subtitle, ctaHref = '/ruta/faedo-de-cinera', ctaLabel = 'Ver la r
         <a href={ctaHref} class="inline-block bg-primary-600 text-white px-5 py-3 rounded-md shadow hover:bg-primary-700">{ctaLabel}</a>
       </div>
     </div>
-    <div class="relative aspect-[16/9] md:aspect-[4/3] rounded-lg overflow-hidden shadow ring-1 ring-black/5">
+    <div class="relative aspect-video md:aspect-4/3 rounded-lg overflow-hidden shadow ring-1 ring-black/5">
       <Image src={heroImg} alt="Hayedo del Faedo de Ciñera" widths={[480,768,1024,1280]} sizes="(max-width: 768px) 100vw, 50vw" />
     </div>
   </div>

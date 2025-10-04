@@ -12,7 +12,7 @@ const { title, description, href = '#', image } = Astro.props as Props;
 ---
 <article class="rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow transition-shadow">
   {image && (
-    <div class="aspect-[4/3] overflow-hidden">
+    <div class="aspect-4/3 overflow-hidden">
       <Image src={image} alt={title} widths={[320,480,640]} sizes="(max-width: 640px) 100vw, 320px" />
     </div>
   )}
