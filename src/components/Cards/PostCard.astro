@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { slugifyTag } from '../../utils/tags';
 
 interface Props {
   title: string;
@@ -23,11 +24,16 @@ const { title, excerpt, href, cover, date, tags = [] } = Astro.props as Props;
     {date && <p class="text-xs text-gray-500 mt-1">{new Date(date).toLocaleDateString('es-ES')}</p>}
     <p class="mt-2 text-sm text-gray-600">{excerpt}</p>
     {tags.length > 0 && (
-      <p class="mt-3 flex flex-wrap gap-2">
+      <div class="mt-3 flex flex-wrap gap-2">
         {tags.map((t) => (
-          <span class="text-xs bg-gray-100 px-2 py-1 rounded">#{t}</span>
+          <a 
+            href={`/blog/tag/${slugifyTag(t)}`}
+            class="text-xs bg-primary-50 text-primary-700 hover:bg-primary-100 px-2 py-1 rounded no-underline transition-colors"
+          >
+            #{t}
+          </a>
         ))}
-      </p>
+      </div>
     )}
   </div>
 </article>

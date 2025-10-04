@@ -1,0 +1,74 @@
+---
+import Layout from '../../../components/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import PostCard from '../../../components/Cards/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { slugifyTag, getAllTags, filterPostsByTag } from '../../../utils/tags';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const allTags = getAllTags(posts);
+  
+  return allTags.map(tag => ({
+    params: { tag: slugifyTag(tag) },
+    props: { 
+      tag,
+      posts: filterPostsByTag(posts, tag)
+    }
+  }));
+}
+
+const { tag } = Astro.props;
+const { posts } = Astro.props;
+
+// Ordenar posts por fecha descendente
+const sortedPosts = posts.sort((a, b) => 
+  b.data.date.getTime() - a.data.date.getTime()
+);
+
+const title = `Artículos sobre "${tag}" - Blog Faedo de Ciñera`;
+const description = `Todos los artículos del blog sobre ${tag}. Descubre rutas, consejos y naturaleza del Faedo de Ciñera en León.`;
+---
+
+<Layout title={title} description={description}>
+  <Breadcrumbs 
+    items={[
+      { href: '/', label: 'Inicio' },
+      { href: '/blog', label: 'Blog' },
+      { href: `/blog/tag/${slugifyTag(tag)}`, label: `#${tag}` }
+    ]} 
+  />
+  
+  <section class="container py-8">
+    <div class="mb-6">
+      <h1 class="text-3xl font-bold mb-2">
+        Artículos sobre <span class="text-primary-600">#{tag}</span>
+      </h1>
+      <p class="text-gray-600">
+        {sortedPosts.length} {sortedPosts.length === 1 ? 'artículo encontrado' : 'artículos encontrados'}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {sortedPosts.map((post) => (
+        <PostCard 
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          href={`/blog/${post.slug}`}
+          cover={post.data.coverImage}
+          date={post.data.date.toISOString()}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+
+    <div class="mt-8">
+      <a 
+        href="/blog" 
+        class="inline-flex items-center text-primary-600 hover:text-primary-700 hover:underline"
+      >
+        ← Volver al blog
+      </a>
+    </div>
+  </section>
+</Layout>

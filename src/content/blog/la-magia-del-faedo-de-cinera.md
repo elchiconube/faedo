@@ -2,7 +2,7 @@
 title: "La Magia del Faedo de Ciñera: Un Bosque de Cuento"
 excerpt: "Descubre por qué el Faedo de Ciñera es un lugar mágico donde el tiempo se detiene. Duendes, hadas, druidas y la historia viva de un bosque que respira paz entre hayas centenarias."
 date: 2025-10-02
-tags: ["faedo de ciñera", "magia", "naturaleza", "experiencia"]
+tags: ["naturaleza", "experiencia", "fotografía", "relatos"]
 coverImage: ../../assets/blog-placeholder-5.jpg
 ---
 
