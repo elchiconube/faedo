@@ -1,5 +1,5 @@
 ---
-import { SITE_NAME, SITE_LOCALE } from '../consts';
+import { SITE_NAME, SITE_LOCALE, SITE_IMAGE } from '../consts';
 
 interface Props {
   title: string;
@@ -11,6 +11,7 @@ interface Props {
 }
 const { title, description, image, url, type = 'website', jsonLd } = Astro.props as Props;
 const canonical = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
+const ogImage = image ? new URL(image, Astro.site).toString() : new URL(SITE_IMAGE, Astro.site).toString();
 ---
 <fragment>
   <title>{title}</title>
@@ -19,13 +20,17 @@ const canonical = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
   <link rel="alternate" hreflang={SITE_LOCALE} href={canonical} />
   <meta property="og:site_name" content={SITE_NAME} />
   <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  {image && <meta property="og:image" content={image} />}
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonical} />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  {image && <meta name="twitter:image" content={image} />}
+  <meta name="twitter:image" content={ogImage} />
   {jsonLd && (
     <script type="application/ld+json" set:html={JSON.stringify(Array.isArray(jsonLd) ? { '@context': 'https://schema.org', '@graph': jsonLd } : jsonLd)} />
   )}

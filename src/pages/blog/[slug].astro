@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Seo from '../../components/Seo.astro';
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { SITE_LOGO, SITE_URL } from '../../consts';
 
 interface Props { params: { slug: string } }
 const { slug } = Astro.params as Props['params'];
@@ -20,16 +21,20 @@ const blogLd = {
   datePublished: data.date.toISOString(),
   dateModified: data.date.toISOString(),
   mainEntityOfPage: canonical,
-  image: data.coverImage?.src,
+  image: data.coverImage?.src ? new URL(data.coverImage.src, Astro.site).toString() : undefined,
   author: {
     '@type': 'Organization',
     name: 'Faedo de Ciñera',
-    url: 'https://faedo.es'
+    url: SITE_URL
   },
   publisher: {
     '@type': 'Organization',
     name: 'Faedo de Ciñera',
-    url: 'https://faedo.es'
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL(SITE_LOGO, Astro.site).toString()
+    }
   }
 };
 export async function getStaticPaths() {

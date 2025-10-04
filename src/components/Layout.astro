@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_LOCALE } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_LOCALE, SITE_URL, SITE_IMAGE } from '../consts';
 import GoogleAnalytics from './GoogleAnalytics.astro';
 import GoogleSiteVerification from './GoogleSiteVerification.astro';
 import { ViewTransitions } from 'astro:transitions';
@@ -11,6 +11,9 @@ const {
   image = undefined,
   type = 'website',
 } = Astro.props;
+
+const canonicalURL = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
+const ogImage = image ? new URL(image, Astro.site).toString() : new URL(SITE_IMAGE, Astro.site).toString();
 ---
 <!doctype html>
 <html lang={SITE_LOCALE}>
@@ -18,19 +21,29 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#349981" />
-    <link rel="canonical" href={(url ?? new URL(Astro.url.pathname, Astro.site)).toString()} />
-    <link rel="alternate" hreflang={SITE_LOCALE} href={(url ?? new URL(Astro.url.pathname, Astro.site)).toString()} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang={SITE_LOCALE} href={canonicalURL} />
     <meta name="description" content={description} />
+    <meta name="keywords" content="Faedo de Ciñera, senderismo León, rutas León, hayedo, Pola de Gordón, naturaleza León, rutas familias" />
     <title>{title}</title>
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {image && <meta property="og:image" content={image} />}
-    {image && <meta name="twitter:image" content={image} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={SITE_LOCALE} />
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
@@ -40,7 +53,17 @@ const {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: SITE_NAME,
+      description: SITE_DESCRIPTION,
       url: Astro.site?.toString(),
+      inLanguage: SITE_LOCALE,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${Astro.site}?q={search_term_string}`
+        },
+        'query-input': 'required name=search_term_string'
+      }
     })} />
     <slot name="head" />
     <GoogleSiteVerification />
