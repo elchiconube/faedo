@@ -1,12 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Accesibilidad básica */
-:root {
+/* Tema personalizado - Tailwind v4 */
+@theme {
+  /* Colores personalizados */
+  --color-primary-50: #eef8f4;
+  --color-primary-100: #d5efe4;
+  --color-primary-200: #ace0ca;
+  --color-primary-300: #7cccb0;
+  --color-primary-400: #4fb399;
+  --color-primary-500: #349981;
+  --color-primary-600: #287a68;
+  --color-primary-700: #225f54;
+  --color-primary-800: #1f4d44;
+  --color-primary-900: #1b413a;
+  
+  /* Variables personalizadas */
   --container: 1200px;
 }
 
+/* Accesibilidad básica */
 html:focus-within {
   scroll-behavior: smooth;
 }

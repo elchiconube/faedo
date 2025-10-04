@@ -3,6 +3,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_LOCALE, SITE_URL, SITE_IM
 import GoogleAnalytics from './GoogleAnalytics.astro';
 import GoogleSiteVerification from './GoogleSiteVerification.astro';
 import { ViewTransitions } from 'astro:transitions';
+import '../styles/globals.css';
 
 const {
   title = SITE_TITLE,
@@ -69,9 +70,6 @@ const ogImage = image ? new URL(image, Astro.site).toString() : new URL(SITE_IMA
     <GoogleSiteVerification />
     <GoogleAnalytics />
     <ViewTransitions />
-    <style is:global>
-      @import "../styles/globals.css";
-    </style>
   </head>
   <body class="min-h-screen flex flex-col">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>

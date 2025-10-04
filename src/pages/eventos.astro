@@ -27,9 +27,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     ]}
   />
   
-  <section class="container py-8">
-    <div class="max-w-4xl mx-auto">
-      <article class="prose prose-slate max-w-none">
+  <section class="container prose prose-slate max-w-none py-8">
+    <article>
         <h1>{title}</h1>
         
         <p class="lead">
@@ -270,6 +269,5 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           </div>
         </div>
       </article>
-    </div>
   </section>
 </Layout>
