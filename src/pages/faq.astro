@@ -3,6 +3,7 @@ import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Seo from "@components/Seo.astro";
 import ExploreMore from "@components/ExploreMore.astro";
+import CalloutLink from "@components/CalloutLink.astro";
 
 const title = "Preguntas Frecuentes sobre el Faedo de Ciñera";
 const description =
@@ -122,19 +123,9 @@ faqSchema.mainEntity = faqs.map(faq => ({
         >. Si tienes alguna duda que no aparece aquí, no dudes en contactar con
         la Junta Vecinal de Ciñera.
       </p>
-<div class="max-w-lg mx-auto mt-4 mb-6">
-  <a
-    href="/guia-visitantes"
-    class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800 
-           font-medium shadow-sm"
-  >
-    📘 Ver Guía para Visitantes  
-    <span class="block text-sm opacity-75 font-normal">
-      Rutas, preparativos y servicios del pueblo
-    </span>
-  </a>
-</div>
+<CalloutLink href="/guia-visitantes" subtitle="Rutas, preparativos y servicios del pueblo">
+  Ver Guía para Visitantes
+</CalloutLink>
       {
         faqs.map((faq, index) => (
           <section>

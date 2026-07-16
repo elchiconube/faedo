@@ -3,6 +3,7 @@ import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
+import CalloutLink from "@components/CalloutLink.astro";
 import { Image } from "astro:assets";
 
 import imageFaedo from "@assets/paseo-faedo.webp";
@@ -88,16 +89,9 @@ const caliza = {
           src={faedo.src}
           alt={faedo.alt}
         />
-        <div class="max-w-lg mx-auto mt-4 mb-6">
-          <a
-            href="/blog/origen-nombre-faedo"
-            class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-          >
-            📘 Más información sobre la historia del nombre "Faedo"
-          </a>
-        </div>
+        <CalloutLink href="/blog/origen-nombre-faedo">
+          Más información sobre la historia del nombre "Faedo"
+        </CalloutLink>
       </section>
 
       <section>
@@ -117,16 +111,9 @@ const caliza = {
           la humedad y la sombra. Las hayas crean un característico sombrío denso
           que hace del Faedo un lugar especialmente mágico.
         </p>
-        <div class="max-w-lg mx-auto mt-4 mb-6">
-          <a
-            href="/ruta/faedo-de-cinera"
-            class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-          >
-            📘 Descubre la ruta del Faedo.
-          </a>
-        </div>
+        <CalloutLink href="/ruta/faedo-de-cinera">
+          Descubre la ruta del Faedo.
+        </CalloutLink>
       </section>
 
       <section>
@@ -155,16 +142,9 @@ const caliza = {
             alt={fagus.alt}
           />
         </div>
-        <div class="max-w-lg mx-auto mt-4 mb-6">
-          <a
-            href="/haya-fagus"
-            class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-          >
-            📘 Todo sobre el haya Fagus.
-          </a>
-        </div>
+        <CalloutLink href="/haya-fagus">
+          Todo sobre el haya Fagus.
+        </CalloutLink>
       </section>
 
       <section>
@@ -174,14 +154,9 @@ const caliza = {
           resultado de su posición fronteriza entre dos regiones biogeográficas:
           la mediterránea y la eurosiberiana.
         </p>
-        <a
-          href="/flora-fauna"
-          class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-        >
-          📘 La flora y fauna del Faedo.
-        </a>
+        <CalloutLink href="/flora-fauna">
+          La flora y fauna del Faedo.
+        </CalloutLink>
         <h3>Los Tres Árboles Protagonistas</h3>
         <p>
           El bosque alberga tres especies arbóreas principales que representan
@@ -202,16 +177,9 @@ const caliza = {
             en posiciones intermedias.
           </li>
         </ul>
-        <p>
-          <a
-            href="/blog/arboles-del-faedo-de-cinera"
-            class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-          >
-            📘 Aprende a identificar cada árbol durante tu visita.
-          </a>
-        </p>
+        <CalloutLink href="/blog/arboles-del-faedo-de-cinera">
+          Aprende a identificar cada árbol durante tu visita.
+        </CalloutLink>
 
         <h3>Fauna Destacada</h3>
         <p>
@@ -263,16 +231,9 @@ const caliza = {
           />
         </div>
 
-        <p>
-          <a
-            href="/flora-fauna"
-            class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-          >
-            📘 Página completa de la flora y fauna del Faedo.
-          </a>
-        </p>
+        <CalloutLink href="/flora-fauna">
+          Página completa de la flora y fauna del Faedo.
+        </CalloutLink>
       </section>
 
       <section>
@@ -307,14 +268,9 @@ const caliza = {
           Las <strong>capas de carbón</strong> de la Formación Pastora (310 millones
           de años) fueron el origen de la minería de Ciñera.
         </p>
-        <a
-          href="/geologia"
-          class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-        >
-          📘 Historia geológica del Faedo.
-        </a>
+        <CalloutLink href="/geologia">
+          Historia geológica del Faedo.
+        </CalloutLink>
       </section>
 
       <section>
@@ -348,15 +304,10 @@ const caliza = {
           El <strong>Pozo Ibarra</strong>, inaugurado en 1930 y cerrado en 1996,
           fue el corazón económico de Ciñera durante casi 70 años. Su castillete
           de 31,5 metros sigue en pie como símbolo del patrimonio industrial.
-          <a
-            href="/pozo-ibarra"
-            class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-          >
-            📘 Ficha completa del Pozo Ibarra.
-          </a>
         </p>
+        <CalloutLink href="/pozo-ibarra">
+          Ficha completa del Pozo Ibarra.
+        </CalloutLink>
       </section>
 
       <section>
@@ -381,14 +332,9 @@ const caliza = {
           para una versión detallada y sugerencias educativas para contar durante
           la visita al Faedo con niños.
         </p>
-        <a
-          href="/haeda"
-          class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-        >
-          📘 Resumen del cuento de Haeda.
-        </a>
+        <CalloutLink href="/haeda">
+          Resumen del cuento de Haeda.
+        </CalloutLink>
       </section>
 
       <section>
@@ -415,15 +361,9 @@ const caliza = {
             >Un pueblo unido por su bosque</strong
           >. Y eso, en sí mismo, es mágico.
         </p>
-        <a
-          href="/premio-2007"
-          class="block w-full text-center bg-emerald-50 border border-emerald-200
-           hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
-           font-medium shadow-sm"
-        >
-          📘 Más información sobre el premio al Faedo como bosque mejor cuidado
-          de España.
-        </a>
+        <CalloutLink href="/premio-2007">
+          Más información sobre el premio al Faedo como bosque mejor cuidado de España.
+        </CalloutLink>
       </section>
 
       <section>
