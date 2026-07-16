@@ -30,12 +30,36 @@ const ogImage = image
 
 // Navegación principal
 const navItems = [
-  { href: "/", label: "Inicio" },
-  { href: "/ruta/faedo-de-cinera", label: "La ruta" },
-  { href: "/guia-visitantes", label: "Guía" },
-  { href: "/historia-naturaleza", label: "Descubre" },
-  { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
+  {
+    href: "/",
+    label: "Inicio",
+    title: "Ir a la página de inicio del Faedo de Ciñera",
+  },
+  {
+    href: "/ruta/faedo-de-cinera",
+    label: "La ruta",
+    title: "Guía completa de la ruta del Faedo: mapa, GPX y consejos",
+  },
+  {
+    href: "/guia-visitantes",
+    label: "Guía",
+    title: "Guía para visitantes: alojamientos, servicios e itinerarios",
+  },
+  {
+    href: "/historia-naturaleza",
+    label: "Descubre",
+    title: "Historia y naturaleza del Faedo de Ciñera",
+  },
+  {
+    href: "/blog",
+    label: "Blog",
+    title: "Artículos y novedades sobre el Faedo de Ciñera",
+  },
+  {
+    href: "/faq",
+    label: "FAQ",
+    title: "Preguntas frecuentes sobre la ruta del Faedo",
+  },
 ];
 ---
 
@@ -141,6 +165,7 @@ const navItems = [
         <a
           href="/"
           class="font-wittgenstein text-xl text-primary-700 no-underline"
+          title="Ir a la página de inicio del Faedo de Ciñera"
           >{SITE_NAME}</a
         >
 
@@ -149,7 +174,11 @@ const navItems = [
           {
             navItems.map((item) => (
               <li>
-                <a class="px-2 py-6 inline-block" href={item.href}>
+                <a
+                  class="px-2 py-6 inline-block"
+                  href={item.href}
+                  title={item.title}
+                >
                   {item.label}
                 </a>
               </li>
@@ -189,6 +218,7 @@ const navItems = [
               <li>
                 <a
                   href={item.href}
+                  title={item.title}
                   class={`block py-2 ${index < navItems.length - 1 ? "border-b border-gray-100" : ""}`}
                 >
                   {item.label}
@@ -237,8 +267,8 @@ const navItems = [
         class="container py-8 text-sm flex flex-col gap-2 md:flex-row md:items-center md:justify-between"
       >
         <p class="text-center md:text-left">
-          &copy; {new Date().getFullYear()}
-          {SITE_NAME} · Proyecto informativo sin ánimo de lucro.
+          &copy; {new Date().getFullYear()}{' '}{SITE_NAME} · Proyecto
+          informativo sin ánimo de lucro.
         </p>
         <nav aria-label="Secundario">
           <ul class="md:flex md:gap-4 font-wittgenstein text-center">
@@ -246,8 +276,9 @@ const navItems = [
               navItems.map((item) => (
                 <li>
                   <a
-                    class="text-lg md:text-xs py-2 inline-block"
+                    class="text-base py-2 inline-block"
                     href={item.href}
+                    title={item.title}
                   >
                     {item.label}
                   </a>
@@ -261,7 +292,10 @@ const navItems = [
         Sitio web creado por <a
           href="https://faedodigital.com"
           target="_blank"
-          rel="noopener noreferrer">Faedo Digital</a>
+          rel="noopener noreferrer"
+          title="Faedo Digital, creador del sitio web"
+          >Faedo Digital</a
+        >
       </p>
     </footer>
   </body>

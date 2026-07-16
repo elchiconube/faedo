@@ -1,13 +1,13 @@
 ---
 import Layout from "@components/Layout.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 ---
 
 <Layout
   title="Página no encontrada"
   description="La página que buscas no existe"
 >
-  <div class="max-w-7xl mx-auto py-12 px-4">
+  <div class="max-w-8xl mx-auto py-12 px-4">
     <div class="text-center mb-12">
       <div class="mb-8">
         <span class="text-8xl font-bold text-emerald-800">404</span>
@@ -73,12 +73,7 @@ import Cards from "@components/Cards.astro";
       <h2 class="text-2xl font-semibold text-emerald-800 mb-8 text-center">
         Páginas que podrían interesarte
       </h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Cards
-          ids={["fagus", "flora-fauna", "geologia", "historia-naturaleza"]}
-          titleTag="h3"
-        />
-      </div>
+      <ExploreMore variant="grid" titleTag="h3" />
     </div>
   </div>
 </Layout>

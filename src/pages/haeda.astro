@@ -1,7 +1,7 @@
 ---
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageBruja from "@assets/bruja.webp";
@@ -112,7 +112,7 @@ const jsonLd = {
           lugar para caminar, sino un espacio donde la historia y la naturaleza
           se entrelazan. Es habitual que estas historias se compartan durante
           actividades y rutas familiares por el bosque. Para planificar tu
-          visita, puedes <a href="/ruta/faedo-de-cinera">consultar la ruta</a> o
+          visita, puedes <a href="/ruta/faedo-de-cinera">consultar la ruta</a> o{' '}
           <a href="/gpx/faedo.gpx">descargar el GPX</a>.
         </p>
 
@@ -144,8 +144,7 @@ const jsonLd = {
 
         <p class="mt-6">
           ¿Planeas visitarlo? <a href="/ruta/faedo-de-cinera"
-            >Consulta la ruta</a
-          >
+            >Consulta la ruta</a>{' '}
           o <a href="/gpx/faedo.gpx">descarga el GPX</a>.
         </p>
       </section>
@@ -161,27 +160,6 @@ const jsonLd = {
       </div>
     </div>
 
-    <div class="not-prose border-t border-gray-200 mt-8 py-10 px-4">
-      <header class="text-center max-w-2xl mx-auto mb-10">
-        <h3 class="mb-2 text-3xl text-emerald-800 text-balance">
-          Explora más sobre el Faedo
-        </h3>
-        <p class="text-balance text-emerald-800 font-medium leading-6">
-          Descubre más sobre el Faedo de Ciñera y su fascinante historia
-          natural.
-        </p>
-      </header>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Cards
-          ids={[
-            "fagus",
-            "geologia",
-            "patrimonio-minero",
-            "historia-naturaleza",
-          ]}
-          titleTag="h4"
-        />
-      </div>
-    </div>
+    <ExploreMore variant="explore" />
   </div>
 </Layout>

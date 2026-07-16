@@ -5,8 +5,7 @@ import MapLeaflet from "@components/MapLeaflet.astro";
 import Seo from "@components/Seo.astro";
 import coverImage from "@assets/faedo-de-cinera.webp";
 import Gallery from "@components/Gallery.astro";
-import Cards from "@components/Cards.astro";
-import SectionHeader from "@components/SectionHeader.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 import { Image } from "astro:assets";
 
 import imageBocamina from "@assets/bocamina.webp";
@@ -259,12 +258,12 @@ const attractionLd = {
         la <strong>plaza de la iglesia</strong>. Desde allí, el camino avanza
         dejando atrás la bolera y el cementerio, donde ya se siente el rumor del <strong
           >Arroyo Villar</strong
-        >, guía natural de este recorrido. El sendero es cómodo y llano,
+        >, guía natural de este recorrido. El sendero es cómodo y llano,{' '}
         <a href="https://faedo.es/blog/faedo-de-cinera-con-ninos/">adecuado para toda la familia</a>.
       </p>
 
       <p>
-        A unos dos kilómetros del inicio, aparece la <strong><a href="https://faedo.es/blog/bocamina-menos-cincuenta/">bocamina</a></strong>,
+        A unos dos kilómetros del inicio, aparece la <a href="https://faedo.es/blog/bocamina-menos-cincuenta/">bocamina</a>,
         rehabilitada por los vecinos con un cariño que se nota en cada detalle.
         En su interior, convertida en museo, se conservan herramientas y
         recuerdos.
@@ -306,12 +305,11 @@ const attractionLd = {
       </p>
 
       <p>
-        Dentro del hayedo, los carteles hablan de leyendas de <strong
-          ><a href="https://faedo.es/blog/la-magia-del-faedo-de-cinera/"> y brujas buenas</a></strong
-        > que habitan entre las raíces. Es fácil creerlo: el silencio es distinto,
+        Dentro del hayedo, los carteles hablan de leyendas de <a href="/blog/la-magia-del-faedo-de-cinera">hadas y brujas buenas</a>{' '}
+        que habitan entre las raíces. Es fácil creerlo: el silencio es distinto,
         profundo, lleno de vida. En el corazón del bosque se encuentra <strong
           >Fagus</strong
-        >, una haya de unos <strong><a href="/haya-fagus">500 años</a></strong> y más de <strong
+        >, una haya de unos <a href="/haya-fagus">500 años</a> y más de <strong
           >6 metros de perímetro</strong
         >, considerada una de las 100 más singulares de España.
       </p>
@@ -330,9 +328,7 @@ const attractionLd = {
         madera y acero, construida en 2005, permite recorrer este tramo con
         seguridad, suspendidos sobre el agua. La vista desde aquí es pura
         emoción: cascadas, pozas y el sonido constante del agua entre las
-        piedras, desde donde se pueden apreciar las <strong
-          ><a href="blog/marmitas-de-gigante/">Marmitas de Gigante</a></strong
-        >, formaciones naturales creadas por la fuerza del arroyo al chocar
+        piedras, desde donde se pueden apreciar las <a href="blog/marmitas-de-gigante/">Marmitas de Gigante</a>, formaciones naturales creadas por la fuerza del arroyo al chocar
         contra la piedra caliza. En los días cálidos, el reflejo del sol sobre
         el agua convierte este rincón en un espectáculo de luz. Aquí muchos
         visitantes deciden detenerse y regresar por el mismo camino, aunque
@@ -353,9 +349,9 @@ const attractionLd = {
         la zona de la escombrera, un desvío conduce al <strong
           >mirador del Beso</strong
         >, desde donde se puede contemplar el valle en toda su amplitud. Un poco
-        más arriba, se levanta el castillete del <strong><a href="/patrimonio-minero">Pozo Ibarra</a></strong>,
+        más arriba, se levanta el castillete del <a href="/pozo-ibarra">Pozo Ibarra</a>,
         símbolo del pasado industrial de Ciñera. Este conjunto fue declarado en
-        2011 <strong>Bien de Interés Cultural</strong> (BIC) con la categoría de
+        2011 <strong>Bien de Interés Cultural</strong> (BIC) con la categoría de{' '}
         <strong>Conjunto Etnográfico</strong>, en reconocimiento a su valor
         histórico y humano.
       </p>
@@ -383,11 +379,5 @@ const attractionLd = {
 
   <Gallery />
 
-  <SectionHeader
-    title="Puntos de Interés Destacados"
-    description="En esta sección encontrarás toda la información necesaria para planificar tu visita al Faedo de Ciñera."
-  />
-  <div class="grid sm:grid-cols-4 gap-4 mx-auto max-w-7xl px-4 mb-10">
-    <Cards ids={[ "bocamina", "fagus", "puente", "marmitas"]} />
-  </div>
+  <ExploreMore variant="interes" />
 </Layout>

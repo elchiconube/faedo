@@ -1,14 +1,19 @@
 ---
-import { getCardsByIds } from "@data/cards";
+import { getCardsByIds, getCardsForPath } from "@data/cards";
 
 interface Props {
   ids: string[];
   titleTag?: "h2" | "h3" | "h4";
+  /** Si es false, no filtra la URL actual (por defecto sí filtra) */
+  excludeCurrent?: boolean;
+  limit?: number;
 }
 
-const { ids, titleTag } = Astro.props;
+const { ids, titleTag, excludeCurrent = true, limit = 4 } = Astro.props;
 
-const cards = getCardsByIds(ids)
+const cards = excludeCurrent
+  ? getCardsForPath(Astro.url.pathname, ids, limit)
+  : getCardsByIds(ids).slice(0, limit);
 ---
 
 <style>
@@ -34,29 +39,37 @@ const cards = getCardsByIds(ids)
 {
   cards.map((card) => {
     const TitleTag = titleTag || "h3";
+    const tooltip = card.description
+      ? `${card.title}: ${card.description}`
+      : card.title;
     return (
       <a
-        class={`card-link block p-4 rounded-xl hover:shadow no-underline aspect-square relative overflow-hidden flex flex-col justify-end ${
-          !card.backgroundImage
-            ? "bg-gradient-to-tr from-emerald-500 to-emerald-600"
-            : ""
-        }`}
+        class:list={[
+          "card-link block p-4 rounded-xl hover:shadow no-underline aspect-square relative overflow-hidden flex flex-col justify-end",
+          !card.backgroundImage &&
+            "bg-gradient-to-tr from-emerald-500 to-emerald-600",
+        ]}
         href={card.href}
+        title={tooltip}
       >
         {card.backgroundImage && (
           <img
             src={card.backgroundImage}
-            alt={card.title}
+            alt=""
             class="card-image absolute inset-0 w-full h-full object-cover"
+            aria-hidden="true"
           />
         )}
 
-        <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-0" aria-hidden="true">
           <div class="absolute inset-0 bg-black/20" />
         </div>
 
         {card.icon && (
-          <div class="absolute top-3 right-3 bg-white/20 p-2 rounded-full text-white backdrop-blur-sm">
+          <div
+            class="absolute top-3 right-3 bg-white/20 p-2 rounded-full text-white backdrop-blur-sm"
+            aria-hidden="true"
+          >
             <svg
               width="24"
               height="24"

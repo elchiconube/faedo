@@ -113,10 +113,10 @@ export const allCards: Card[] = [
     backgroundImage: imageBocamina.src
   },
   {
-    id: 'patrimonio-minero',
-    href: '/patrimonio-minero',
-    title: 'Patrimonio Minero',
-    description: 'Historia minera y el castillete de 1930',
+    id: 'pozo-ibarra',
+    href: '/pozo-ibarra',
+    title: 'Pozo Ibarra',
+    description: 'Castillete BIC de 1930 y patrimonio minero',
     icon: 'M224,152V136a96.37,96.37,0,0,0-64-90.51V40a16,16,0,0,0-16-16H112A16,16,0,0,0,96,40v5.49A96.37,96.37,0,0,0,32,136v16a16,16,0,0,0-16,16v24a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V168A16,16,0,0,0,224,152Zm-16-16v16H160V62.67A80.36,80.36,0,0,1,208,136ZM144,40V152H112V40ZM48,136A80.36,80.36,0,0,1,96,62.67V152H48Zm176,56H32V168H224v24Z',
     backgroundImage: imageMineria.src
   },
@@ -132,14 +132,61 @@ export const allCards: Card[] = [
 
 ];
 
+/** Cards del módulo «Explora más» (páginas principales del site) */
+export const EXPLORE_CARD_IDS = [
+  "fagus",
+  "geologia",
+  "pozo-ibarra",
+  "flora-fauna",
+  "historia-naturaleza",
+  "haeda",
+  "ruta",
+  "guia-visitantes",
+] as const;
+
+/** Cards del módulo «Planifica tu visita» */
+export const PLANIFICA_CARD_IDS = [
+  "ruta",
+  "pozo-ibarra",
+  "guia-visitantes",
+  "historia-naturaleza",
+  "haeda",
+] as const;
+
+/** Puntos de interés (página de la ruta) */
+export const RUTA_INTERES_CARD_IDS = [
+  "bocamina",
+  "fagus",
+  "pozo-ibarra",
+  "marmitas",
+  "puente",
+] as const;
+
+export function normalizePath(path: string): string {
+  if (!path || path === "/") return "/";
+  return path.replace(/\/+$/, "") || "/";
+}
+
+/** Obtiene cards por IDs excluyendo la URL actual y limitando el número */
+export function getCardsForPath(
+  pathname: string,
+  ids: readonly string[],
+  limit = 4,
+): Card[] {
+  const current = normalizePath(pathname);
+  return getCardsByIds([...ids])
+    .filter((card) => normalizePath(card.href) !== current)
+    .slice(0, limit);
+}
+
 // Función helper para obtener cards por sus IDs
 export function getCardsByIds(ids: string[]): Card[] {
   return ids
-    .map(id => allCards.find(card => card.id === id))
+    .map((id) => allCards.find((card) => card.id === id))
     .filter((card): card is Card => card !== undefined);
 }
 
 // Función helper para obtener una card por su ID
 export function getCardById(id: string): Card | undefined {
-  return allCards.find(card => card.id === id);
+  return allCards.find((card) => card.id === id);
 }

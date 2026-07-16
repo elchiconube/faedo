@@ -2,8 +2,7 @@
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Seo from "@components/Seo.astro";
-import SectionHeader from "@components/SectionHeader.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 
 const title = "Preguntas Frecuentes sobre el Faedo de Ciñera";
 const description =
@@ -146,19 +145,6 @@ faqSchema.mainEntity = faqs.map(faq => ({
       }
     </div>
 
-    <section class="py-5 px-4" aria-labelledby="intro">
-      <SectionHeader
-        title="Planifica tu visita"
-        description="En esta sección encontrarás toda la información necesaria para planificar tu visita al Faedo de Ciñera."
-      />
-      <div class="grid sm:grid-cols-4 gap-4 mx-auto max-w-7xl">
-        <Cards
-          ids={["ruta", "historia-naturaleza", "guia-visitantes", "blog"]}
-        />
-      </div>
-      
-      
-
-    </section>
+    <ExploreMore variant="planifica" />
   </div>
 </Layout>

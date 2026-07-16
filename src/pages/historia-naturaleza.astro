@@ -1,7 +1,7 @@
 ---
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 
@@ -76,7 +76,7 @@ const caliza = {
         <h2>El Origen del Nombre: "Faedo"</h2>
         <p>
           El nombre <strong>"Faedo"</strong> proviene del latín <em>fagus</em> (haya)
-          más el sufijo abundancial
+          más el sufijo abundancial{' '}
           <em>-etum</em>, que evolucionó a <strong>faedo</strong> en asturleonés,
           significando "lugar abundante en hayas" o "hayedo". La conservación de
           la /f-/ inicial (en lugar de evolucionar a /h-/ como en castellano "hayedo")
@@ -107,7 +107,7 @@ const caliza = {
           conservados que ofrece sombra y humedad durante todo el año. Además de
           sus colores otoñales, el Faedo es un lugar ideal para disfrutar de la naturaleza
           durante todo el año y que puedes visitar con toda la familia. Este bosque
-          de hayas es uno de los
+          de hayas es uno de los{' '}
           <strong>más meridionales de Europa</strong> y alberga ejemplares de más
           de 500 años de antigüedad.
         </p>
@@ -134,12 +134,10 @@ const caliza = {
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <p>
-              Entre todas las hayas del bosque destaca <strong
-                ><a href="/haya-fagus">El Haya Fagus</a></strong
-              >, un gigante de más de <strong>500 años de edad</strong> que se sitúa
+              Entre todas las hayas del bosque destaca <a href="/haya-fagus">El Haya Fagus</a>, un gigante de más de <strong>500 años de edad</strong> que se sitúa
               entre el escaso club de árboles más singulares y centenarios de España.
             </p><p>
-              Con 6,32m de perímetro y 23m de altura, fue incluido en el libro
+              Con 6,32m de perímetro y 23m de altura, fue incluido en el libro{' '}
               <em>"Árboles, Leyendas Vivas"</em> como uno de los <strong
                 >100 árboles más singulares de España</strong
               >.
@@ -224,7 +222,7 @@ const caliza = {
         <ul>
           <li>
             <a href="/blog/desman-iberico-faedo-de-cinera"
-              ><strong>Desmán ibérico</strong></a
+              >Desmán ibérico</a
             > (<em>Galemys pyrenaicus</em>):
           </li>
           Endemismo ibérico en peligro de extinción, indicador de aguas puras. <a
@@ -281,7 +279,7 @@ const caliza = {
         <h2>Geología: 400 Millones de Años</h2>
         <p>
           La geología del Faedo de Ciñera explica tanto su biodiversidad como su
-          historia minera. Hace
+          historia minera. Hace{' '}
           <strong>400 millones de años</strong>, esta zona era el fondo de un
           mar paleozoico del hemisferio sur.
         </p>
@@ -329,15 +327,13 @@ const caliza = {
         </p>
         <ul>
           <li>
-            <strong
-              ><a href="/blog/bocamina-menos-cincuenta">
-                Bocamina "Menos 50" rehabilitada</a
-              ></strong
+            <a href="/blog/bocamina-menos-cincuenta"
+              >Bocamina "Menos 50" rehabilitada</a
             >: Punto de encuentro anual cada primer sábado de julio
           </li>
           <li>
-            <strong>Castillete del Pozo Ibarra</strong>: Estructura metálica de
-            1930, visible desde varios puntos
+            <a href="/pozo-ibarra">Castillete del Pozo Ibarra</a>: Estructura
+            metálica de 1930, visible desde varios puntos
           </li>
           <li>
             <strong>Puente de Palos</strong>: Construcción histórica utilizada
@@ -353,12 +349,12 @@ const caliza = {
           fue el corazón económico de Ciñera durante casi 70 años. Su castillete
           de 31,5 metros sigue en pie como símbolo del patrimonio industrial.
           <a
-            href="/blog/historia-del-pozo-ibarra"
+            href="/pozo-ibarra"
             class="block w-full text-center bg-emerald-50 border border-emerald-200
            hover:bg-emerald-100 transition rounded-xl py-3 px-4 text-emerald-800
            font-medium shadow-sm"
           >
-            📘 Historia completa del Pozo Ibarra.
+            📘 Ficha completa del Pozo Ibarra.
           </a>
         </p>
       </section>
@@ -381,8 +377,7 @@ const caliza = {
         </p>
         <p>
           Lee el <a href="/haeda"
-            >cuento completo de Haeda del Faedo de Ciñera</a
-          >
+            >cuento completo de Haeda del Faedo de Ciñera</a>{' '}
           para una versión detallada y sugerencias educativas para contar durante
           la visita al Faedo con niños.
         </p>
@@ -435,7 +430,7 @@ const caliza = {
         <h2>Curiosidades del Faedo de Ciñera</h2>
         <p>
           Varios tramos del sendero del <strong>Faedo de Ciñera</strong> discurren
-          por
+          por{' '}
           <strong>pasarelas de madera elevadas</strong> que protegen el entorno sensible
           del hayedo. Estas pasarelas permiten recorrer el bosque sin dañar el ecosistema
           del suelo, donde crecen musgos, helechos y hongos fundamentales para el
@@ -466,28 +461,6 @@ const caliza = {
         </p>
       </section>
     </div>
-    <div class="not-prose border-t border-gray-200 mt-8 py-10 px-4">
-      <header class="text-center max-w-2xl mx-auto mb-10">
-        <h3 class="mb-2 text-3xl text-emerald-800 text-balance">
-          Explora más sobre el Faedo
-        </h3>
-        <p class="text-balance text-emerald-800 font-medium leading-6">
-          Descubre más sobre el Faedo de Ciñera y su fascinante historia
-          natural.
-        </p>
-      </header>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Cards
-          ids={[
-            "haya-fagus",
-            "flora-fauna",
-            "geologia",
-            "patrimonio-minero",
-            "bocamina",
-          ]}
-          titleTag="h4"
-        />
-      </div>
-    </div>
+    <ExploreMore variant="explore" />
   </div>
 </Layout>

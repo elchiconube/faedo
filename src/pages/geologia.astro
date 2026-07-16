@@ -1,7 +1,7 @@
 ---
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageCaliza from "@assets/piedra-caliza.webp";
@@ -40,7 +40,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       <p class="lead">
         Hace unos <strong>400 millones de años</strong>, la actual comarca
         gordonesa constituía el fondo de un mar de poca profundidad, salpicado
-        de islas y ubicado en el noroeste de un gran continente,
+        de islas y ubicado en el noroeste de un gran continente,{' '}
         <strong>Gondwana</strong>, situado en el hemisferio sur de nuestro
         planeta.
       </p>
@@ -131,7 +131,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       <h3>Formación Pastora (310 millones de años)</h3>
       <p>
         Las rocas marinas se encuentran parcialmente cubiertas por otros
-        materiales geológicos: son los
+        materiales geológicos: son los{' '}
         <strong>conglomerados, arenas y lutitas con capas de carbón</strong> pertenecientes
         a la Formación Pastora, de edad <strong>Carbonífero Superior</strong> (sobre
         310 millones de años).
@@ -171,16 +171,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       <h3>Cómo las Hayas Crecen sobre Piedra</h3>
       <p>
         Las calizas se erosionan por disolución, de tal manera que su alteración <strong
-          >no genera suelo</strong
-        >
+          >no genera suelo</strong>{' '}
         excepto por el depósito de diversas arcillas que, en mayor o menor medida,
         se encuentran en las rocas calcáreas.
       </p>
       <p>
         Estas arcillas se acumulan en fisuras o pequeñas hondonadas favoreciendo
         el crecimiento de los pequeños hayucos. Tras las fases iniciales, <strong
-          >las raíces del árbol deben abrazar estas rocas</strong
-        >
+          >las raíces del árbol deben abrazar estas rocas</strong>{' '}
         y el haya se sostiene en equilibrio precario sobre ellas.
       </p>
       <p>
@@ -292,7 +290,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       <div class="bg-gray-50 border rounded-lg p-4 mt-6 text-sm">
         <p class="text-gray-600">
           <strong>Nota técnica:</strong> El contenido geológico está basado en el
-          trabajo de la geóloga
+          trabajo de la geóloga{' '}
           <strong>Esperanza Fernández Martínez</strong>, experta en la geología
           del Alto Bernesga. Para información más técnica y detallada, consulta
           publicaciones especializadas sobre la geología de la Cordillera
@@ -301,27 +299,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       </div>
     </div>
 
-    <div class="not-prose border-t border-gray-200 mt-8 py-10 px-4">
-      <header class="text-center max-w-2xl mx-auto mb-10">
-        <h3 class="mb-2 text-3xl text-emerald-800 text-balance">
-          Explora más sobre el Faedo
-        </h3>
-        <p class="text-balance text-emerald-800 font-medium leading-6">
-          Descubre más sobre el Faedo de Ciñera y su fascinante historia
-          natural.
-        </p>
-      </header>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Cards
-          ids={[
-            "haya-fagus",
-            "flora-fauna",
-            "patrimonio-minero",
-            "historia-naturaleza",
-          ]}
-          titleTag="h4"
-        />
-      </div>
-    </div>
+    <ExploreMore variant="explore" />
   </div>
 </Layout>

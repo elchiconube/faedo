@@ -6,6 +6,12 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://faedo.es',
+  redirects: {
+    '/patrimonio-minero': {
+      status: 301,
+      destination: '/pozo-ibarra',
+    },
+  },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',
@@ -42,6 +48,9 @@ export default defineConfig({
         }
         if (item.url.includes('/guia-visitantes') || item.url.includes('/historia-naturaleza')) {
           return { ...item, priority: 0.8, changefreq: 'monthly' };
+        }
+        if (item.url.includes('/pozo-ibarra')) {
+          return { ...item, priority: 0.8, changefreq: 'weekly' };
         }
         return { ...item, priority: 0.6, changefreq: 'monthly' };
       },

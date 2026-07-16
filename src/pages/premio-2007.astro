@@ -1,7 +1,7 @@
 ---
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageFaedo from "@assets/faedo-de-cinera.webp";
@@ -38,7 +38,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <div class="prose max-w-4xl mx-auto py-8 px-4">
       <p class="lead">
         En el año <strong>2007</strong>, el Faedo de Ciñera fue galardonado con
-        el premio al
+        el premio al{' '}
         <strong>"Bosque Mejor Cuidado de España"</strong> concedido por el <strong
           >Ministerio de Medio Ambiente</strong
         > y la ONG <strong>Bosques sin Fronteras</strong>. Un reconocimiento que
@@ -129,9 +129,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           <p class="text-sm mt-2 italic">
             "El faedo de Ciñera es un lugar mágico, un bosque de cuento de
             hadas, donde se respira paz. El máximo exponente de este refugio de
-            la naturaleza es <strong
-              ><a href="/haya-fagus">el Haya de Ciñera</a></strong
-            >, que con 6,32 m. de perímetro, una altura de 23 m. y 500 años de
+            la naturaleza es <a href="/haya-fagus">el Haya de Ciñera</a>, que con 6,32 m. de perímetro, una altura de 23 m. y 500 años de
             edad acoge bajo sus enormes ramas a todo aquel que se acerque a
             contemplarlo. Este singular entorno es cuidado con mimo por los
             habitantes de Ciñera quienes llevan realizando desde hace años
@@ -181,7 +179,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           <p class="text-sm">
             El jurado de los premios estimó conveniente hacer una <strong
               >mención especial</strong
-            > a
+            > a{' '}
             <strong>Dª. Margarita Burón Barrio</strong>, ingeniera forestal que
             trabajó durante 10 años por la conservación de los olmos en nuestro
             país y que falleció en el mes de mayo en un accidente de tráfico
@@ -193,7 +191,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         <p>
           <strong>Bosques sin Fronteras</strong>, precursora de la I Edición del
           Premio Árbol y Bosque del Año, es una organización sin ánimo de lucro
-          que desde 2002 está llevando a cabo el proyecto de
+          que desde 2002 está llevando a cabo el proyecto de{' '}
           <strong
             >Catalogación, conservación y divulgación de los árboles más
             singulares del territorio español</strong
@@ -361,7 +359,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           <strong>¿Quieres formar parte de esta historia?</strong> Visita el <a
             href="/ruta/faedo-de-cinera">Faedo de Ciñera</a
           >, respeta las <a href="/guia-visitantes">normas ambientales</a>, y
-          considera asistir al
+          considera asistir al{' '}
           <a href="/eventos">encuentro anual de julio</a>. El bosque es de
           todos, y entre todos lo cuidamos.
         </p>
@@ -375,22 +373,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       </p>
     </div>
 
-    <div class="not-prose border-t border-gray-200 mt-8 py-10 px-4">
-      <header class="text-center max-w-2xl mx-auto mb-10">
-        <h3 class="mb-2 text-3xl text-emerald-800 text-balance">
-          Explora más sobre el Faedo
-        </h3>
-        <p class="text-balance text-emerald-800 font-medium leading-6">
-          Descubre más sobre el Faedo de Ciñera y su fascinante historia
-          natural.
-        </p>
-      </header>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Cards
-          ids={["fagus", "flora-fauna", "geologia", "historia-naturaleza"]}
-          titleTag="h4"
-        />
-      </div>
-    </div>
+    <ExploreMore variant="explore" />
   </div>
 </Layout>

@@ -1,7 +1,7 @@
 ---
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Cards from "@components/Cards.astro";
+import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageFagus from "@assets/fagus.webp";
@@ -89,7 +89,7 @@ const landmarkSchema = {
           Estas características y la <a href="/haeda"
             >leyenda de "La bruja Haeda"</a
           > hacen que me encuentre incluida en una selección de 100 árboles, los
-          más singulares de España, en el libro
+          más singulares de España, en el libro{' '}
           <strong>"Árboles, leyendas vivas"</strong> editado por la Obra Social de
           Caja Madrid.
         </p>
@@ -116,7 +116,7 @@ const landmarkSchema = {
           > hacen de los huecos de nuestros troncos y ramas su hogar. Nuestros hayucos
           sirven de alimento a <strong>corzos y jabalíes</strong>
           durante el invierno. ¡Anímate a madrugar la próxima vez! Disfrutarás al
-          ver al
+          ver al{' '}
           <a href="/flora-fauna#desman">desmán de los pirineos</a> en su baño matutino.
         </p>
 
@@ -178,7 +178,7 @@ const landmarkSchema = {
       <div class="bg-gray-50 border rounded-lg p-4 mt-6 text-sm">
         <p class="text-gray-600">
           <strong>Cómo llegar:</strong> El Haya Fagus se encuentra en el corazón
-          del
+          del{' '}
           <a href="/ruta/faedo-de-cinera" class="underline"
             >recorrido del Faedo</a
           >, aproximadamente a 20 minutos caminando desde el inicio en Ciñera.
@@ -186,27 +186,6 @@ const landmarkSchema = {
       </div>
     </div>
 
-    <div class="not-prose border-t border-gray-200 mt-8 py-10 px-4">
-      <header class="text-center max-w-2xl mx-auto mb-10">
-        <h3 class="mb-2 text-3xl text-emerald-800 text-balance">
-          Explora más sobre el Faedo
-        </h3>
-        <p class="text-balance text-emerald-800 font-medium leading-6">
-          Descubre más sobre el Faedo de Ciñera y su fascinante historia
-          natural.
-        </p>
-      </header>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <Cards
-          ids={[
-            "flora-fauna",
-            "geologia",
-            "patrimonio-minero",
-            "historia-naturaleza",
-          ]}
-          titleTag="h4"
-        />
-      </div>
-    </div>
+    <ExploreMore variant="explore" />
   </div>
 </Layout>

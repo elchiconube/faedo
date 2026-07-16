@@ -2,18 +2,7 @@
 import Layout from "@components/Layout.astro";
 import Hero from "@components/Hero.astro";
 import SectionHeader from "@components/SectionHeader.astro";
-import ScrollRevealText from "@components/ScrollRevealText.astro";
-import Cards from "@components/Cards.astro";
-import MediaGrid from "@components/MediaGrid.astro";
-import { Image } from "astro:assets";
-import Guia from "@components/Guia.astro";
-
-import imageFaedo from "@assets/faedo-5.webp";
-import imageCamino from "@assets/camino.webp";
-
-import imageMarmitas from "@assets/marmitas.webp";
-import imageMarmitas2 from "@assets/marmitas-2.webp";
-import imageMarmitas3 from "@assets/marmitas-3.webp";
+import ExploreMore from "@components/ExploreMore.astro";
 ---
 
 <Layout
@@ -29,139 +18,53 @@ import imageMarmitas3 from "@assets/marmitas-3.webp";
 
   <section class="container py-10">
     <SectionHeader
-      title="Descubre el Faedo de Ciñera"
-      description="Un hayedo centenario en León con senderismo fácil ideal para familias."
+      title="Haz la ruta del Faedo"
+      description="Senderismo fácil de unos 4,5 km por un hayedo centenario en León, ideal para familias."
       icon="M221.28,34.75a64,64,0,0,0-90.49,0L60.69,104A15.9,15.9,0,0,0,56,115.31v73.38L26.34,218.34a8,8,0,0,0,11.32,11.32L67.32,200H140.7A15.92,15.92,0,0,0,152,195.32l0,0,69.23-70A64,64,0,0,0,221.28,34.75ZM142.07,46.06A48,48,0,0,1,211.79,112H155.33l34.35-34.34a8,8,0,0,0-11.32-11.32L120,124.69V67.87ZM72,115.35l32-31.67v57l-32,32ZM140.7,184H83.32l56-56h56.74Z"
     />
     <div class="prose prose-slate max-w-4xl mx-auto">
       <p>
-  El <strong>Faedo de Ciñera</strong> es un hayedo centenario situado en el
-  pueblo de Ciñera en el municipio de La Pola de Gordón, en la provincia de
-  <strong>León</strong>. Este bosque de hayas (<em>Fagus sylvatica</em>)
-  es uno de los más meridionales de Europa y está considerado uno de los
-  espacios naturales más bonitos de Castilla y León. La <a href="/ruta-del-faedo-de-ciñera">ruta del Faedo de Ciñera</a>
-  permite recorrer este hayedo mágico a través de un sendero circular de
-  4,5 kilómetros perfectamente acondicionado.
-</p>
-<p>
-  El sendero del Faedo de Ciñera discurre por pasarelas de madera elevadas
-  que protegen el ecosistema del bosque mientras permiten a los visitantes
-  adentrarse en el corazón del hayedo. Durante el recorrido descubrirás
-  <a href="https://faedo.es/haya-fagus/">hayas centenarias</a> de más de 500 años, arroyos cristalinos, lugares que
-  invitan a descansar, <a href="/marmitas-de-gigante">cascadas naturales</a> y restos del patrimonio minero
-  que caracteriza el valle de Gordón, como la <a href="/bocamina">Bocamina</a>.
-</p>
-<p>
-  La ruta del Faedo de Ciñera es especialmente popular en otoño, cuando el
-  bosque se transforma en un espectáculo de colores ocres, dorados y rojizos.
-  Sin embargo, es <a href="https://faedo.es/blog/mejor-epoca-visitar-faedo-de-cinera/">visible durante todo el año</a>: en primavera con el verde
-  brillante de las hojas nuevas, en verano ofreciendo sombra y frescor, y en
-  invierno con paisajes nevados de cuento. La facilidad del recorrido hace que
-  la visita sea <a href="https://faedo.es/blog/faedo-de-cinera-con-ninos/">perfecta para familias con niños</a> o personas que buscan una
-  escapada tranquila en la naturaleza.
-</p>
-<p>
-  Además de la ruta, podrás disfrutar del acogedor pueblo de Ciñera, donde
-  encontrarás <a href="https://faedo.es/guia-visitantes/">multitud de servicios</a> que harán que tu visita sea aún más
-  agradable.
-</p>
-
-    </div>
-  </section>
-
-  <MediaGrid />
-
-  <section class="py-20">
-    <ScrollRevealText
-      text="Un bosque mágico para toda la familia"
-      class="max-w-2xl text-center mx-auto px-4 mb-10 font-wittgenstein text-emerald-800"
-    />
-
-    <div class="prose prose-slate max-w-4xl mx-auto px-4">
+        La <strong>ruta del Faedo de Ciñera</strong> es un recorrido circular de
+        unos <strong>4,5 kilómetros</strong> por un hayedo centenario en el
+        valle de Gordón (León). El sendero está acondicionado con pasarelas de
+        madera, es de dificultad fácil y resulta ideal para familias, paseos
+        tranquilos y una primera toma de contacto con la montaña leonesa.
+      </p>
       <p>
-  El <strong>Faedo de Ciñera</strong> es uno de los hayedos más <strong>meridionales de Europa</strong> y, sin duda, uno de los más especiales de León. Se encuentra en el pequeño pueblo de <strong>Ciñera de Gordón</strong>, rodeado por las montañas del Alto Bernesga y cobijado por un silencio que solo rompen el viento y el agua.
-</p>
-
-<p>
-  Sus <a href="https://faedo.es/haya-fagus/">hayas centenarias</a> —algunas con más de <strong>500 años de vida</strong>— se alzan sobre las laderas formando una bóveda natural que filtra la luz del sol y crea un ambiente casi de cuento. El sendero que lo recorre, cómodo y bien acondicionado, invita a caminar despacio, a escuchar el <strong>murmullo del Arroyo Villar</strong> y a dejarse envolver por los tonos cambiantes del bosque y sus <a href="/marmitas-de-gigante">cascadas naturales</a>.
-</p>
-
-<p>
-  En <strong>otoño</strong>, el Faedo se tiñe de dorados, naranjas y rojizos, transformando el paisaje en una postal viva; sin embargo, es <a href="https://faedo.es/blog/mejor-epoca-visitar-faedo-de-cinera/">visitables todo el año</a>: en <strong>primavera</strong>, el verde joven de las hojas anuncia el renacer de la montaña. Cada paso es un descubrimiento: el olor a tierra húmeda, la textura del musgo, los rayos de sol que se cuelan entre las ramas… un escenario <a href="https://faedo.es/blog/faedo-de-cinera-con-ninos/">perfecto para disfrutar en familia</a>, con niños o en pareja, sin prisas.
-</p>
-
-      <div class="grid md:grid-cols-3 gap-4 my-8">
-        <Image
-          class="md:col-span-2 w-full h-full rounded-2xl object-cover object-center shadow-lg shadow-black/25"
-          src={imageFaedo}
-          alt="Pozo Ibarra"
-          loading="lazy"
-        />
-        <Image
-          class="w-full h-full rounded-2xl object-cover object-center shadow-lg shadow-black/25"
-          src={imageCamino}
-          alt="Pasarela de madera del Faedo de Ciñera"
-          loading="lazy"
-        />
-      </div>
-
-<p>
-  El bosque no solo es belleza: también es historia. A lo largo del camino, el visitante se encuentra con vestigios del <strong>pasado minero</strong> de Ciñera, testigos de un tiempo en que los mineros cruzaban este mismo sendero rumbo a las galerías. Hoy, esos lugares se han integrado en la naturaleza como parte de un <strong>patrimonio vivo</strong>, donde la memoria y el paisaje caminan juntos.
-</p>
-
-<p>
-  Entre las joyas naturales del recorrido destacan las <a href="/marmitas-de-gigante"><strong>Marmitas de Gigante</strong></a>, pozas y remolinos esculpidos por el agua a lo largo de miles de años. Estas formaciones circulares, creadas por la erosión del arroyo sobre la roca caliza, parecen enormes calderos donde la naturaleza ha dejado su firma.
-</p>
-
-
-      <div class="grid md:grid-cols-3 gap-4 my-8">
-        <Image
-          class="w-full h-full rounded-2xl object-cover object-center shadow-lg shadow-black/25"
-          src={imageMarmitas}
-          alt="Pozo Ibarra"
-          loading="lazy"
-        />
-        <Image
-          class="w-full h-full rounded-2xl object-cover object-center shadow-lg shadow-black/25"
-          src={imageMarmitas2}
-          alt="Pasarela de madera del Faedo de Ciñera"
-          loading="lazy"
-        />
-
-        <Image
-          class="w-full h-full rounded-2xl object-cover object-center shadow-lg shadow-black/25"
-          src={imageMarmitas3}
-          alt="Pasarela de madera del Faedo de Ciñera"
-          loading="lazy"
-        />
-      </div>
-
-<p>
-  Después de disfrutar del hayedo, el camino de regreso permite ascender
-  por la <strong>antigua escombrera</strong> hasta el <strong><a href="/patrimonio-minero">Pozo Ibarra</a></strong>, un espacio emblemático que forma parte de la historia minera de
-  Ciñera. Allí se alza el <strong>castillete del Pozo Ibarra</strong>, símbolo del esfuerzo y la memoria colectiva de un pueblo. Este conjunto
-  industrial fue declarado en 2011 <strong>Bien de Interés Cultural con categoría de Conjunto Etnográfico</strong>, reconocimiento que subraya su valor patrimonial y emocional para toda la comarca.
-</p>
-
-
-<p>
-  El <strong>Faedo de Ciñera</strong> es mucho más que una ruta de senderismo:
-  es un viaje sensorial por un <a href="https://faedo.es/blog/la-magia-del-faedo-de-cinera/">bosque mágico</a> donde naturaleza, historia y emoción
-  se entrelazan. Un lugar que no solo se visita, sino que se siente.
-</p>
-
+        Durante la caminata descubrirás <a
+          href="/haya-fagus"
+          title="El Haya Fagus, árbol centenario del Faedo de Ciñera"
+          >hayas centenarias</a
+        >, el murmullo del Arroyo Villar, las{' '}
+        <a
+          href="/blog/marmitas-de-gigante"
+          title="Marmitas de Gigante: pozas naturales del Arroyo Villar"
+          >Marmitas de Gigante</a>{' '}
+        y vestigios del patrimonio minero del valle, como la{' '}
+        <a
+          href="/blog/bocamina-menos-cincuenta"
+          title="Bocamina Menos 50, rehabilitada por los vecinos de Ciñera"
+          >Bocamina</a>{' '}
+        y el castillete del{' '}
+        <a
+          href="/pozo-ibarra"
+          title="Pozo Ibarra: historia del castillete BIC de 1930"
+          >Pozo Ibarra</a
+        >. Es especialmente espectacular en otoño, aunque se puede disfrutar
+        todo el año.
+      </p>
+      <p>
+        ¿Listo para planificar tu visita? Consulta la{' '}
+        <a
+          href="/ruta/faedo-de-cinera"
+          title="Guía completa de la ruta del Faedo: mapa, GPX y consejos"
+          >guía completa de la ruta</a
+        >: mapa interactivo, track GPX descargable, cómo llegar, tiempos
+        estimados y consejos prácticos para hacer el Faedo con seguridad y sin
+        prisas.
+      </p>
     </div>
   </section>
 
-  <section class="py-5 px-4" aria-labelledby="intro">
-    <SectionHeader
-      title="Planifica tu visita"
-      description="En esta sección encontrarás toda la información necesaria para planificar tu visita al Faedo de Ciñera."
-    />
-    <div class="grid sm:grid-cols-4 gap-4 mx-auto max-w-7xl">
-      <Cards
-        ids={["ruta", "historia-naturaleza", "guia-visitantes", "haeda"]}
-      />
-    </div>
-  </section>
+  <ExploreMore variant="planifica" />
 </Layout>

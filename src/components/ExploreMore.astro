@@ -1,0 +1,105 @@
+---
+import Cards from "@components/Cards.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import {
+  EXPLORE_CARD_IDS,
+  PLANIFICA_CARD_IDS,
+  RUTA_INTERES_CARD_IDS,
+} from "@data/cards";
+
+interface Props {
+  /**
+   * explore: bloque «Explora más» (páginas de contenido)
+   * planifica: bloque «Planifica tu visita» (home, faq, guía)
+   * interes: puntos de interés (página de la ruta)
+   * grid: solo la rejilla max-w-8xl (p. ej. 404 con título propio)
+   */
+  variant?: "explore" | "planifica" | "interes" | "grid";
+  ids?: string[];
+  titleTag?: "h2" | "h3" | "h4";
+  limit?: number;
+  title?: string;
+  description?: string;
+}
+
+const {
+  variant = "explore",
+  ids,
+  titleTag = "h4",
+  limit = 4,
+  title,
+  description,
+} = Astro.props;
+
+const defaultIds =
+  variant === "planifica"
+    ? [...PLANIFICA_CARD_IDS]
+    : variant === "interes"
+      ? [...RUTA_INTERES_CARD_IDS]
+      : [...EXPLORE_CARD_IDS];
+
+const cardIds = ids ?? defaultIds;
+const gridClass =
+  "grid sm:grid-cols-2 md:grid-cols-4 gap-4 mx-auto max-w-8xl";
+---
+
+{
+  variant === "explore" && (
+    <div class="not-prose border-t border-gray-200 mt-8 py-10 px-4">
+      <header class="text-center max-w-2xl mx-auto mb-10">
+        <h3 class="mb-2 text-3xl text-emerald-800 text-balance">
+          {title ?? "Explora más sobre el Faedo"}
+        </h3>
+        <p class="text-balance text-emerald-800 font-medium leading-6">
+          {description ??
+            "Descubre más sobre el Faedo de Ciñera y su fascinante historia natural."}
+        </p>
+      </header>
+      <div class={gridClass}>
+        <Cards ids={cardIds} titleTag={titleTag} limit={limit} />
+      </div>
+    </div>
+  )
+}
+
+{
+  variant === "planifica" && (
+    <section class="py-5 px-4" aria-labelledby="planifica-visita">
+      <SectionHeader
+        title={title ?? "Planifica tu visita"}
+        description={
+          description ??
+          "En esta sección encontrarás toda la información necesaria para planificar tu visita al Faedo de Ciñera."
+        }
+      />
+      <div class={gridClass}>
+        <Cards ids={cardIds} titleTag={titleTag} limit={limit} />
+      </div>
+    </section>
+  )
+}
+
+{
+  variant === "interes" && (
+    <div class="px-4 mb-10">
+      <SectionHeader
+        title={title ?? "Puntos de Interés Destacados"}
+        description={
+          description ??
+          "En esta sección encontrarás toda la información necesaria para planificar tu visita al Faedo de Ciñera."
+        }
+      />
+      <div class={gridClass}>
+        <Cards ids={cardIds} titleTag={titleTag} limit={limit} />
+      </div>
+    </div>
+  )
+}
+
+{
+  variant === "grid" && (
+    <div class={`${gridClass} px-4`}>
+      <Cards ids={cardIds} titleTag={titleTag} limit={limit} />
+    </div>
+  )
+}
