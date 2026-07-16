@@ -12,6 +12,8 @@ import GoogleSiteVerification from "./GoogleSiteVerification.astro";
 import { ClientRouter } from "astro:transitions";
 import "../styles/globals.css";
 import Guia from "./Guia.astro";
+import { Image } from "astro:assets";
+import logoFaedoDigital from "@assets/logo-faedo-digital.webp";
 
 const {
   title = SITE_TITLE,
@@ -39,6 +41,11 @@ const navItems = [
     href: "/ruta/faedo-de-cinera",
     label: "La ruta",
     title: "Guía completa de la ruta del Faedo: mapa, GPX y consejos",
+  },
+  {
+    href: "/pozo-ibarra",
+    label: "Pozo Ibarra",
+    title: "Historia y patrimonio del Pozo Ibarra en Ciñera",
   },
   {
     href: "/guia-visitantes",
@@ -288,15 +295,21 @@ const navItems = [
           </ul>
         </nav>
       </div>
-      <p class="text-center text-sm">
-        Sitio web creado por <a
-          href="https://faedodigital.com"
+      <div class="footer-faedo flex justify-center py-6">
+        <a
+          href="https://faedodigital.com/"
           target="_blank"
           rel="noopener noreferrer"
-          title="Faedo Digital, creador del sitio web"
-          >Faedo Digital</a
+          title="Sitio web creado y mantenido por Faedo Digital"
         >
-      </p>
+          <Image
+            src={logoFaedoDigital}
+            alt="Faedo Digital"
+            width={180}
+            height={45}
+          />
+        </a>
+      </div>
     </footer>
   </body>
 </html>
