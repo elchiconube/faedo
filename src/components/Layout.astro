@@ -9,6 +9,7 @@ import {
 } from "../consts";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
 import GoogleSiteVerification from "./GoogleSiteVerification.astro";
+import UmamiAnalytics from "./UmamiAnalytics.astro";
 import { ClientRouter } from "astro:transitions";
 import "../styles/globals.css";
 import Guia from "./Guia.astro";
@@ -113,6 +114,7 @@ const navItems = [
     <!-- DNS Prefetch para recursos externos -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://umami.faedodigital.com" />
 
     <link
       rel="alternate"
@@ -157,6 +159,7 @@ const navItems = [
     <slot name="head" />
     <GoogleSiteVerification />
     <GoogleAnalytics />
+    <UmamiAnalytics />
     <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col">
