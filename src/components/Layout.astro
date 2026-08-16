@@ -6,6 +6,7 @@ import {
   SITE_LOCALE,
   SITE_URL,
   SITE_IMAGE,
+  SITE_LOGO,
 } from "../consts";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
 import GoogleSiteVerification from "./GoogleSiteVerification.astro";
@@ -174,10 +175,18 @@ const navItems = [
       >
         <a
           href="/"
-          class="font-wittgenstein text-xl text-primary-700 no-underline"
+          class="font-wittgenstein text-xl text-primary-700 no-underline inline-flex items-center gap-2 py-2"
           title="Ir a la página de inicio del Faedo de Ciñera"
-          >{SITE_NAME}</a
         >
+          <img
+            src={SITE_LOGO}
+            alt=""
+            width="40"
+            height="40"
+            class="h-10 w-10"
+          />
+          <span>{SITE_NAME}</span>
+        </a>
 
         <!-- Menú desktop -->
         <ul class="hidden md:flex font-wittgenstein">
