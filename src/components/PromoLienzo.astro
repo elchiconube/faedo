@@ -1,0 +1,87 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ctaLabel?: string;
+  href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  badge?: string;
+}
+
+const {
+  title = "Lleva el Faedo a casa",
+  description = "Disfruta del Faedo de Ciñera en tu casa. Hemos hecho un lienzo precioso con el que podrás recordar tu visita. Quedará genial en el rincón que decidas ponerlo. Aprovecha la oferta que tenemos disponible por tiempo limitado.",
+  ctaLabel = "Ver oferta en la tienda",
+  href = "/tienda",
+  imageSrc = "/cuadros/cuado-faedo-1.jpeg",
+  imageAlt = "Mockup del cuadro El Faedo de Ciñera en lienzo",
+  badge = "Oferta especial",
+} = Astro.props;
+---
+
+<section
+  class="border-y border-primary-200 bg-primary-50 px-4 py-12 sm:py-16"
+  aria-labelledby="promo-lienzo-title"
+>
+  <div class="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-12">
+    <div class="overflow-hidden rounded-2xl">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        width="1236"
+        height="864"
+        class="h-64 w-full object-cover sm:h-80 lg:h-[22rem]"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div>
+      {
+        badge && (
+          <p class="mb-3 inline-flex rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary-800 shadow-sm">
+            {badge}
+          </p>
+        )
+      }
+      <h2
+        id="promo-lienzo-title"
+        class="mb-3 text-3xl text-emerald-800 text-balance"
+      >
+        {title}
+      </h2>
+      <p class="mb-7 max-w-xl leading-7 text-gray-700">
+        {description}
+      </p>
+      <a
+        href={href}
+        title={ctaLabel}
+        class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all hover:shadow-xl"
+      >
+        <span class="z-10 pr-2">{ctaLabel}</span>
+        <div
+          class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
+          aria-hidden="true"
+        >
+          <div class="mr-3.5 flex items-center justify-center">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-primary-50"
+            >
+              <path
+                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
