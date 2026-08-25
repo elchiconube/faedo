@@ -46,7 +46,7 @@ export default defineConfig({
         if (item.url.endsWith('/blog/')) {
           return { ...item, priority: 0.8, changefreq: 'weekly' };
         }
-        if (item.url.includes('/guia-visitantes') || item.url.includes('/historia-naturaleza')) {
+        if (item.url.includes('/guia-visitantes') || item.url.includes('/historia-naturaleza') || item.url.includes('/tienda')) {
           return { ...item, priority: 0.8, changefreq: 'monthly' };
         }
         if (item.url.includes('/pozo-ibarra')) {

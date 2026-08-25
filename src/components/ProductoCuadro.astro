@@ -1,0 +1,305 @@
+---
+export interface ProductVariant {
+  id: string;
+  label: string;
+  price: string;
+  compareAtPrice?: string;
+  paymentLink: string;
+}
+
+export interface ProductImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  id: string;
+  name: string;
+  description: string;
+  images: ProductImage[];
+  variants: ProductVariant[];
+}
+
+const { id, name, description, images, variants } = Astro.props as Props;
+
+if (variants.length === 0) {
+  throw new Error("ProductoCuadro requiere al menos una variante");
+}
+
+if (images.length === 0) {
+  throw new Error("ProductoCuadro requiere al menos una imagen");
+}
+
+const defaultVariant = variants[0];
+---
+
+<article class="grid items-start gap-8 lg:grid-cols-2 lg:gap-12" data-product>
+  <div data-product-slider>
+    <div class="relative">
+    <div class="w-full overflow-hidden" data-slider-viewport>
+      <div class="flex w-full transition-transform duration-300 ease-out" data-slider-track>
+        {
+          images.map((image, index) => (
+            <div class="w-full shrink-0 grow-0 basis-full" data-slider-slide>
+              <img
+                src={image.src}
+                alt={image.alt}
+                width="1236"
+                height="864"
+                class="h-72 w-full object-cover sm:h-96 lg:h-[28rem]"
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    {
+      images.length > 1 && (
+        <>
+          <button
+            type="button"
+            class="absolute top-1/2 left-2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-white/85 text-emerald-800 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+            data-slider-prev
+            aria-label="Imagen anterior"
+          >
+            <svg width="18" height="18" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path
+                d="M6.85355 3.14645C7.04882 3.34171 7.04882 3.65829 6.85355 3.85355L3.70711 7H12.5C12.7761 7 13 7.22386 13 7.5C13 7.77614 12.7761 8 12.5 8H3.70711L6.85355 11.1464C7.04882 11.3417 7.04882 11.6583 6.85355 11.8536C6.65829 12.0488 6.34171 12.0488 6.14645 11.8536L2.14645 7.85355C1.95118 7.65829 1.95118 7.34171 2.14645 7.14645L6.14645 3.14645C6.34171 2.95118 6.65829 2.95118 6.85355 3.14645Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="absolute top-1/2 right-2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-white/85 text-emerald-800 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+            data-slider-next
+            aria-label="Imagen siguiente"
+          >
+            <svg width="18" height="18" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path
+                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </>
+      )
+    }
+    </div>
+
+    {
+      images.length > 1 && (
+        <div class="mt-3 flex justify-center gap-2" role="tablist" aria-label="Imágenes del producto">
+          {images.map((_, index) => (
+            <button
+              type="button"
+              class="h-2.5 w-2.5 rounded-full bg-gray-300 aria-[current=true]:bg-primary-700"
+              data-slider-dot
+              aria-label={`Ver imagen ${index + 1}`}
+              aria-current={index === 0 ? "true" : undefined}
+            />
+          ))}
+        </div>
+      )
+    }
+  </div>
+
+  <div>
+    <h2 class="mb-4 text-3xl text-emerald-800 text-balance">{name}</h2>
+    <p class="mb-7 leading-7 text-gray-700">{description}</p>
+
+    <fieldset class="mb-6">
+      <legend class="mb-3 font-semibold text-gray-900">Elige el tamaño</legend>
+      <div class="flex flex-wrap gap-3">
+        {
+          variants.map((variant, index) => (
+            <div>
+              <input
+                class="peer sr-only"
+                type="radio"
+                id={`${id}-${variant.id}`}
+                name={`${id}-size`}
+                value={variant.id}
+                data-product-variant
+                data-price={variant.price}
+                data-compare-at-price={variant.compareAtPrice ?? ""}
+                data-payment-link={variant.paymentLink}
+                checked={index === 0}
+              />
+              <label
+                for={`${id}-${variant.id}`}
+                class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full border-2 border-gray-300 bg-white px-5 py-2 font-semibold text-gray-800 transition-colors hover:border-primary-500 peer-checked:border-primary-700 peer-checked:bg-primary-50 peer-checked:text-primary-800 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary-500"
+              >
+                {variant.label}
+              </label>
+            </div>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <div aria-live="polite" aria-atomic="true" class="mb-5">
+      <div class="flex flex-wrap items-end gap-x-3 gap-y-1">
+        {
+          defaultVariant.compareAtPrice && (
+            <p
+              class="mb-0 text-lg text-gray-500 line-through"
+              data-product-compare
+            >
+              {defaultVariant.compareAtPrice}
+            </p>
+          )
+        }
+        <p class="mb-0 text-3xl font-bold text-emerald-900" data-product-price>
+          {defaultVariant.price}
+        </p>
+        {
+          defaultVariant.compareAtPrice && (
+            <span
+              class="mb-1 inline-flex rounded-full bg-primary-100 px-2.5 py-0.5 text-sm font-semibold text-primary-800"
+              data-product-offer
+            >
+              Oferta
+            </span>
+          )
+        }
+      </div>
+      <p class="mb-0 text-sm text-gray-600">IVA incluido</p>
+    </div>
+
+    <a
+      href={defaultVariant.paymentLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative inline-flex min-h-14 w-full items-center justify-center rounded-full bg-neutral-950 py-2 pl-6 pr-16 font-wittgenstein font-medium text-white no-underline transition-shadow hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 sm:w-auto"
+      data-product-buy
+    >
+      <span class="z-10 pr-2">Comprar</span>
+      <span
+        class="absolute right-1 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
+        aria-hidden="true"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 15 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
+    </a>
+
+    <ul
+      class="mt-4 mb-0 flex flex-wrap items-center gap-2 sm:justify-start justify-center"
+      aria-label="Métodos de pago aceptados"
+    >
+      {
+        [
+          { src: "/pagos/visa.svg", alt: "Visa" },
+          { src: "/pagos/mastercard.svg", alt: "Mastercard" },
+          { src: "/pagos/amex.svg", alt: "American Express" },
+          { src: "/pagos/apple-pay.svg", alt: "Apple Pay" },
+          { src: "/pagos/google-pay.svg", alt: "Google Pay" },
+        ].map((method) => (
+          <li>
+            <img
+              src={method.src}
+              alt={method.alt}
+              width="38"
+              height="24"
+              class="h-8 w-auto border border-gray-200 bg-white"
+              loading="lazy"
+            />
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-3 mb-0 text-center text-sm leading-6 text-gray-600 sm:text-left">
+      Envío en 4-6 días laborables · Impresión bajo pedido · Pago seguro con
+      Stripe
+    </p>
+  </div>
+</article>
+
+<script>
+  function initializeProducts() {
+    document.querySelectorAll<HTMLElement>("[data-product]").forEach((product) => {
+      if (product.dataset.initialized === "true") return;
+
+      const price = product.querySelector<HTMLElement>("[data-product-price]");
+      const compareAt = product.querySelector<HTMLElement>("[data-product-compare]");
+      const offerBadge = product.querySelector<HTMLElement>("[data-product-offer]");
+      const buyLink = product.querySelector<HTMLAnchorElement>("[data-product-buy]");
+      const variants =
+        product.querySelectorAll<HTMLInputElement>("[data-product-variant]");
+
+      variants.forEach((variant) => {
+        variant.addEventListener("change", () => {
+          if (!variant.checked || !price || !buyLink) return;
+
+          price.textContent = variant.dataset.price ?? "";
+          buyLink.href = variant.dataset.paymentLink ?? "";
+
+          const previousPrice = variant.dataset.compareAtPrice ?? "";
+          if (compareAt) {
+            compareAt.textContent = previousPrice;
+            compareAt.hidden = previousPrice.length === 0;
+          }
+          if (offerBadge) {
+            offerBadge.hidden = previousPrice.length === 0;
+          }
+        });
+      });
+
+      const slider = product.querySelector<HTMLElement>("[data-product-slider]");
+      const viewport = slider?.querySelector<HTMLElement>("[data-slider-viewport]");
+      const track = slider?.querySelector<HTMLElement>("[data-slider-track]");
+      const slides = slider?.querySelectorAll("[data-slider-slide]") ?? [];
+      const dots = slider?.querySelectorAll<HTMLButtonElement>("[data-slider-dot]") ?? [];
+      const prev = slider?.querySelector<HTMLButtonElement>("[data-slider-prev]");
+      const next = slider?.querySelector<HTMLButtonElement>("[data-slider-next]");
+      let index = 0;
+
+      const goTo = (nextIndex: number) => {
+        if (!track || !viewport || slides.length === 0) return;
+
+        index = (nextIndex + slides.length) % slides.length;
+        const offset = viewport.clientWidth * index;
+        track.style.transform = `translateX(-${offset}px)`;
+        dots.forEach((dot, dotIndex) => {
+          if (dotIndex === index) {
+            dot.setAttribute("aria-current", "true");
+          } else {
+            dot.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      prev?.addEventListener("click", () => goTo(index - 1));
+      next?.addEventListener("click", () => goTo(index + 1));
+      dots.forEach((dot, dotIndex) => {
+        dot.addEventListener("click", () => goTo(dotIndex));
+      });
+      window.addEventListener("resize", () => goTo(index));
+
+      product.dataset.initialized = "true";
+    });
+  }
+
+  initializeProducts();
+  document.addEventListener("astro:page-load", initializeProducts);
+</script>

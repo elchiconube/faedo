@@ -1,0 +1,131 @@
+---
+import Layout from "@components/Layout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Seo from "@components/Seo.astro";
+import ExploreMore from "@components/ExploreMore.astro";
+import ProductoCuadro from "@components/ProductoCuadro.astro";
+
+const title = "Tienda del Faedo de Ciñera";
+const description =
+  "Compra el cuadro El Faedo de Ciñera impreso en lienzo y listo para colgar. Disponible en dos tamaños, con impresión bajo pedido.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const productName = "Cuadro El Faedo de Ciñera";
+const productDescription =
+  "Lleva un trozo de El Faedo de Ciñera a casa. Impreso en lienzo de algodón-poliéster de alta densidad sobre bastidor de madera certificada FSC, listo para colgar. Se imprime bajo pedido especialmente para ti, sin mínimos ni stock previo.";
+const productImage = "/cuadros/cuado-faedo-1.jpeg";
+
+const PAYMENT_LINK_40X80 =
+  "https://buy.stripe.com/14A6oJa2P1r36lc8blbwk01";
+const PAYMENT_LINK_70X100 =
+  "https://buy.stripe.com/6oUcN73Er6LneRI8blbwk02";
+
+const variants = [
+  {
+    id: "40x80",
+    label: "40×80 cm",
+    compareAtPrice: "89,95 €",
+    price: "74,95 €",
+    paymentLink: PAYMENT_LINK_40X80,
+  },
+  {
+    id: "70x100",
+    label: "70×100 cm",
+    compareAtPrice: "129,95 €",
+    price: "109,95 €",
+    paymentLink: PAYMENT_LINK_70X100,
+  },
+];
+
+const productImages = [
+  {
+    src: "/cuadros/cuado-faedo-1.jpeg",
+    alt: "Mockup del cuadro El Faedo de Ciñera en lienzo",
+  },
+  {
+    src: "/cuadros/cuado-faedo-2.jpeg",
+    alt: "Cuadro El Faedo de Ciñera colgado en una pared",
+  },
+  {
+    src: "/cuadros/cuado-faedo-3.jpeg",
+    alt: "Detalle del cuadro El Faedo de Ciñera impreso en lienzo",
+  },
+];
+
+const jsonLd = [
+  {
+    "@type": "Store",
+    "@id": `${canonical}#store`,
+    name: title,
+    description,
+    url: canonical,
+  },
+  {
+    "@type": "Product",
+    "@id": `${canonical}#cuadro-faedo`,
+    name: productName,
+    description: productDescription,
+    image: new URL(productImage, Astro.site).toString(),
+    brand: {
+      "@type": "Brand",
+      name: "Faedo Digital",
+    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "40×80 cm",
+        price: "74.95",
+        priceCurrency: "EUR",
+        url: `${canonical}#40x80`,
+        seller: { "@id": `${canonical}#store` },
+      },
+      {
+        "@type": "Offer",
+        name: "70×100 cm",
+        price: "109.95",
+        priceCurrency: "EUR",
+        url: `${canonical}#70x100`,
+        seller: { "@id": `${canonical}#store` },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <Seo
+    slot="head"
+    title={title}
+    description={description}
+    image={productImage}
+    url={canonical}
+    type="website"
+    jsonLd={jsonLd}
+  />
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Inicio" },
+      { href: "/tienda", label: "Tienda" },
+    ]}
+  />
+
+  <div>
+    <header class="text-center max-w-2xl mx-auto mt-5">
+      <h1 class="mb-2 text-emerald-800 text-balance">{title}</h1>
+      <p class="text-base font-medium text-emerald-700">
+        Un recuerdo del bosque, impreso especialmente para ti
+      </p>
+    </header>
+
+    <div class="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+      <ProductoCuadro
+        id="cuadro-faedo"
+        name={productName}
+        description={productDescription}
+        images={productImages}
+        variants={variants}
+      />
+    </div>
+
+    <ExploreMore variant="planifica" />
+  </div>
+</Layout>
