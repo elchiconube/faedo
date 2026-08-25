@@ -15,7 +15,7 @@ const productDescription =
 const productImage = "/cuadros/cuado-faedo-1.jpeg";
 
 const PAYMENT_LINK_40X80 =
-  "https://buy.stripe.com/14A6oJa2P1r36lc8blbwk01";
+  "https://buy.stripe.com/fZufZj4Iv1r3gZQcrBbwk03";
 const PAYMENT_LINK_70X100 =
   "https://buy.stripe.com/6oUcN73Er6LneRI8blbwk02";
 
@@ -23,15 +23,15 @@ const variants = [
   {
     id: "40x80",
     label: "40×80 cm",
-    compareAtPrice: "89,95 €",
-    price: "74,95 €",
+    compareAtPrice: "104,95 €",
+    price: "89,95 €",
     paymentLink: PAYMENT_LINK_40X80,
   },
   {
     id: "70x100",
     label: "70×100 cm",
-    compareAtPrice: "129,95 €",
-    price: "109,95 €",
+    compareAtPrice: "149,95 €",
+    price: "129,95 €",
     paymentLink: PAYMENT_LINK_70X100,
   },
 ];
@@ -73,7 +73,7 @@ const jsonLd = [
       {
         "@type": "Offer",
         name: "40×80 cm",
-        price: "74.95",
+        price: "89.95",
         priceCurrency: "EUR",
         url: `${canonical}#40x80`,
         seller: { "@id": `${canonical}#store` },
@@ -81,7 +81,7 @@ const jsonLd = [
       {
         "@type": "Offer",
         name: "70×100 cm",
-        price: "109.95",
+        price: "129.95",
         priceCurrency: "EUR",
         url: `${canonical}#70x100`,
         seller: { "@id": `${canonical}#store` },
