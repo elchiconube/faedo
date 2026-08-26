@@ -25,7 +25,12 @@ const {
   aria-labelledby="promo-lienzo-title"
 >
   <div class="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-12">
-    <a href={href} title={ctaLabel} class="block overflow-hidden rounded-2xl no-underline">
+    <a
+      href={href}
+      title={ctaLabel}
+      class="block overflow-hidden rounded-2xl no-underline"
+      data-umami-event="promo-lienzo-click"
+    >
       <img
         src={imageSrc}
         alt={imageAlt}
@@ -58,6 +63,7 @@ const {
         href={href}
         title={ctaLabel}
         class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all hover:shadow-xl"
+        data-umami-event="promo-lienzo-click"
       >
         <span class="z-10 pr-2">{ctaLabel}</span>
         <div
