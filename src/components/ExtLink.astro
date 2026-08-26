@@ -3,20 +3,23 @@ import { Icon } from "astro-icon/components";
 
 interface Props {
   href: string;
+  sponsored?: boolean;
+  eventName?: string;
 }
 
-const { href } = Astro.props;
+const { href, sponsored = false, eventName } = Astro.props;
 ---
 
 <a
   href={href}
   target="_blank"
-  rel="noopener noreferrer"
+  rel={sponsored ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+  data-umami-event={eventName}
   class="inline-flex items-baseline gap-0.5"
 >
   <slot />
   <Icon
-    name="ph:arrow-square-out"
+    name="ph:arrow-up-right"
     class="relative top-0.5 inline h-3.5 w-3.5 shrink-0"
     aria-hidden="true"
   />

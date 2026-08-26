@@ -6,7 +6,153 @@ import ExploreMore from "@components/ExploreMore.astro";
 import RutaBloque from "@components/RutaBloque.astro";
 import RutaInfoItem from "@components/RutaInfoItem.astro";
 import ExtLink from "@components/ExtLink.astro";
+import PreparaVisita from "@components/PreparaVisita.astro";
 import { Icon } from "astro-icon/components";
+
+const alojamientos = [
+  {
+    name: "Alojamiento Cuatro Estaciones",
+    href: "https://alojamientocuatroestaciones.com/",
+    address: "Calle Constitución, 77",
+    phones: ["987 697 779"],
+    recommended: true,
+  },
+  {
+    name: "Refugio Rural El Faedo",
+    address: "Paseo del Faedo, Ciñera",
+    phones: ["628 94 71 95"],
+  },
+  {
+    name: "Apartamento La Antigua",
+    address: "Ctra. de los Barrios, 2",
+    phones: ["618 752 775"],
+  },
+  {
+    name: "Apartamento VUT AguasBlancas",
+    address: "Travesía Severo Ochoa 2, 1A",
+    phones: ["676 147 029", "680 924 839"],
+  },
+  {
+    name: "Apartamento VUT La Plata",
+    address: "Travesía Severo Ochoa, 1 Entresuelo F",
+    phones: ["676 147 029", "680 924 839"],
+  },
+  {
+    name: "Alojamientos La Estacada",
+    address: "Calle Odón Alonso, 25",
+    phones: ["680 126 853"],
+  },
+  {
+    name: "Casa Alcor",
+    address: "Calle Luis Vives, 13 bajo",
+    phones: ["670 714 974"],
+  },
+  {
+    name: "Casa Cimalavilla",
+    address: "Tras las Casas, 32, Cabornera",
+    phones: ["658 150 370"],
+  },
+  {
+    name: "Casa Daniel",
+    address: "Calle Benito Gutiérrez Martínez, 23, Llombera",
+    phones: ["600 884 081"],
+  },
+  {
+    name: "Casa de Montaña Leonesa",
+    address: "C/ Salvador de Madariaga, 18, Santa Lucía de Gordón",
+    phones: ["678 745 458"],
+  },
+  {
+    name: "Casa Millar",
+    address: "Ctra. Asturias, 15, El Millar, Huergas de Gordón",
+    phones: ["607 779 001"],
+  },
+  {
+    name: "Casa Manuel y Ana María",
+    address: "Llombera",
+    phones: ["634 212 868", "648 774 845"],
+  },
+  {
+    name: "Casas de Manuel (Casa y Apartamento)",
+    address: "Los Barrios de Gordón",
+    phones: ["630 544 725", "606 315 432"],
+  },
+  {
+    name: "Casas Rurales Tarabico",
+    address: "Geras de Gordón",
+    phones: ["987 597 054"],
+  },
+  {
+    name: "Casas La Herrera I y II",
+    address: "Cabornera",
+    phones: ["987 236 368", "646 029 682"],
+  },
+  {
+    name: "Casa Rural El Corredor de Cabornera",
+    address: "Cabornera",
+    phones: ["647 852 197"],
+  },
+  {
+    name: "Casa Rural La Cuadra I",
+    address: "Cabornera de Gordón",
+    phones: ["647 852 198"],
+  },
+  {
+    name: "Casa Rural La Fábrica de Cabornera",
+    address: "Cabornera",
+    phones: ["677 586 704"],
+  },
+  {
+    name: "Camping Bosque de Gordón",
+    address: "Avda. Joaquín Blume, s/n",
+    phones: ["685 486 187"],
+  },
+  {
+    name: "Complejo Rural La Castañona / Buiza Rural Loft",
+    address: "Buiza",
+    phones: ["636 483 506"],
+  },
+  {
+    name: "CTR Ca Pepa – Ca La Juana – Bungalow Ca Pepa",
+    address: "Huergas de Gordón",
+    phones: ["987 588 395", "629 248 154"],
+  },
+  {
+    name: "Hostal Fontañán",
+    address: "Calle Constitución, 169",
+    phones: ["987 588 208"],
+  },
+  {
+    name: "Hotel Bicis & Vacas",
+    address: "Calle Capitán Lozano, 37",
+    phones: ["650 220 125"],
+  },
+  {
+    name: "La Villa / Villa en la Reserva de la Biosfera",
+    address: "Huergas de Gordón",
+    phones: ["695 447 625"],
+  },
+  {
+    name: "Pensión 15 de Mayo",
+    address: "Calle Azorín, 17",
+    phones: ["619 444 000", "689 945 761"],
+  },
+  {
+    name: "Pensión El Arenal",
+    address: "Paseo del Arenal, 4",
+    phones: ["987 588 303", "615 052 414"],
+  },
+  {
+    name: "Pensión El Rabocán",
+    address: "Ctra. LE-473 Km. 2, Beberino",
+    phones: ["640 706 621"],
+  },
+  {
+    name: "Zona de Autocaravanas y Campers La Pola de Gordón",
+    address: "Paseo del Arenal, 27",
+    phones: ["987 588 003"],
+  },
+];
 ---
 
 <Layout
@@ -31,6 +177,7 @@ import { Icon } from "astro-icon/components";
         Guía para visitantes del Faedo de Ciñera
       </h1>
     </header>
+    <PreparaVisita class="mt-6 mb-2" />
     <div class="prose max-w-4xl mx-auto py-8 px-4">
       <p class="lead">
         Esta guía te ayudará a planificar tu visita al <strong
@@ -253,15 +400,66 @@ import { Icon } from "astro-icon/components";
             icon="ph:cloud-rain"
             text="Consultar el tiempo antes de ir"
           />
-          <RutaInfoItem icon="ph:drop" text="Agua suficiente" />
-          <RutaInfoItem
-            icon="ph:boot"
-            text="Calzado cómodo antideslizante"
-          />
-          <RutaInfoItem icon="ph:hoodie" text="Ropa de abrigo ligera" />
+          <RutaInfoItem icon="ph:drop">
+            Agua suficiente en un{" "}
+            <ExtLink
+              href="https://link.amazon/B0dQWtyO5"
+              sponsored
+              eventName="affiliate-termo-click"
+            >
+              termo reutilizable
+            </ExtLink>
+          </RutaInfoItem>
+          <RutaInfoItem icon="ph:boot">
+            <ExtLink
+              href="https://link.amazon/B02WmzUop"
+              sponsored
+              eventName="affiliate-zapatillas-click"
+            >
+              Zapatillas de trekking
+            </ExtLink>{" "}
+            con buen agarre
+          </RutaInfoItem>
+          <RutaInfoItem icon="ph:person-simple-hike">
+            <ExtLink
+              href="https://link.amazon/B03B2KeJE"
+              sponsored
+              eventName="affiliate-bastones-click"
+            >
+              Bastones de senderismo
+            </ExtLink>{" "}
+            para las Hoces
+          </RutaInfoItem>
+          <RutaInfoItem icon="ph:hoodie">
+            Ropa de abrigo y{" "}
+            <ExtLink
+              href="https://link.amazon/B03alKd5T"
+              sponsored
+              eventName="affiliate-chubasquero-click"
+            >
+              chubasquero ligero
+            </ExtLink>
+          </RutaInfoItem>
           <RutaInfoItem icon="ph:cookie" text="Snack o fruta para la ruta" />
-          <RutaInfoItem icon="ph:device-mobile" text="Móvil con batería" />
-          <RutaInfoItem icon="ph:camera" text="Cámara de fotos" />
+          <RutaInfoItem icon="ph:device-mobile">
+            Móvil con{" "}
+            <ExtLink
+              href="https://link.amazon/B0gvjJU6o"
+              sponsored
+              eventName="affiliate-bateria-click"
+            >
+              batería externa
+            </ExtLink>
+          </RutaInfoItem>
+          <RutaInfoItem icon="ph:camera">
+            <ExtLink
+              href="https://link.amazon/B0hNgbL9z"
+              sponsored
+              eventName="affiliate-camara-click"
+            >
+              Cámara de fotos
+            </ExtLink>
+          </RutaInfoItem>
           <RutaInfoItem icon="ph:map-trifold">
             <strong>Track GPX descargado</strong><br />
             <a href="/gpx/faedo.gpx">Descargar</a>
@@ -333,7 +531,7 @@ import { Icon } from "astro-icon/components";
           varios días o vienen en furgoneta o autocaravana.
         </p>
 
-        <div class="mt-6 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6">
+        <div class="my-6 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6">
           <RutaInfoItem
             icon="ph:storefront"
             title="Bares y restaurantes"
@@ -404,162 +602,45 @@ import { Icon } from "astro-icon/components";
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="Nombre">Refugio Rural El Faedo</td>
-              <td data-label="Dirección">Paseo del Faedo, Ciñera</td>
-              <td data-label="Contacto">📱 628 94 71 95</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Alojamiento Cuatro Estaciones</td>
-              <td data-label="Dirección">Calle Constitución, 77</td>
-              <td data-label="Contacto">☎️ 987 697 779</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Apartamento La Antigua</td>
-              <td data-label="Dirección">Ctra. de los Barrios, 2</td>
-              <td data-label="Contacto">📱 618 752 775</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Apartamento VUT AguasBlancas</td>
-              <td data-label="Dirección">Travesía Severo Ochoa 2, 1A</td>
-              <td data-label="Contacto">📱 676 147 029 / 680 924 839</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Apartamento VUT La Plata</td>
-              <td data-label="Dirección"
-                >Travesía Severo Ochoa, 1 Entresuelo F</td
-              >
-              <td data-label="Contacto">📱 676 147 029 / 680 924 839</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Alojamientos La Estacada</td>
-              <td data-label="Dirección">Calle Odón Alonso, 25</td>
-              <td data-label="Contacto">📱 680 126 853</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Alcor</td>
-              <td data-label="Dirección">Calle Luis Vives, 13 bajo</td>
-              <td data-label="Contacto">📱 670 714 974</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Cimalavilla</td>
-              <td data-label="Dirección">Tras las Casas, 32, Cabornera</td>
-              <td data-label="Contacto">📱 658 150 370</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Daniel</td>
-              <td data-label="Dirección"
-                >Calle Benito Gutiérrez Martínez, 23, Llombera</td
-              >
-              <td data-label="Contacto">📱 600 884 081</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa de Montaña Leonesa</td>
-              <td data-label="Dirección"
-                >C/ Salvador de Madariaga, 18, Santa Lucía de Gordón</td
-              >
-              <td data-label="Contacto">📱 678 745 458</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Millar</td>
-              <td data-label="Dirección"
-                >Ctra. Asturias, 15, El Millar, Huergas de Gordón</td
-              >
-              <td data-label="Contacto">📱 607 779 001</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Manuel y Ana María</td>
-              <td data-label="Dirección">Llombera</td>
-              <td data-label="Contacto">📱 634 212 868 / 648 774 845</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casas de Manuel (Casa y Apartamento)</td>
-              <td data-label="Dirección">Los Barrios de Gordón</td>
-              <td data-label="Contacto">📱 630 544 725 / 606 315 432</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casas Rurales Tarabico</td>
-              <td data-label="Dirección">Geras de Gordón</td>
-              <td data-label="Contacto">☎️ 987 597 054</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casas La Herrera I y II</td>
-              <td data-label="Dirección">Cabornera</td>
-              <td data-label="Contacto">☎️ 987 236 368 / 📱 646 029 682</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Rural El Corredor de Cabornera</td>
-              <td data-label="Dirección">Cabornera</td>
-              <td data-label="Contacto">📱 647 852 197</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Rural La Cuadra I</td>
-              <td data-label="Dirección">Cabornera de Gordón</td>
-              <td data-label="Contacto">📱 647 852 198</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Casa Rural La Fábrica de Cabornera</td>
-              <td data-label="Dirección">Cabornera</td>
-              <td data-label="Contacto">📱 677 586 704</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Camping Bosque de Gordón</td>
-              <td data-label="Dirección">Avda. Joaquín Blume, s/n</td>
-              <td data-label="Contacto">📱 685 486 187</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre"
-                >Complejo Rural La Castañona / Buiza Rural Loft</td
-              >
-              <td data-label="Dirección">Buiza</td>
-              <td data-label="Contacto">📱 636 483 506</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre"
-                >CTR Ca Pepa – Ca La Juana – Bungalow Ca Pepa</td
-              >
-              <td data-label="Dirección">Huergas de Gordón</td>
-              <td data-label="Contacto">☎️ 987 588 395 / 📱 629 248 154</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Hostal Fontañán</td>
-              <td data-label="Dirección">Calle Constitución, 169</td>
-              <td data-label="Contacto">☎️ 987 588 208</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Hotel Bicis & Vacas</td>
-              <td data-label="Dirección">Calle Capitán Lozano, 37</td>
-              <td data-label="Contacto">📱 650 220 125</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre"
-                >La Villa / Villa en la Reserva de la Biosfera</td
-              >
-              <td data-label="Dirección">Huergas de Gordón</td>
-              <td data-label="Contacto">📱 695 447 625</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Pensión 15 de Mayo</td>
-              <td data-label="Dirección">Calle Azorín, 17</td>
-              <td data-label="Contacto">📱 619 444 000 / 689 945 761</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Pensión El Arenal</td>
-              <td data-label="Dirección">Paseo del Arenal, 4</td>
-              <td data-label="Contacto">☎️ 987 588 303 / 📱 615 052 414</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre">Pensión El Rabocán</td>
-              <td data-label="Dirección">Ctra. LE-473 Km. 2, Beberino</td>
-              <td data-label="Contacto">📱 640 706 621</td>
-            </tr>
-            <tr>
-              <td data-label="Nombre"
-                >Zona de Autocaravanas y Campers La Pola de Gordón</td
-              >
-              <td data-label="Dirección">Paseo del Arenal, 27</td>
-              <td data-label="Contacto">☎️ 987 588 003</td>
-            </tr>
+            {
+              alojamientos.map((alojamiento) => (
+                <tr class:list={[alojamiento.recommended && "alojamiento-recomendado"]}>
+                  <td data-label="Nombre">
+                    <span class="alojamiento-nombre">
+                      {alojamiento.href ? (
+                        <ExtLink href={alojamiento.href}>{alojamiento.name}</ExtLink>
+                      ) : (
+                        alojamiento.name
+                      )}
+                      {alojamiento.recommended && (
+                        <span class="recomendado-badge">Recomendado</span>
+                      )}
+                    </span>
+                  </td>
+                  <td data-label="Dirección">{alojamiento.address}</td>
+                  <td data-label="Contacto">
+                    <span class="alojamiento-contactos">
+                      {alojamiento.phones.map((phone, index) => (
+                        <>
+                          {index > 0 && <span class="contacto-sep"> / </span>}
+                          <a
+                            class="alojamiento-telefono"
+                            href={`tel:${phone.replace(/\s/g, "")}`}
+                          >
+                            <Icon
+                              name="ph:phone"
+                              class="h-4 w-4 shrink-0"
+                              aria-hidden="true"
+                            />
+                            <span>{phone}</span>
+                          </a>
+                        </>
+                      ))}
+                    </span>
+                  </td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
 
@@ -632,8 +713,58 @@ import { Icon } from "astro-icon/components";
     background-color: #f9f9f9;
   }
 
+  .alojamientos-table tr.alojamiento-recomendado {
+    background-color: #ecfdf5;
+  }
+
+  .alojamientos-table tr.alojamiento-recomendado:hover,
   .alojamientos-table tr:hover {
     background-color: #e0f2ef;
+  }
+
+  .alojamiento-nombre {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .recomendado-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background-color: #006d5b;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 0.15rem 0.55rem;
+    text-transform: uppercase;
+  }
+
+  .alojamiento-contactos {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .alojamiento-telefono {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: none;
+    font-weight: 500;
+  }
+
+  .alojamiento-telefono:hover {
+    color: #006d5b;
+  }
+
+  .contacto-sep {
+    color: #9ca3af;
   }
 
   .alojamientos-table td {
@@ -690,8 +821,7 @@ import { Icon } from "astro-icon/components";
     padding: 1rem;
     text-align: left;
     transition:
-      transform 0.3s,
-      box-shadow 0.3s;
+      transform 0.3s;
     font-size: 0.9rem;
     background: #f0fdf9;
     margin-bottom: 1rem;
@@ -699,7 +829,6 @@ import { Icon } from "astro-icon/components";
 
   .card:hover {
     transform: none;
-    box-shadow: none;
   }
 
   .icon {
@@ -750,6 +879,7 @@ import { Icon } from "astro-icon/components";
 
   .estacion-card .icon {
     justify-content: center;
+    margin-bottom: 0.85rem;
   }
 
   .estacion-card .icon :global(svg) {
@@ -759,5 +889,8 @@ import { Icon } from "astro-icon/components";
 
   .estacion-card h3 {
     text-align: center;
+    font-size: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
   }
 </style>

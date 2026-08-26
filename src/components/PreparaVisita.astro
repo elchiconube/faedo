@@ -1,0 +1,57 @@
+---
+import ExtLink from "@components/ExtLink.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<aside
+  class:list={["max-w-4xl mx-auto px-4", className]}
+  aria-labelledby="prepara-visita"
+>
+  <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6">
+    <div class="mb-3 flex items-center gap-3">
+      <span class="text-emerald-700">
+        <Icon
+          name="ph:person-simple-hike"
+          class="h-7 w-7"
+          aria-hidden="true"
+        />
+      </span>
+      <h2 id="prepara-visita" class="m-0 text-2xl text-emerald-800">
+        Prepara tu visita al Faedo
+      </h2>
+    </div>
+    <p class="m-0 leading-7 text-gray-700">
+      El suelo del hayedo y las pasarelas pueden estar húmedos y resbaladizos, por
+      lo que conviene llevar unas{' '}
+      <ExtLink
+        href="https://link.amazon/B02WmzUop"
+        sponsored
+        eventName="affiliate-zapatillas-click"
+      >
+        zapatillas de trekking con buen agarre
+      </ExtLink>. Si vas a continuar hacia las Hoces del Villar, donde el camino
+      se estrecha y se vuelve más irregular, unos{' '}
+      <ExtLink
+        href="https://link.amazon/B03B2KeJE"
+        sponsored
+        eventName="affiliate-bastones-click"
+      >
+        bastones de senderismo
+      </ExtLink> pueden darte un apoyo extra. Además, no hay fuentes de agua
+      potable durante el recorrido: lleva tu propia agua en un{' '}
+      <ExtLink
+        href="https://link.amazon/B0dQWtyO5"
+        sponsored
+        eventName="affiliate-termo-click"
+      >
+        termo reutilizable
+      </ExtLink> y no dependas del arroyo para hidratarte.
+    </p>
+  </div>
+</aside>

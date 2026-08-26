@@ -15,6 +15,7 @@ import { ClientRouter } from "astro:transitions";
 import { Icon } from "astro-icon/components";
 import "../styles/globals.css";
 import Guia from "./Guia.astro";
+import GoogleReviews from "./GoogleReviews.astro";
 import { Image } from "astro:assets";
 import logoFaedoDigital from "@assets/logo-faedo-digital.webp";
 
@@ -274,6 +275,7 @@ const navItems = [
       <slot />
     </main>
 
+    <GoogleReviews />
     <Guia />
 
     <footer class="border-t border-gray-100" transition:persist>

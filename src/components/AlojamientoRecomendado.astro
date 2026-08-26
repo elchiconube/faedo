@@ -1,0 +1,110 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeader from "@components/SectionHeader.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  badge?: string;
+  location?: string;
+  ctaLabel?: string;
+}
+
+const {
+  title = "Alojamiento Cuatro Estaciones",
+  description = "Descansa en plena Reserva de la Biosfera del Alto Bernesga y disfruta de la tranquilidad, las montañas y las actividades al aire libre de La Pola de Gordón.",
+  href = "https://alojamientocuatroestaciones.com/",
+  imageSrc = "/alojamientos/cuatro-estaciones.webp",
+  imageAlt = "Alojamiento Cuatro Estaciones en La Pola de Gordón",
+  badge = "Recomendamos",
+  location = "La Pola de Gordón, León",
+  ctaLabel = "Reservar",
+} = Astro.props;
+---
+
+<section class="my-6 px-4 py-12 sm:py-16" aria-label="Dónde dormir">
+  <div class="mx-auto max-w-6xl">
+    <SectionHeader
+      title="Dónde dormir"
+      description="Seguramente necesites alojarte para conocer mejor todo lo que nuestra comarca puede ofrecerte, te recomendamos estos alojamientos."
+      icon="ph:bed"
+    />
+
+    <div
+      class="grid overflow-hidden rounded-3xl border border-primary-200 bg-white lg:grid-cols-2"
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={ctaLabel}
+        class="group block min-h-64 overflow-hidden no-underline sm:min-h-80 lg:min-h-[24rem]"
+        data-umami-event="alojamiento-recomendado-click"
+      >
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          width="1200"
+          height="800"
+          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+
+      <div class="flex flex-col justify-center bg-primary-50 p-7 sm:p-10 lg:p-12">
+        {
+          badge && (
+            <p class="mb-4 w-fit rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary-800">
+              {badge}
+            </p>
+          )
+        }
+
+        <h3 class="mb-3 text-3xl text-emerald-800 text-balance sm:text-4xl">
+          {title}
+        </h3>
+
+        {
+          location && (
+            <p class="mb-5 flex items-center gap-2 font-medium text-primary-800">
+              <Icon name="ph:map-pin" class="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span>{location}</span>
+            </p>
+          )
+        }
+
+        <p class="mb-7 max-w-xl leading-7 text-gray-700">
+          {description}
+        </p>
+
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={ctaLabel}
+          class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] w-fit items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all"
+          data-umami-event="alojamiento-recomendado-click"
+        >
+          <span class="z-10 pr-2">{ctaLabel}</span>
+          <span
+            class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
+            aria-hidden="true"
+          >
+            <span class="mr-3.5 flex items-center justify-center">
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-5 w-5 text-primary-50"
+                aria-hidden="true"
+              />
+            </span>
+          </span>
+          <span class="sr-only"> (se abre en una pestaña nueva)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

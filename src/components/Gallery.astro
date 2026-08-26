@@ -67,7 +67,7 @@ const gallery = [
       {gallery.map((image: any, index: number) => (
         <button 
           data-image-index={index}
-          class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-gray-100 hover:shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-emerald-500"
+          class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-gray-100 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-emerald-500"
           aria-label={`Ver imagen ${index + 1} de ${gallery.length}: ${image.alt || 'Faedo de Ciñera'}`}
           type="button"
         >
@@ -131,7 +131,7 @@ const gallery = [
         id="lightbox-image" 
         src="" 
         alt="" 
-        class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" 
+        class="max-w-full max-h-full object-contain rounded-lg" 
       />
     </div>
 

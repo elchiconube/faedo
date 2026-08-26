@@ -1,0 +1,272 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionHeader from "@components/SectionHeader.astro";
+
+const googleMapsUrl = "https://maps.app.goo.gl/6QfokhH8pfW8JwMx8";
+
+const reviews = [
+  {
+    name: "Pere Jornet",
+    details: "Local Guide · 68 reseñas · 139 fotos",
+    date: "Hace 2 meses",
+    text: "Espectacular paseo sencillo, casi casi llano, con unos 6 km entre ida y vuelta. Perfecto para todas las edades y condiciones físicas.",
+  },
+  {
+    name: "Nuria GD",
+    details: "Local Guide · 1055 reseñas · 11.516 fotos",
+    date: "Hace 9 meses",
+    text: "El hayedo es increíble, con hayas centenarias, pasarelas de madera para proteger el suelo y una atmósfera casi de cuento. A principios de noviembre los colores estaban en plena explosión: verdes, rojos, dorados, ocres…",
+  },
+  {
+    name: "Gonzalo Suárez",
+    details: "Local Guide · 558 reseñas · 1798 fotos",
+    date: "Hace 2 años",
+    text: "Lugar increíble, muy bien cuidado, un bosque que merece mucho la pena visitar. Yo, de hecho, lo pondría como un imprescindible de la provincia de León. La ruta para llegar hasta el bosque es muy sencilla…",
+  },
+  {
+    name: "Mika Kunze",
+    details: "Local Guide · 16 reseñas · 1 foto",
+    date: "Hace 10 meses",
+    text: "Tuve la suerte de haber viajado ya por muchos rincones del mundo, pero el Faedo de Ciñera me dejó realmente maravillado. En medio de una región tan poco conocida turísticamente, se revela como una auténtica joya…",
+  },
+  {
+    name: "Paula",
+    details: "Local Guide · 85 reseñas · 284 fotos",
+    date: "Hace 3 años",
+    text: "Es un lugar impresionante, muy recomendable por su belleza natural. El sendero es muy fácil, por lo que el camino se hace muy disfrutable. Los riachuelos de agua fría que bajan de la montaña son perfectos…",
+  },
+  {
+    name: "MARIA ANGELES RODRIGUEZ DIAZ",
+    details: "Local Guide · 428 reseñas · 2695 fotos",
+    date: "Hace 9 meses",
+    text: "Llegar al Hayedo y contemplar esa belleza hace que te olvides de la subida. El camino estaba muy embarrado y resbaladizo por la lluvia y las hojas. El regreso fue más cómodo y fácil.",
+  },
+  {
+    name: "minivi94",
+    details: "Local Guide · 147 reseñas · 240 fotos",
+    date: "Hace 8 meses",
+    text: "Bonita ruta, cortita y semicircular. El mejor momento para visitarla es otoño, pero si ha llovido está todo embarrado a más no poder, así que asegúrate de coger unas buenas botas que no te importe manchar.",
+  },
+  {
+    name: "Marcos A.",
+    details: "Local Guide · 537 reseñas · 1403 fotos",
+    date: "Hace un año",
+    text: "Hayedo con mucho encanto, a 30 minutos al norte de la capital de León. Muy pequeño, apenas 200 metros de hayedo, pero de una belleza comprimida. Se accede desde la misma plaza de Ciñera…",
+  },
+  {
+    name: "J.C.",
+    details: "Local Guide · 286 reseñas · 1533 fotos",
+    date: "Hace 2 años",
+    text: "Pequeño pero precioso hayedo, totalmente acondicionado con pasarelas de madera para la visita. En fines de semana con buen clima suele estar muy concurrido.",
+  },
+  {
+    name: "Hellforo Tricéforo Érebo",
+    details: "Local Guide · 8 reseñas · 13 fotos",
+    date: "Hace un mes",
+    text: "Muy bonito y muy cuidado. Da gusto pasear por el bosque, siempre, sea cual sea y sea cuando sea. En el caso del Faedo de Ciñera, es un paseo por el hayedo sobre una plataforma…",
+  },
+];
+
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+---
+
+<section
+  class="border-y border-primary-200 bg-primary-50/70 py-12 sm:py-16"
+  aria-label="Reseñas de Google Maps"
+  data-google-reviews
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="relative mb-8 px-4">
+      <div class="mb-3 flex items-center justify-center gap-2.5">
+        <svg
+          class="h-7 w-7 shrink-0"
+          viewBox="0 0 24 24"
+          role="img"
+          aria-label="Google"
+        >
+          <path fill="#4285F4" d="M21.6 12.227c0-.709-.064-1.391-.182-2.045H12v3.868h5.382a4.6 4.6 0 0 1-1.996 3.018v2.51h3.232c1.891-1.74 2.982-4.304 2.982-7.35Z" />
+          <path fill="#34A853" d="M12 22c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.04.955-3.386.955-2.605 0-4.81-1.76-5.6-4.123H3.06v2.59A9.997 9.997 0 0 0 12 22Z" />
+          <path fill="#FBBC05" d="M6.4 13.9A6.013 6.013 0 0 1 6.086 12c0-.659.114-1.3.314-1.9V7.51H3.06A9.997 9.997 0 0 0 2 12c0 1.614.386 3.141 1.06 4.49L6.4 13.9Z" />
+          <path fill="#EA4335" d="M12 5.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C16.96 2.99 14.695 2 12 2a9.997 9.997 0 0 0-8.94 5.51L6.4 10.1c.79-2.364 2.995-4.123 5.6-4.123Z" />
+        </svg>
+        <span class="text-sm font-semibold tracking-wide text-gray-700">Google Maps</span>
+      </div>
+
+      <SectionHeader title="Opiniones del Faedo de Ciñera" />
+
+      <p class="mb-0 flex items-center justify-center gap-1.5 text-balance text-emerald-800 font-medium leading-6">
+        <span>Más de 2.700 reseñas verificadas</span>
+        <svg
+          class="h-5 w-5 shrink-0"
+          viewBox="0 0 22 22"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle cx="11" cy="11" r="8.25" fill="#fff" />
+          <path
+            fill="#1D9BF0"
+            d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.442-1.218-.896-1.682-.454-.464-1.039-.775-1.673-.905-.633-.131-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.44-1.685.896-.462.455-.773 1.04-.904 1.675-.13.634-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.443 1.22.904 1.675.463.457 1.048.771 1.687.904.635.13 1.29.081 1.896-.141.273.586.704 1.086 1.244 1.441.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.907-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
+          />
+        </svg>
+      </p>
+
+      <div
+        class="mt-5 flex justify-center gap-2 sm:absolute sm:top-0 sm:right-4 sm:mt-0"
+        data-review-controls
+        hidden
+      >
+        <button
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary-300 bg-white text-primary-800 transition hover:border-primary-600 hover:bg-primary-100 disabled:cursor-not-allowed disabled:opacity-40"
+          aria-label="Ver reseñas anteriores"
+          data-review-prev
+        >
+          <Icon name="ph:arrow-left" class="h-5 w-5" aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary-300 bg-white text-primary-800 transition hover:border-primary-600 hover:bg-primary-100 disabled:cursor-not-allowed disabled:opacity-40"
+          aria-label="Ver más reseñas"
+          data-review-next
+        >
+          <Icon name="ph:arrow-right" class="h-5 w-5" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+
+    <ul
+      class="reviews-track flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-4 pb-4 scroll-px-4 sm:gap-5"
+      aria-label="Reseñas de visitantes publicadas en Google Maps"
+      tabindex="0"
+      data-review-track
+    >
+      {
+        reviews.map((review) => (
+          <li class="flex w-[min(82vw,20rem)] shrink-0 snap-start flex-col rounded-2xl border border-gray-200 bg-white p-5 sm:w-[22rem] sm:p-6">
+            <div class="mb-4 flex items-start gap-3">
+              <span
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800"
+                aria-hidden="true"
+              >
+                {initials(review.name)}
+              </span>
+              <div class="min-w-0">
+                <h3 class="truncate text-base font-semibold text-gray-950">{review.name}</h3>
+                <p class="mt-0.5 truncate text-xs text-gray-500">{review.details}</p>
+              </div>
+            </div>
+
+            <div class="mb-3 flex items-center gap-2">
+              <span class="flex gap-0.5 text-amber-500" aria-label="5 de 5 estrellas">
+                {Array.from({ length: 5 }, () => (
+                  <Icon name="ph:star-fill" class="h-4 w-4" aria-hidden="true" />
+                ))}
+              </span>
+              <span class="text-xs text-gray-500">{review.date}</span>
+            </div>
+
+            <blockquote class="m-0 flex-1 border-0 p-0 text-[0.95rem] leading-6 text-gray-700">
+              “{review.text}”
+            </blockquote>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-7 px-4 text-center">
+      <a
+        href={googleMapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] max-w-full items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all"
+        data-umami-event="google-reviews-cta-click"
+      >
+        <span class="z-10 pr-2">Ver todas las reseñas en Google Maps</span>
+        <span
+          class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
+          aria-hidden="true"
+        >
+          <span class="mr-3.5 flex items-center justify-center">
+            <Icon name="ph:arrow-up-right" class="h-5 w-5 text-primary-50" />
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const setupGoogleReviews = () => {
+    document.querySelectorAll<HTMLElement>("[data-google-reviews]").forEach((section) => {
+      if (section.dataset.ready === "true") return;
+
+      const track = section.querySelector<HTMLElement>("[data-review-track]");
+      const controls = section.querySelector<HTMLElement>("[data-review-controls]");
+      const previous = section.querySelector<HTMLButtonElement>("[data-review-prev]");
+      const next = section.querySelector<HTMLButtonElement>("[data-review-next]");
+
+      if (!track || !controls || !previous || !next) return;
+
+      section.dataset.ready = "true";
+      controls.hidden = false;
+
+      const updateControls = () => {
+        previous.disabled = track.scrollLeft <= 2;
+        next.disabled =
+          track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      };
+
+      const move = (direction: -1 | 1) => {
+        const card = track.querySelector<HTMLElement>("li");
+        const styles = getComputedStyle(track);
+        const gap =
+          Number.parseFloat(styles.columnGap || styles.gap) || 0;
+        const distance = (card?.offsetWidth ?? track.clientWidth * 0.85) + gap;
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        track.scrollBy({
+          left: direction * distance,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      };
+
+      previous.addEventListener("click", () => move(-1));
+      next.addEventListener("click", () => move(1));
+      track.addEventListener("scroll", updateControls, { passive: true });
+      window.addEventListener("resize", updateControls, { passive: true });
+      updateControls();
+    });
+  };
+
+  setupGoogleReviews();
+  document.addEventListener("astro:page-load", setupGoogleReviews);
+</script>
+
+<style>
+  .reviews-track {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-300) transparent;
+  }
+
+  .reviews-track::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .reviews-track::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: var(--color-primary-300);
+  }
+
+  .reviews-track:focus-visible {
+    border-radius: 0.75rem;
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 4px;
+  }
+</style>
