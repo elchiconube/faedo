@@ -264,17 +264,16 @@ li strong {
 }
 
 .prose {
-  h3 {
+  > h3 {
     font-size: 1.4rem;
     margin-bottom: var(--spacing-custom);
     margin-top: 32px;
   }
-  
-  
-  h2 {
+
+  > h2 {
     margin-top: 32px;
     font-size: 1.8rem;
-    margin-bottom:var(--spacing-custom);
+    margin-bottom: var(--spacing-custom);
   }
 }
 

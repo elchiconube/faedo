@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  title?: string;
+  text?: string;
+}
+
+const { icon, title, text } = Astro.props;
+const hasBody = Boolean(text) || Astro.slots.has("default");
+---
+
+<div
+  class="flex h-full flex-col items-center justify-start gap-2 rounded-xl border border-primary-200 bg-primary-50/50 px-3 py-4 text-center"
+>
+  <Icon
+    name={icon}
+    class="h-10 w-10 shrink-0 text-primary-700"
+    aria-hidden="true"
+  />
+  {
+    title && (
+      <h4 class="font-figtree-bold m-0 mb-0.5 text-base text-[#006d5b] text-balance">
+        {title}
+      </h4>
+    )
+  }
+  {
+    hasBody && (
+      <div class="text-sm leading-snug text-gray-800">
+        {text ? <span>{text}</span> : <slot />}
+      </div>
+    )
+  }
+</div>

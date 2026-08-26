@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import { getCardsByIds, getCardsForPath } from "@data/cards";
 
 interface Props {
@@ -70,14 +71,7 @@ const cards = excludeCurrent
             class="absolute top-3 right-3 bg-white/20 p-2 rounded-full text-white backdrop-blur-sm"
             aria-hidden="true"
           >
-            <svg
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 256 256"
-            >
-              <path d={card.icon} />
-            </svg>
+            <Icon name={card.icon} class="h-6 w-6" />
           </div>
         )}
 

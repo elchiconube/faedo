@@ -4,6 +4,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
 import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import imageFaedo from "@assets/faedo-de-cinera.webp";
 
 const title = "Premio 'Bosque Mejor Cuidado de España' 2007 | Faedo de Ciñera";
@@ -91,7 +92,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           diferentes categorías. Estos fueron todos los ganadores:
         </p>
 
-        <h3>🌳 Árbol Gigante</h3>
+        <h3 class="inline-flex items-center gap-2">
+          <Icon name="ph:tree" class="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
+          Árbol Gigante
+        </h3>
         <p>
           <strong>Castanyer de Can Cuch</strong> (Cánoves, Barcelona)
         </p>
@@ -103,7 +107,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           chimenea.
         </p>
 
-        <h3>🕰️ Árbol Longevo</h3>
+        <h3 class="inline-flex items-center gap-2">
+          <Icon name="ph:clock" class="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
+          Árbol Longevo
+        </h3>
         <p>
           <strong>Encina de las Tres Patas</strong> (Mendaza, Navarra)
         </p>
@@ -116,7 +123,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           o preguntar cómo se encuentra.
         </p>
 
-        <h3>🏆 Bosque Cuidado (GANADOR: FAEDO DE CIÑERA)</h3>
+        <h3 class="inline-flex items-center gap-2">
+          <Icon name="ph:trophy" class="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
+          Bosque Cuidado (GANADOR: FAEDO DE CIÑERA)
+        </h3>
         <p>
           <strong>Faedo de Ciñera</strong> (Ciñera, León)
         </p>
@@ -137,7 +147,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           </p>
         </div>
 
-        <h3>🌟 Árbol Emblemático</h3>
+        <h3 class="inline-flex items-center gap-2">
+          <Icon name="ph:star" class="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
+          Árbol Emblemático
+        </h3>
         <p>
           <strong>Olmo de Nuevo Baztán</strong> (Madrid)
         </p>
@@ -163,7 +176,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           evitar su desaparición, han llevado al jurado a otorgarle este premio.
         </p>
 
-        <h3>📜 Árbol Histórico</h3>
+        <h3 class="inline-flex items-center gap-2">
+          <Icon name="ph:scroll" class="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />
+          Árbol Histórico
+        </h3>
         <p>
           <strong>Ciprés del Monasterio de Santo Domingo de Silos</strong> (Burgos)
         </p>
@@ -283,7 +299,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         <h2>La Historia detrás del Premio</h2>
         <p>
           La iniciativa de presentarse al premio partió del <strong
-            >AMPA del Colegio Público San Miguel Arcángel de Ciñera de Gordón</strong
+            >AMPA del Colegio Público San Miguel Arcángel de Ciñera</strong
           >. Un grupo de padres y madres decidieron documentar todo el trabajo
           que durante años habían llevado a cabo los diferentes sectores
           sociales del municipio.

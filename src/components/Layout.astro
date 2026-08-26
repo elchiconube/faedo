@@ -12,6 +12,7 @@ import GoogleAnalytics from "./GoogleAnalytics.astro";
 import GoogleSiteVerification from "./GoogleSiteVerification.astro";
 import UmamiAnalytics from "./UmamiAnalytics.astro";
 import { ClientRouter } from "astro:transitions";
+import { Icon } from "astro-icon/components";
 import "../styles/globals.css";
 import Guia from "./Guia.astro";
 import { Image } from "astro:assets";
@@ -217,18 +218,7 @@ const navItems = [
           aria-label="Abrir menú"
           aria-expanded="false"
         >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+          <Icon name="ph:list" class="h-6 w-6" aria-hidden="true" />
         </button>
       </nav>
 
@@ -291,8 +281,7 @@ const navItems = [
         class="container py-8 text-sm flex flex-col gap-2 md:flex-row md:items-center md:justify-between"
       >
         <p class="text-center md:text-left">
-          &copy; {new Date().getFullYear()}{' '}{SITE_NAME} · Proyecto
-          informativo sin ánimo de lucro.
+          &copy; {new Date().getFullYear()}{' '}{SITE_NAME}
         </p>
         <nav aria-label="Secundario">
           <ul class="md:flex md:gap-4 font-wittgenstein text-center">
@@ -311,6 +300,12 @@ const navItems = [
             }
           </ul>
         </nav>
+      </div>
+      <div class="container pb-4">
+        <p class="text-xs text-gray-500 text-center max-w-3xl mx-auto py-2">
+          Como participante del Programa de Afiliados de Amazon, faedo.es obtiene
+          ingresos por las compras adscritas que cumplen los requisitos aplicables.
+        </p>
       </div>
       <div class="footer-faedo flex justify-center py-6">
         <a

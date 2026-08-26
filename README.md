@@ -294,7 +294,7 @@ El mapa utiliza:
 
 ## 📄 Licencia
 
-Proyecto informativo sin ánimo de lucro sobre el Faedo de Ciñera.
+Proyecto informativo sobre el Faedo de Ciñera.
 
 ## 🤝 Contribuciones
 

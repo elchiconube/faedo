@@ -3,6 +3,10 @@ import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Seo from "@components/Seo.astro";
 import ExploreMore from "@components/ExploreMore.astro";
+import RutaBloque from "@components/RutaBloque.astro";
+import RutaInfoItem from "@components/RutaInfoItem.astro";
+import ExtLink from "@components/ExtLink.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout
@@ -52,119 +56,153 @@ import ExploreMore from "@components/ExploreMore.astro";
         más populares:
       </p>
 
-        <!-- Ruta 1 -->
-        <div class="card ruta-card">
-          <h3><strong>1.- Ruta del Faedo (Circular – 6 km)</strong></h3>
-          <div class="ruta-info">
-            <span><strong>📍 Inicio:</strong> Plaza de la Iglesia, Ciñera</span>
-            <span><strong>📏 Distancia:</strong> 6 km (circular)</span>
-            <span><strong>⏱️ Duración:</strong> 2–2,5 h</span>
-            <span><strong>💪 Dificultad:</strong> Fácil</span>
-          </div>
+        <RutaBloque title="Ruta del Faedo (Circular – 6 km)">
+          <RutaInfoItem
+            slot="info"
+            icon="ph:map-pin"
+            text="Inicio: Plaza de la Iglesia, Ciñera"
+          />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:ruler"
+            text="Distancia: 6 km (circular)"
+          />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:clock"
+            text="Duración: 2–2,5 h"
+          />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:person-simple-hike"
+            text="Dificultad: Fácil"
+          />
           <p>
             Apta para todos los públicos, incluso con niños. Desde el centro del
             pueblo, el camino arranca junto a la bolera y el cementerio,
-            siguiendo el <em>Paseo del Valle</em> hasta la <a href="/blog/bocamina-menos-cincuenta">bocamina</a>. Desde allí, el sendero serpentea entre restos mineros hasta el <strong
-              >puente de madera</strong
-            >, construido por los mineros del lugar. Al cruzarlo comienza la
-            parte más mágica del recorrido: el <strong>hayedo del Faedo</strong
-            >, con sus pasarelas, silencio verde y las <em
-              ><a href="/blog/marmitas-de-gigante">marmitas de gigante</a></em
-            >, pozas naturales excavadas por el agua durante siglos.
+            siguiendo el <em>Paseo del Valle</em> hasta la{" "}
+            <a href="/blog/bocamina-menos-cincuenta">bocamina</a>. Desde allí, el
+            sendero serpentea entre restos mineros hasta el{" "}
+            <strong>puente de madera</strong>, construido por los mineros del
+            lugar. Al cruzarlo comienza la parte más mágica del recorrido: el{" "}
+            <strong>hayedo del Faedo</strong>, con sus pasarelas, silencio verde
+            y las{" "}
+            <em><a href="/blog/marmitas-de-gigante">marmitas de gigante</a></em>,
+            pozas naturales excavadas por el agua durante siglos.
           </p>
           <p>
-            Tras un descanso en el merendero, se puede continuar hasta el <strong
-              >mirador del beso</strong
-            > y seguir hacia el{' '}
+            Tras un descanso en el merendero, se puede continuar hasta el{" "}
+            <strong>mirador del beso</strong> y seguir hacia el{" "}
             <strong>castillete del Pozo Ibarra</strong>, declarado Bien de
-            Interés Cultural en 2011. La ruta completa tiene unos{' '}
+            Interés Cultural en 2011. La ruta completa tiene unos{" "}
             <strong>6 km</strong>, es circular y fácil, perfecta para disfrutar
-            sin prisas. Más información en <a href="/ruta/faedo-de-cinera"
-              >Ruta del Faedo de Ciñera</a>
+            sin prisas. Más información en{" "}
+            <a href="/ruta/faedo-de-cinera">Ruta del Faedo de Ciñera</a>
           </p>
-        </div>
+        </RutaBloque>
 
-        <!-- Ruta 2 -->
-        <div class="card ruta-card">
-          <h3>
-            <strong
-              >2.- Ruta Faedo de Ciñera – Valporquero (Solo ida – 9,15 km)</strong>
-          </h3>
-          <div class="ruta-info">
-            <span><strong>📍 Inicio:</strong> Plaza de la Iglesia, Ciñera</span>
-            <span><strong>📏 Distancia:</strong> 9,15 km (ida)</span>
-            <span><strong>⏱️ Duración:</strong> 3–4 h</span>
-            <span><strong>💪 Dificultad:</strong> Moderada</span>
-          </div>
+        <RutaBloque
+          title="Ruta Faedo de Ciñera – Valporquero (Solo ida – 9,15 km)"
+        >
+          <RutaInfoItem
+            slot="info"
+            icon="ph:map-pin"
+            text="Inicio: Plaza de la Iglesia, Ciñera"
+          />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:ruler"
+            text="Distancia: 9,15 km (ida)"
+          />
+          <RutaInfoItem slot="info" icon="ph:clock" text="Duración: 3–4 h" />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:person-simple-hike"
+            text="Dificultad: Moderada"
+          />
           <p>
             Ideal para quienes buscan un día completo de naturaleza. Parte desde
-            Ciñera y recorre el Faedo en su totalidad, pasando por las <a href="/blog/marmitas-de-gigante"> marmitas del gigante </a> siguiendo el arroyo hasta
-            enlazar con las <a href="https://www.cuevadevalporquero.es/">Cuevas de Valporquero.</a> Aunque  la ruta es fácil, se recomienda para
-            mayores de 10 años o senderistas con algo de experiencia.
+            Ciñera y recorre el Faedo en su totalidad, pasando por las{" "}
+            <a href="/blog/marmitas-de-gigante">marmitas del gigante</a>{" "}
+            siguiendo el arroyo hasta enlazar con las{" "}
+            <ExtLink href="https://www.cuevadevalporquero.es/">
+              Cuevas de Valporquero
+            </ExtLink>. Aunque la ruta es fácil, se recomienda para mayores de
+            10 años o senderistas con algo de experiencia.
           </p>
           <p>
-            Si dispones de dos coches, puedes dejar uno en <strong
-              >Vegacervera</strong
-            > o junto a la{' '}
-            <a href="https://www.cuevadevalporquero.es/">Cueva de Valporquero</a> para hacer solo la ida.
+            Si dispones de dos coches, puedes dejar uno en{" "}
+            <strong>Vegacervera</strong> o junto a la{" "}
+            <ExtLink href="https://www.cuevadevalporquero.es/">
+              Cueva de Valporquero
+            </ExtLink>{" "}
+            para hacer solo la ida.
           </p>
-        </div>
+        </RutaBloque>
 
-        <!-- Ruta 3 -->
-        <div class="card ruta-card">
-          <h3><strong>3.- Cueva de Valporquero</strong></h3>
-          <div class="ruta-info">
-            <span><strong>📍 Inicio:</strong> Acceso a Cueva</span>
-            <span><strong>📏 Distancia:</strong> ≈ 5 km (interior)</span>
-            <span><strong>⏱️ Duración:</strong> ≈ 2 h</span>
-            <span><strong>💪 Dificultad:</strong> Fácil</span>
-          </div>
+        <RutaBloque title="Cueva de Valporquero">
+          <RutaInfoItem
+            slot="info"
+            icon="ph:map-pin"
+            text="Inicio: Acceso a Cueva"
+          />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:ruler"
+            text="Distancia: ≈ 5 km (interior)"
+          />
+          <RutaInfoItem slot="info" icon="ph:clock" text="Duración: ≈ 2 h" />
+          <RutaInfoItem
+            slot="info"
+            icon="ph:person-simple-hike"
+            text="Dificultad: Fácil"
+          />
           <p>
-            A pocos kilómetros del Faedo se encuentra una de las <strong
-              >maravillas naturales más impresionantes de León</strong
-            >: la <a href="https://www.cuevadevalporquero.es/">Cueva de Valporquero</a>. Su recorrido turístico,
-            de unos 1.300 metros, está acondicionado con pasarelas e
-            iluminación. La temperatura interior ronda los <strong>7 °C</strong>
-            todo el año, con humedad del 99 %.
+            A pocos kilómetros del Faedo se encuentra una de las{" "}
+            <strong>maravillas naturales más impresionantes de León</strong>: la{" "}
+            <ExtLink href="https://www.cuevadevalporquero.es/">
+              Cueva de Valporquero
+            </ExtLink>. Su recorrido turístico, de unos 1.300 metros, está
+            acondicionado con pasarelas e iluminación. La temperatura interior
+            ronda los <strong>7 °C</strong> todo el año, con humedad del 99 %.
           </p>
           <p>
             Se pueden recorrer hasta siete salas principales: la Gran Rotonda,
             Pequeñas Maravillas, Hadas, Cementerio Estalactítico, Gran Vía,
             Columna Solitaria y Maravillas. También hay ruta de espeleología
-            guiada por el curso subterráneo del agua, que conecta con la <strong
-              >Covona</strong
-            > y las <a href="https://turisleon.com/lugares/espacio-natural-de-las-hoces-de-vegacervera/">Hoces de Vegacervera</a>.
+            guiada por el curso subterráneo del agua, que conecta con la{" "}
+            <strong>Covona</strong> y las{" "}
+            <ExtLink href="https://turisleon.com/lugares/espacio-natural-de-las-hoces-de-vegacervera/">
+              Hoces de Vegacervera
+            </ExtLink>.
           </p>
-        </div>
+        </RutaBloque>
 
-        <!-- Ruta 4 -->
-        <div class="card ruta-card">
-          <h3>
-            <strong
-              >4.- Otras rutas de senderismo cerca del Faedo de Ciñera</strong>
-          </h3>
+        <RutaBloque title="Otras rutas de senderismo cerca del Faedo de Ciñera">
           <p>
-            Si te gusta el senderismo y visitas el <strong
-              >Faedo de Ciñera</strong
-            >, aprovecha para conocer otras rutas cercanas en León. Consulta
-            nuestra guía completa:{' '}
-            <a href="/blog/que-ver-cerca-faedo-de-cinera"
-              >Qué ver cerca del Faedo de Ciñera</a
-            >.
+            Si te gusta el senderismo y visitas el{" "}
+            <strong>Faedo de Ciñera</strong>, aprovecha para conocer otras rutas
+            cercanas en León. Consulta nuestra guía completa:{" "}
+            <a href="/blog/que-ver-cerca-faedo-de-cinera">
+              Qué ver cerca del Faedo de Ciñera
+            </a>.
           </p>
-        </div>
+        </RutaBloque>
 
         <h2>Cuándo visitar el Faedo de Ciñera</h2>
         <p>
           El Faedo cambia radicalmente con cada estación. No hay un momento
           perfecto: todos son distintos. Muchos visitantes prefieren el otoño,
           aunque la magia del bosque se disfruta todo el año. Si quieres evitar
-          aglomeraciones, evita los fines de semana de otoño. <a href="blog/mejor-epoca-visitar-faedo-de-cinera">Mejor época para visitar el Faedo de Ciñera</a>
+          aglomeraciones, evita los fines de semana de otoño.
+          <a href="/blog/mejor-epoca-visitar-faedo-de-cinera"
+            >Mejor época para visitar el Faedo de Ciñera</a
+          >
         </p>
 
         <div class="estaciones-grid">
           <div class="card estacion-card primavera">
-            <span class="icon">🌸</span>
+            <span class="icon" aria-hidden="true"><Icon name="ph:flower" /></span>
             <h3><strong>Primavera</strong></h3>
             <p>
               El bosque despierta y el arroyo baja lleno de vida. Comienzan a
@@ -173,7 +211,7 @@ import ExploreMore from "@components/ExploreMore.astro";
             </p>
           </div>
           <div class="card estacion-card verano">
-            <span class="icon">☀️</span>
+            <span class="icon" aria-hidden="true"><Icon name="ph:sun" /></span>
             <h3><strong>Verano</strong></h3>
             <p>
               Bajo las hayas la temperatura es más fresca. El bosque está en su
@@ -181,7 +219,7 @@ import ExploreMore from "@components/ExploreMore.astro";
             </p>
           </div>
           <div class="card estacion-card otoño">
-            <span class="icon">🍂</span>
+            <span class="icon" aria-hidden="true"><Icon name="ph:leaf" /></span>
             <h3><strong>Otoño</strong></h3>
             <p>
               El hayedo se tiñe de dorados, ocres y rojizos. Es la época más
@@ -190,7 +228,7 @@ import ExploreMore from "@components/ExploreMore.astro";
             </p>
           </div>
           <div class="card estacion-card invierno">
-            <span class="icon">❄️</span>
+            <span class="icon" aria-hidden="true"><Icon name="ph:snowflake" /></span>
             <h3><strong>Invierno</strong></h3>
             <p>
               Las hayas pierden sus hojas y se aprecia la estructura de los
@@ -211,51 +249,24 @@ import ExploreMore from "@components/ExploreMore.astro";
           recomendados:
         </p>
         <div class="preparativos-grid">
-          <div class="preparativo-card">
-            <span class="icon">🌦️</span>
-            <p><strong>Consultar el tiempo</strong> antes de ir</p>
-          </div>
-          <div class="preparativo-card">
-            <span class="icon">💧</span>
-            <p><strong>Agua suficiente</strong></p>
-          </div>
-          <div class="preparativo-card">
-            <span class="icon">🥾</span>
-            <p><strong>Calzado cómodo</strong> antideslizante</p>
-          </div>
-
-          <div class="preparativo-card">
-            <span class="icon">🧥</span>
-            <p><strong>Ropa de abrigo ligera</strong></p>
-          </div>
-
-          <div class="preparativo-card">
-            <span class="icon">🍏</span>
-            <p><strong>Snack o fruta</strong> para la ruta</p>
-          </div>
-
-          <div class="preparativo-card">
-            <span class="icon">📱</span>
-            <p><strong>Móvil con batería</strong></p>
-          </div>
-
-          <div class="preparativo-card">
-            <span class="icon">📸</span>
-            <p><strong>Cámara de fotos</strong></p>
-          </div>
-
-          <div class="preparativo-card">
-            <span class="icon">📱</span>
-            <p>
-              <strong>Track GPX descargado</strong>
-              <a href="/gpx/faedo.gpx">descargar</a>
-            </p>
-          </div>
-
-          <div class="preparativo-card">
-            <span class="icon">🗑️</span>
-            <p><strong>Bolsa para tu basura</strong></p>
-          </div>
+          <RutaInfoItem
+            icon="ph:cloud-rain"
+            text="Consultar el tiempo antes de ir"
+          />
+          <RutaInfoItem icon="ph:drop" text="Agua suficiente" />
+          <RutaInfoItem
+            icon="ph:boot"
+            text="Calzado cómodo antideslizante"
+          />
+          <RutaInfoItem icon="ph:hoodie" text="Ropa de abrigo ligera" />
+          <RutaInfoItem icon="ph:cookie" text="Snack o fruta para la ruta" />
+          <RutaInfoItem icon="ph:device-mobile" text="Móvil con batería" />
+          <RutaInfoItem icon="ph:camera" text="Cámara de fotos" />
+          <RutaInfoItem icon="ph:map-trifold">
+            <strong>Track GPX descargado</strong><br />
+            <a href="/gpx/faedo.gpx">Descargar</a>
+          </RutaInfoItem>
+          <RutaInfoItem icon="ph:trash" text="Bolsa para tu basura" />
         </div>
 
         <h2>Normas ambientales en el Faedo de Ciñera</h2>
@@ -322,68 +333,53 @@ import ExploreMore from "@components/ExploreMore.astro";
           varios días o vienen en furgoneta o autocaravana.
         </p>
 
-        <div class="servicios-grid">
-          <div class="servicio">
-            <span class="icono">🏪</span>
-            <strong>Bares y restaurantes</strong>
-            <p>
-              Opciones para comer y reponer fuerzas antes o después de las
-              rutas.
-            </p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">🅿️</span>
-            <strong>Aparcamiento gratuito</strong>
-            <p>Varias plazas disponibles en el centro del pueblo.</p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">⛪</span>
-            <strong>Iglesia de San Miguel Arcángel</strong>
-            <p>Visita cultural y arquitectónica en el corazón del pueblo.</p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">🏛</span>
-            <strong>Biblioteca municipal</strong>
-            <p>Espacio para leer y consultar información local.</p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">🏠</span>
-            <strong>Casas rurales y alojamientos</strong>
-            <p>Alojamientos para estancias cortas o largas cerca del Faedo.</p>
-          </div>
-
-
-          <div class="servicio">
-            <span class="icono">🛒</span>
-            <strong>Supermercados y tiendas</strong>
-            <p>Todo lo necesario para abastecerte durante tu visita.</p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">💊</span>
-            <strong>Farmacia</strong>
-            <p>Atención farmacéutica disponible en horario comercial.</p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">👕</span>
-            <strong>Lavandería autoservicio</strong>
-            <p>Muy práctica para viajeros que pasan varios días en la zona.</p>
-          </div>
-
-          <div class="servicio">
-            <span class="icono">⛽</span>
-            <strong>Gasolineras cercanas</strong>
-            <p>
-              La Pola de Gordón – 8 km | Villamanín – 7 km | La Robla – 16 km
-            </p>
-          </div>
+        <div class="mt-6 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6">
+          <RutaInfoItem
+            icon="ph:storefront"
+            title="Bares y restaurantes"
+            text="Opciones para comer y reponer fuerzas antes o después de las rutas."
+          />
+          <RutaInfoItem
+            icon="ph:garage"
+            title="Aparcamiento gratuito"
+            text="Varias plazas disponibles en el centro del pueblo."
+          />
+          <RutaInfoItem
+            icon="ph:church"
+            title="Iglesia de San Miguel Arcángel"
+            text="Visita cultural y arquitectónica en el corazón del pueblo."
+          />
+          <RutaInfoItem
+            icon="ph:books"
+            title="Biblioteca municipal"
+            text="Espacio para leer y consultar información local."
+          />
+          <RutaInfoItem
+            icon="ph:house"
+            title="Casas rurales y alojamientos"
+            text="Alojamientos para estancias cortas o largas cerca del Faedo."
+          />
+          <RutaInfoItem
+            icon="ph:shopping-cart"
+            title="Supermercados y tiendas"
+            text="Todo lo necesario para abastecerte durante tu visita."
+          />
+          <RutaInfoItem
+            icon="ph:pill"
+            title="Farmacia"
+            text="Atención farmacéutica disponible en horario comercial."
+          />
+          <RutaInfoItem
+            icon="ph:t-shirt"
+            title="Lavandería autoservicio"
+            text="Muy práctica para viajeros que pasan varios días en la zona."
+          />
+          <RutaInfoItem
+            icon="ph:gas-pump"
+            title="Gasolineras cercanas"
+            text="La Pola de Gordón – 8 km | Villamanín – 7 km | La Robla – 16 km"
+          />
         </div>
-<p></p>
 
         <p>
           Para más información sobre turismo, alojamientos, etc, consulta la web
@@ -612,37 +608,6 @@ import ExploreMore from "@components/ExploreMore.astro";
   </div>
 </Layout>
 <style>
-  .servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .servicio {
-    background: #f9f9f9;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .servicio .icono {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .servicio strong {
-    display: block;
-    margin-bottom: 0.3rem;
-    color: #006d5b; /* verde para resaltar */
-  }
-
-  .servicio p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #333;
-  }
   .alojamientos-table {
     width: 100%;
     border-collapse: collapse;
@@ -711,29 +676,6 @@ import ExploreMore from "@components/ExploreMore.astro";
       text-align: left;
     }
   }
-  .card {
-    border-radius: 12px;
-    padding: 0.8rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition:
-      transform 0.3s,
-      box-shadow 0.3s;
-    font-size: 0.9rem;
-    background: #f0fdf9;
-  }
-
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-  }
-
-  .icon {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 0.3rem;
-  }
-
   .estaciones-grid,
   .preparativos-grid {
     display: grid;
@@ -741,12 +683,12 @@ import ExploreMore from "@components/ExploreMore.astro";
     gap: 0.8rem;
     margin-top: 1rem;
   }
-  /* Tarjetas base */
+
+  /* Tarjetas base (estaciones) */
   .card {
     border-radius: 12px;
     padding: 1rem;
     text-align: left;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition:
       transform 0.3s,
       box-shadow 0.3s;
@@ -756,72 +698,33 @@ import ExploreMore from "@components/ExploreMore.astro";
   }
 
   .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    transform: none;
+    box-shadow: none;
   }
 
-  /* Iconos */
   .icon {
-    font-size: 1.5rem;
-    display: block;
+    display: flex;
+    color: var(--color-emerald-700, #047857);
     margin-bottom: 0.3rem;
   }
 
-  /* Info destacada en rutas */
-  .ruta-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 0.8rem;
-    font-size: 0.85rem;
+  .icon :global(svg) {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
-  .ruta-info span {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 0.3rem 0.5rem;
-    border-radius: 6px;
-    display: block;
-  }
-
-  /* Preparativos: 3 columnas fijas */
   .preparativos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
     margin-top: 1rem;
   }
-  /* Tarjetas compactas */
-  .preparativo-card {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 0.5rem 0.6rem;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    font-size: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .preparativo-card .icon {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-  }
-
-  /* Grid: 3 columnas siempre */
-  .preparativos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-  }
 
   /* Ajustes para pantallas pequeñas */
   @media (max-width: 480px) {
-    .preparativo-card {
-      padding: 0.4rem;
-      font-size: 0.7rem;
-    }
-
-    .preparativo-card .icon {
-      font-size: 1.1rem;
+    .preparativos-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
     }
   }
 
@@ -843,5 +746,18 @@ import ExploreMore from "@components/ExploreMore.astro";
   }
   .invierno {
     background: #e0f0ff;
+  }
+
+  .estacion-card .icon {
+    justify-content: center;
+  }
+
+  .estacion-card .icon :global(svg) {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .estacion-card h3 {
+    text-align: center;
   }
 </style>

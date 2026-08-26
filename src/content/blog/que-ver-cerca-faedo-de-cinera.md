@@ -17,7 +17,7 @@ Senderos que combinan hayedos, robledales, patrimonio minero y panorámicas de l
 📏 Distancia: ≈ 5 km (ida y vuelta)  
 ⏱️ Duración: ≈ 2 h  
 💪 Dificultad: Fácil  
-📍 Inicio: Aparcamiento / plaza de Ciñera de Gordón
+📍 Inicio: Aparcamiento / plaza de Ciñera
 
 Un hayedo centenario, pasarelas de madera, puentes y el ejemplar monumental *Fagus*. Ideal para familias, primavera y otoño son sus momentos más mágicos. La ruta enlaza con vestigios mineros y termina en las marmitas y pozas naturales.
 

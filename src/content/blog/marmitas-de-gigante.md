@@ -307,7 +307,7 @@ Juntos, bosque y roca, vida y erosión, verde y blanco, componen uno de los pais
 
 ---
 
-**Explora más sobre Ciñera de Gordón:**
+**Explora más sobre Ciñera:**
 - [El Faedo de Ciñera: Ruta completa](/ruta/faedo-de-cinera)
 - [El Haya Fagus de 500 años](/haya-fagus)
 - [Por qué se llama 'Faedo': Etimología](/blog/por-que-se-llama-faedo)

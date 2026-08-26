@@ -11,7 +11,7 @@ import imagePuentePalos from "@assets/puente-palos.webp";
 const title =
   "Pozo Ibarra: Castillete BIC 1930 en Ciñera | Reforma y Ruta del Faedo";
 const description =
-  "Pozo Ibarra en Ciñera de Gordón: castillete metálico de 31,5 m declarado BIC en 2011, activo de 1930 a 1996. Historia, reforma aprobada y visita desde la ruta del Faedo.";
+  "Pozo Ibarra en Ciñera: castillete metálico de 31,5 m declarado BIC en 2011, activo de 1930 a 1996. Historia, reforma aprobada y visita desde la ruta del Faedo.";
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 const landmarkSchema = {
@@ -20,7 +20,7 @@ const landmarkSchema = {
   name: "Pozo Ibarra",
   alternateName: "la torre Eiffel de Ciñera",
   description:
-    "Castillete minero de 31,5 metros en Ciñera de Gordón (León), activo de 1930 a 1996. Declarado Bien de Interés Cultural con categoría de Conjunto Etnológico en 2011.",
+    "Castillete minero de 31,5 metros en Ciñera (León), activo de 1930 a 1996. Declarado Bien de Interés Cultural con categoría de Conjunto Etnológico en 2011.",
   image: imageMineria.src,
   geo: {
     "@type": "GeoCoordinates",
@@ -29,7 +29,7 @@ const landmarkSchema = {
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Ciñera de Gordón",
+    addressLocality: "Ciñera",
     addressRegion: "León",
     addressCountry: "ES",
   },
@@ -90,7 +90,7 @@ const landmarkSchema = {
     <div class="prose max-w-4xl mx-auto py-8 px-4">
       <p class="lead">
         El <strong>Pozo Ibarra</strong> es una histórica explotación de carbón
-        en <strong>Ciñera de Gordón</strong> (municipio de Pola de Gordón,
+        en <strong>Ciñera</strong> (municipio de Pola de Gordón,
         León). Puesto en marcha en <strong>1930</strong> por la Sociedad
         Hullera Vasco-Leonesa y activo hasta <strong>1996</strong>, destaca por
         su imponente castillete metálico —conocido localmente como{' '}
@@ -173,7 +173,7 @@ const landmarkSchema = {
       <Image
         class="w-full h-full rounded-2xl object-cover object-center shadow-lg shadow-black/25 my-8"
         src={imageMineria}
-        alt="Castillete metálico del Pozo Ibarra en Ciñera de Gordón"
+        alt="Castillete metálico del Pozo Ibarra en Ciñera"
       />
 
       <h2>Noviembre de 1930: La Inauguración</h2>

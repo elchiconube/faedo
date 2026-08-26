@@ -1,12 +1,12 @@
 ---
 title: "La Bocamina Menos 50: El Corazón Minero de Ciñera"
-excerpt: "Descubre la historia de la Bocamina Menos 50 de Ciñera de Gordón. De las profundidades del carbón al patrimonio industrial: la fascinante memoria de la minería leonesa."
+excerpt: "Descubre la historia de la Bocamina Menos 50 de Ciñera. De las profundidades del carbón al patrimonio industrial: la fascinante memoria de la minería leonesa."
 date: 2025-10-11
 tags: ["mineria", "historia", "patrimonio-industrial", "leon", "cinera"]
 coverImage: ../../assets/bocamina.webp
 ---
 
-Cuando paseas por **Ciñera de Gordón**, es imposible ignorar las huellas de su pasado minero. Entre todas ellas, la **Bocamina Menos 50** destaca como uno de los testimonios más emblemáticos de la época dorada del carbón en León. Pero, ¿qué significa exactamente ese nombre tan peculiar?
+Cuando paseas por **Ciñera**, es imposible ignorar las huellas de su pasado minero. Entre todas ellas, la **Bocamina Menos 50** destaca como uno de los testimonios más emblemáticos de la época dorada del carbón en León. Pero, ¿qué significa exactamente ese nombre tan peculiar?
 
 La **Bocamina Menos 50** es mucho más que una simple entrada a una mina abandonada. Es un portal a la historia industrial de León, un monumento a generaciones de mineros, y un testigo silencioso de la transformación económica y social de toda una comarca.
 
@@ -45,9 +45,9 @@ Esta nomenclatura permitía a los ingenieros y mineros:
 - Comunicar ubicaciones con precisión
 - Diseñar sistemas de drenaje y ventilación
 
-## La Minería del Carbón en Ciñera de Gordón
+## La Minería del Carbón en Ciñera
 
-Ciñera de Gordón no es un pueblo cualquiera. Durante más de un siglo, fue uno de los epicentros de la **cuenca carbonífera de la Montaña Central Leonesa**, junto con otros núcleos como:
+Ciñera no es un pueblo cualquiera. Durante más de un siglo, fue uno de los epicentros de la **cuenca carbonífera de la Montaña Central Leonesa**, junto con otros núcleos como:
 
 - Pola de Gordón
 - La Robla
@@ -184,7 +184,7 @@ Diversas voces en Ciñera y León reclaman la **conservación y musealización**
 Curiosamente, la Bocamina Menos 50 y el [Faedo de Ciñera](/blog/por-que-se-llama-faedo) están conectados de formas inesperadas:
 
 ### Conexiones Evidentes:
-- **Ubicación**: Ambos en el término municipal de Ciñera de Gordón
+- **Ubicación**: Ambos en el término municipal de Ciñera
 - **Contraste**: Naturaleza virgen vs. cicatriz industrial
 - **Turismo**: Pueden formar una ruta conjunta naturaleza-historia
 - **Identidad local**: Ambos símbolos de Ciñera
@@ -254,7 +254,7 @@ Ambos son patrimonios de Ciñera. Ambos merecen ser recordados.
 
 ---
 
-**Explora más sobre Ciñera de Gordón:**
+**Explora más sobre Ciñera:**
 - [El Faedo de Ciñera: Ruta completa](/ruta/faedo-de-cinera)
 - [El Haya Fagus de 500 años](/haya-fagus)
 - [Por qué se llama 'Faedo': Etimología](/blog/por-que-se-llama-faedo)
