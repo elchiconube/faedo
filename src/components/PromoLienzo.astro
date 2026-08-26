@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import CtaLink from "@components/CtaLink.astro";
 
 interface Props {
   title?: string;
@@ -61,22 +61,9 @@ const {
       <p class="mb-7 max-w-xl leading-7 text-gray-700">
         {description}
       </p>
-      <a
-        href={href}
-        title={ctaLabel}
-        class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all"
-        data-umami-event="promo-lienzo-click"
-      >
-        <span class="z-10 pr-2">{ctaLabel}</span>
-        <div
-          class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
-          aria-hidden="true"
-        >
-          <div class="mr-3.5 flex items-center justify-center">
-            <Icon name="ph:arrow-right" class="h-5 w-5 text-primary-50" aria-hidden="true" />
-          </div>
-        </div>
-      </a>
+      <CtaLink href={href} title={ctaLabel} eventName="promo-lienzo-click">
+        {ctaLabel}
+      </CtaLink>
     </div>
   </div>
 </section>

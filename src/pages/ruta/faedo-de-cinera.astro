@@ -1,12 +1,12 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import MapLeaflet from "@components/MapLeaflet.astro";
-import Seo from "@components/Seo.astro";
 import coverImage from "@assets/faedo-de-cinera.webp";
 import Gallery from "@components/Gallery.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import CalloutLink from "@components/CalloutLink.astro";
+import CtaLink from "@components/CtaLink.astro";
 import PromoLienzo from "@components/PromoLienzo.astro";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
@@ -27,8 +27,8 @@ const data = {
   difficulty: "fácil",
   season: "Todo el año (mejor en otoño y primavera)",
   start_coords: {
-    lat: 42.8205,
-    lng: -5.6335,
+    lat: 42.884014,
+    lng: -5.636232,
   },
   gpx_url: "https://faedo.es/gpx/faedo.gpx",
   access:
@@ -39,20 +39,34 @@ const data = {
   coverImage: coverImage,
 };
 
-const hikingTrailLd = {
-  "@type": "HikingTrail",
+const touristTripLd = {
+  "@type": "TouristTrip",
   name: data.title,
   description: data.summary,
   url: new URL(Astro.url.pathname, Astro.site).toString(),
-  image: data.coverImage.src,
-  trailLength: { "@type": "Distance", name: `${data.distance_km} km` },
-  estimatedDuration: `PT${Math.round(data.duration_h)}H`,
-  difficulty: data.difficulty,
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: data.start_coords.lat,
-    longitude: data.start_coords.lng,
+  image: new URL(data.coverImage.src, Astro.site).toString(),
+  touristType: ["Senderistas", "Familias"],
+  itinerary: {
+    "@type": "ItemList",
+    name: "Recorrido circular del Faedo de Ciñera",
   },
+  additionalProperty: [
+    {
+      "@type": "PropertyValue",
+      name: "Distancia",
+      value: `${data.distance_km} km`,
+    },
+    {
+      "@type": "PropertyValue",
+      name: "Duración estimada",
+      value: "PT1H30M",
+    },
+    {
+      "@type": "PropertyValue",
+      name: "Dificultad",
+      value: data.difficulty,
+    },
+  ],
 };
 
 const attractionLd = {
@@ -60,7 +74,7 @@ const attractionLd = {
   name: "Faedo de Ciñera",
   description: data.summary,
   url: new URL(Astro.url.pathname, Astro.site).toString(),
-  image: data.coverImage.src,
+  image: new URL(data.coverImage.src, Astro.site).toString(),
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ciñera",
@@ -75,14 +89,12 @@ const attractionLd = {
 };
 ---
 
-<Layout title={`La Ruta: ${data.title}`} description={data.summary}>
-  <Seo
-    slot="head"
-    title={`La ruta: ${data.title}`}
-    description={data.summary}
-    type="place"
-    jsonLd={[hikingTrailLd, attractionLd]}
-  />
+<Layout
+  title="Ruta del Faedo de Ciñera: mapa, GPX y consejos"
+  description={data.summary}
+  image={data.coverImage.src}
+  jsonLd={[touristTripLd, attractionLd]}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -100,22 +112,20 @@ const attractionLd = {
         ideal para familias.
       </p>
     </header>
-<CalloutLink href="/guia-visitantes" subtitle="Rutas, preparativos y servicios del pueblo">
+<CtaLink centered href="/guia-visitantes">
   Ver Guía para Visitantes
-</CalloutLink>
+</CtaLink>
     <section aria-labelledby="mapa" class="max-w-7xl mx-auto px-4">
-      <MapLeaflet
-        lat={data.start_coords.lat}
-        lng={data.start_coords.lng}
-        zoom={14}
-        height="380px"
-      />
+      <MapLeaflet />
       <p class="text-sm">
         Descarga el GPX: <a href="/gpx/faedo.gpx" download>faedo.gpx</a>
       </p>
     </section>
+    <h2 class="text-center text-3xl text-emerald-800 mt-8">
+      Información práctica
+    </h2>
     <aside class="grid sm:grid-cols-3 gap-4 max-w-7xl mx-auto py-8 px-4">
-<div class="min-h-[200px] border border-neutral-400 rounded-lg p-4 flex flex-col justify-between">
+<div id="como-llegar" class="min-h-[200px] border border-neutral-400 rounded-lg p-4 flex flex-col justify-between">
   <div class="mb-4 text-center">
     <span class="inline-block text-emerald-300 mb-2">
       <Icon name="ph:signpost" class="h-8 w-8" aria-hidden="true" />
@@ -123,12 +133,10 @@ const attractionLd = {
     <h3 class="text-2xl text-emerald-800">Cómo llegar y empezar tu ruta</h3>
   </div>
 
-  <p class="mb-3">
-    <ul>
-      <li>En coche por la N630 dirección Oviedo.</li>
-      <li>En autobus ALSA desde León hasta Ciñera,</li>
-    </ul>
-    </p>
+  <ul class="mb-3">
+    <li>En coche por la N-630 dirección Oviedo.</li>
+    <li>En autobús ALSA desde León hasta Ciñera.</li>
+  </ul>
   <p>
     En Ciñera, encontrarás <strong>aparcamiento </strong>
     <a href="https://maps.app.goo.gl/SdQxtZvE2ud87h938" target="_blank" rel="noopener noreferrer">
@@ -216,7 +224,7 @@ const attractionLd = {
       </div>
     </aside>
 
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <h2>El Recorrido paso a paso</h2>
       <p>
         El <strong>Faedo de Ciñera</strong> es uno de esos lugares que no se visitan,
@@ -228,7 +236,7 @@ const attractionLd = {
       </p>
 
       <p>
-        La ruta, de unos <strong>5 kilómetros ida y vuelta</strong>, comienza en
+        La ruta circular, de unos <strong>4,5 kilómetros</strong>, comienza en
         la <strong>plaza de la iglesia</strong>. Desde allí, el camino avanza
         dejando atrás la bolera y el cementerio, donde ya se siente el rumor del <strong
           >Arroyo Villar</strong
@@ -246,11 +254,11 @@ const attractionLd = {
       <Image
         class="w-full h-full rounded-2xl object-cover object-center my-8"
         src={imageBocamina}
-        alt="Bocamina"
+        alt="Entrada de la Bocamina Menos 50 en la ruta del Faedo de Ciñera"
         loading="lazy"
       />
 
-      <p>
+      <p id="puente-artesanal">
         Un poco más adelante, el paisaje cambia. Se levanta la antigua <strong
           >escombrera</strong
         >, hoy restaurada y cubierta de vegetación. Desde allí, se alcanza el <strong
@@ -265,7 +273,7 @@ const attractionLd = {
       <Image
         class="w-full h-full rounded-2xl object-cover object-center my-8"
         src={imagePuente}
-        alt="Puente artesanal hecho por mineros de l zona"
+        alt="Puente artesanal construido por mineros de Ciñera"
         loading="lazy"
       />
 
@@ -291,7 +299,7 @@ const attractionLd = {
       <Image
         class="w-full h-full rounded-2xl object-cover object-center my-8"
         src={imageFagus}
-        alt="Fagus el Haya de 500 años"
+        alt="Haya Fagus, árbol centenario del Faedo de Ciñera"
         loading="lazy"
       />
 
@@ -302,7 +310,7 @@ const attractionLd = {
         madera y acero, construida en 2005, permite recorrer este tramo con
         seguridad, suspendidos sobre el agua. La vista desde aquí es pura
         emoción: cascadas, pozas y el sonido constante del agua entre las
-        piedras, desde donde se pueden apreciar las <a href="blog/marmitas-de-gigante/">Marmitas de Gigante</a>, formaciones naturales creadas por la fuerza del arroyo al chocar
+        piedras, desde donde se pueden apreciar las <a href="/blog/marmitas-de-gigante">Marmitas de Gigante</a>, formaciones naturales creadas por la fuerza del arroyo al chocar
         contra la piedra caliza. En los días cálidos, el reflejo del sol sobre
         el agua convierte este rincón en un espectáculo de luz. Aquí muchos
         visitantes deciden detenerse y regresar por el mismo camino, aunque
@@ -314,7 +322,7 @@ const attractionLd = {
       <Image
         class="w-full h-full rounded-2xl object-cover object-center my-8"
         src={imageMarmitas}
-        alt="Marmitas de Gigante"
+        alt="Marmitas de Gigante del Arroyo Villar junto al Faedo"
         loading="lazy"
       />
 
@@ -333,7 +341,7 @@ const attractionLd = {
       <Image
         class="w-full h-full rounded-2xl object-cover object-center my-8"
         src={imagePozoIbarra2}
-        alt="Pozo Ibarra"
+        alt="Castillete histórico del Pozo Ibarra en Ciñera"
         loading="lazy"
       />
 
@@ -348,7 +356,7 @@ const attractionLd = {
         bosque —pequeño, frágil y eterno— no solo se recorre con los pies, sino
         con el alma. Quien entra en él, siempre vuelve.
       </p>
-    </div>
+    </PageContent>
   </article>
 
   <Gallery />

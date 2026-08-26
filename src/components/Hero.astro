@@ -1,8 +1,22 @@
 ---
 import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
+import CtaLink from '@components/CtaLink.astro';
 import heroPlaceholder from '../assets/faedo-de-cinera.webp';
 import heroVideo from '../assets/hero.mp4';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  title = "Descubre el Faedo de Ciñera",
+  subtitle = "Un mágico bosque de hayas en León",
+  ctaLabel = "Ver la ruta",
+  ctaHref = "/ruta/faedo-de-cinera",
+} = Astro.props;
 ---
 
 <section class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -14,6 +28,7 @@ import heroVideo from '../assets/hero.mp4';
       widths={[768, 1024, 1280, 1920]} 
       sizes="100vw"
       loading="eager"
+      fetchpriority="high"
     />
     
     <video 
@@ -22,6 +37,8 @@ import heroVideo from '../assets/hero.mp4';
       autoplay
       muted
       loop
+      preload="none"
+      poster={heroPlaceholder.src}
       aria-label="Video decorativo del hayedo del Faedo de Ciñera"
     >
       <source src={heroVideo} type="video/mp4" />
@@ -33,20 +50,18 @@ import heroVideo from '../assets/hero.mp4';
   
   <div class="relative z-30 container text-center px-4 py-16">
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-      Descubre el Faedo de Ciñera
+      {title}
     </h1>
     <p class="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto">
-      Un mágico bosque de hayas en León
+      {subtitle}
     </p>
     <div class="mt-8">
-      <a href="/ruta/faedo-de-cinera" title="Ver la guía completa de la ruta del Faedo de Ciñera" class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white transition-all">
-        <span class="z-10 pr-2">Ver la ruta</span>
-        <div class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]">
-          <div class="mr-3.5 flex items-center justify-center">
-            <Icon name="ph:arrow-right" class="h-5 w-5 text-primary-50" aria-hidden="true" />
-          </div>
-        </div>
-      </a>
+      <CtaLink
+        href={ctaHref}
+        title="Ver la guía completa de la ruta del Faedo de Ciñera"
+      >
+        {ctaLabel}
+      </CtaLink>
     </div>
   </div>
 </section>

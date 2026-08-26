@@ -6,33 +6,44 @@ interface Props {
   description: string;
   image?: string;
   url?: string;
-  type?: 'website' | 'article' | 'blog' | 'place';
+  type?: 'website' | 'article';
+  robots?: string;
+  canonical?: boolean;
   jsonLd?: Record<string, any> | Record<string, any>[];
 }
-const { title, description, image, url, type = 'website', jsonLd } = Astro.props as Props;
-const canonical = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
+const {
+  title,
+  description,
+  image,
+  url,
+  type = 'website',
+  robots,
+  canonical: includeCanonical = true,
+  jsonLd,
+} = Astro.props as Props;
+const canonicalUrl = (url ?? new URL(Astro.url.pathname, Astro.site)).toString();
 const ogImage = image ? new URL(image, Astro.site).toString() : new URL(SITE_IMAGE, Astro.site).toString();
+const isDefaultImage = !image;
 ---
-<fragment>
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={canonical} />
-  <link rel="alternate" hreflang={SITE_LOCALE} href={canonical} />
-  <meta property="og:site_name" content={SITE_NAME} />
-  <meta property="og:type" content={type} />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content={canonical} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
-  {jsonLd && (
-    <script type="application/ld+json" set:html={JSON.stringify(Array.isArray(jsonLd) ? { '@context': 'https://schema.org', '@graph': jsonLd } : jsonLd)} />
-  )}
-</fragment>
+<title>{title}</title>
+<meta name="description" content={description} />
+{robots && <meta name="robots" content={robots} />}
+{includeCanonical && <link rel="canonical" href={canonicalUrl} />}
+{includeCanonical && <link rel="alternate" hreflang={SITE_LOCALE} href={canonicalUrl} />}
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:type" content={type} />
+{includeCanonical && <meta property="og:url" content={canonicalUrl} />}
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+{isDefaultImage && <meta property="og:image:width" content="1200" />}
+{isDefaultImage && <meta property="og:image:height" content="630" />}
+<meta name="twitter:card" content="summary_large_image" />
+{includeCanonical && <meta name="twitter:url" content={canonicalUrl} />}
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+{jsonLd && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(Array.isArray(jsonLd) ? { '@context': 'https://schema.org', '@graph': jsonLd } : jsonLd)} />
+)}
 

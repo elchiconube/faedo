@@ -1,6 +1,6 @@
 ---
 title: "Guía ornitológica: el Faedo de Ciñera"
-excerpt: "Descubre las aves que puedes encontrar en el Faedo de Ciñera"
+excerpt: "Guía de las aves del Faedo de Ciñera: aprende a reconocer buitres leonados, trepadores azules, pitos reales y otras especies del hayedo y la montaña leonesa."
 date: 2025-11-11
 tags: ["pajaros", "ornitologia", "hayedo", "otono", "senderismo"]
 coverImage: ../../assets/trepador-azul.webp
@@ -147,7 +147,7 @@ Las aves del Faedo forman parte de un ecosistema delicado que ha tardado siglos 
 **Más información sobre el Faedo:**
 - [El Haya Fagus de 500 años](/haya-fagus)
 - [Flora y Fauna del Faedo](/flora-fauna)
-- [Por qué se llama 'Faedo': Etimología](/blog/por-que-se-llama-faedo)
+- [Por qué se llama 'Faedo': Etimología](/blog/origen-nombre-faedo)
 - [Planifica tu visita](/ruta/faedo-de-cinera)
 
 *¿Has visto alguna de estas aves en el Faedo? Comparte tus observaciones y ayúdanos a conocer mejor la riqueza ornitológica de este bosque único.*

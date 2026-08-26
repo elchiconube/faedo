@@ -11,6 +11,11 @@ import 'leaflet/dist/leaflet.css';
   >
   </div>
 </div>
+<noscript>
+  <p>
+    Consulta el <a href="https://maps.app.goo.gl/SdQxtZvE2ud87h938">inicio de la ruta del Faedo de Ciñera en Google Maps</a>.
+  </p>
+</noscript>
 
 <style>
 
@@ -44,7 +49,12 @@ import 'leaflet/dist/leaflet.css';
   import L from "leaflet";
   import type { LatLngTuple } from "leaflet";
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initializeMap() {
+    const mapElement = document.getElementById("mapa-leaflet");
+    if (!mapElement || (mapElement as HTMLElement & { _leaflet_id?: number })._leaflet_id) {
+      return;
+    }
+
     // Coordenadas reales del centro de la ruta (calculadas del GPX)
     const centroRuta: LatLngTuple = [42.884037, -5.622944];
 
@@ -217,7 +227,7 @@ import 'leaflet/dist/leaflet.css';
           <p>Ciñera - Punto de partida de la ruta circular.</p>
           <div class="datos">
             <p><strong>📍 Altitud:</strong> 1.057m</p>
-            <p><strong>🥾 Distancia total:</strong> 6,01 km (circular)</p>
+            <p><strong>🥾 Distancia total:</strong> 4,5 km (circular)</p>
             <p><strong>⭐ Dificultad:</strong> Fácil-Moderada</p>
             <p><strong>⏱️ Tiempo:</strong> 2-2,5 horas</p>
             <p><strong>🎯 Desnivel:</strong> +108m (1.051-1.159m)</p>
@@ -339,7 +349,7 @@ import 'leaflet/dist/leaflet.css';
           border-left: 4px solid #ffff00;
         ">
           <div style="font-weight: bold; margin-bottom: 6px; color: #e67e00;">Ruta circular El Faedo de Ciñera</div>
-          <div><span style="color: #ffff00; font-weight: bold;">━━━</span> Track GPS real (6,01 km)</div>
+          <div><span style="color: #ffff00; font-weight: bold;">━━━</span> Track GPS real (4,5 km)</div>
           <div>🛰️ PNOA + IGN Base superpuestos</div>
           <div>🏷️ Ortofoto con nombres de localidades</div>
           <div>🚗 Inicio: Iglesia San Miguel Arcángel</div>
@@ -359,5 +369,8 @@ import 'leaflet/dist/leaflet.css';
     L.control
       .scale({ position: "bottomleft", metric: true, imperial: false })
       .addTo(map);
-  });
+  }
+
+  document.addEventListener("DOMContentLoaded", initializeMap);
+  document.addEventListener("astro:page-load", initializeMap);
 </script>

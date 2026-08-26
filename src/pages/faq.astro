@@ -1,9 +1,9 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Seo from "@components/Seo.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import CalloutLink from "@components/CalloutLink.astro";
+import CtaLink from "@components/CtaLink.astro";
 
 const title = "Preguntas Frecuentes sobre el Faedo de Ciñera";
 const description =
@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "¿La ruta del Faedo de Ciñera es apta para niños?",
     answer:
-      "Sí, la ruta del Faedo de Ciñera es perfecta para niños. Es un sendero corto (6km), fácil y con pasarelas de madera que lo hacen seguro. ay que vigilar cerca del arroyo y en algunos tramos con desnivel. Es una de las mejores rutas de senderismo en León para hacer enH familia. No apto para ir con carritos.",
+      "Sí, la ruta del Faedo de Ciñera es adecuada para niños acostumbrados a caminar. Es un sendero corto de 4,5 km, fácil y con pasarelas de madera. Hay que vigilar cerca del arroyo y en algunos tramos con desnivel. No es apta para carritos infantiles.",
   },
   {
     question: "¿Se puede ir con perros al Faedo de Ciñera?",
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: "¿Cuánto dura la ruta del Faedo de Ciñera?",
     answer:
-      "La ruta del Faedo de Ciñera dura entre 1,5 y 2 horas, dependiendo de tu ritmo y las paradas que hagas. Son 6 km circulares con 120 metros de desnivel acumulado. Si vas con niños o quieres hacer fotos, calcula unas 2 horas.",
+      "La ruta del Faedo de Ciñera dura entre 1,5 y 2 horas, dependiendo del ritmo y las paradas. Son 4,5 km circulares con 120 metros de desnivel acumulado. Si vas con niños o quieres hacer fotos, calcula unas 2 horas.",
   },
   {
     question: "¿Dónde descargar el GPX del Faedo de Ciñera?",
@@ -92,15 +92,13 @@ faqSchema.mainEntity = faqs.map(faq => ({
 }));
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    url={canonical}
-    type="website"
-    jsonLd={faqSchema}
-  />
+<Layout
+  title={title}
+  description={description}
+  url={canonical}
+  jsonLd={faqSchema}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -116,25 +114,25 @@ faqSchema.mainEntity = faqs.map(faq => ({
       </p>
     </header>
 
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         Aquí encontrarás respuestas a las preguntas más frecuentes sobre la <strong
           >Ruta del Faedo de Ciñera</strong
         >. Si tienes alguna duda que no aparece aquí, no dudes en contactar con
         la Junta Vecinal de Ciñera.
       </p>
-<CalloutLink href="/guia-visitantes" subtitle="Rutas, preparativos y servicios del pueblo">
+<CtaLink centered href="/guia-visitantes">
   Ver Guía para Visitantes
-</CalloutLink>
+</CtaLink>
       {
-        faqs.map((faq, index) => (
+        faqs.map((faq) => (
           <section>
             <h2>{faq.question}</h2>
             <p>{faq.answer}</p>
           </section>
         ))
       }
-    </div>
+    </PageContent>
 
     <ExploreMore variant="planifica" />
   </div>

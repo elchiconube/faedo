@@ -30,7 +30,12 @@ const title = `Artículos sobre "${tag}" - Blog Faedo de Ciñera`;
 const description = `Todos los artículos del blog sobre ${tag}. Descubre rutas, consejos y naturaleza del Faedo de Ciñera en León.`;
 ---
 
-<Layout title={title} description={description}>
+<Layout
+  title={title}
+  description={description}
+  robots="noindex, follow"
+  showFooterContent={false}
+>
   <Breadcrumbs 
     items={[
       { href: '/', label: 'Inicio' },

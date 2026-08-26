@@ -19,7 +19,6 @@ export interface Card {
   /** Iconify Phosphor id, e.g. `ph:compass` */
   icon: string;
   backgroundImage?: any;
-  titleTag?: 'h2' | 'h3' | 'h4';
 }
 
 export const allCards: Card[] = [
@@ -81,7 +80,7 @@ export const allCards: Card[] = [
   },
   {
     id: 'puente',
-    href: '/blog/puente-de-palos',
+    href: '/ruta/faedo-de-cinera#puente-artesanal',
     title: 'Puente de palos',
     description: 'Construcción histórica utilizada por mineros.',
     icon: 'ph:boat',
@@ -143,7 +142,7 @@ export const RUTA_INTERES_CARD_IDS = [
   "puente",
 ] as const;
 
-export function normalizePath(path: string): string {
+function normalizePath(path: string): string {
   if (!path || path === "/") return "/";
   return path.replace(/\/+$/, "") || "/";
 }

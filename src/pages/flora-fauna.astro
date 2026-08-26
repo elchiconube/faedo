@@ -1,9 +1,9 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import Seo from "@components/Seo.astro";
-import CalloutLink from "@components/CalloutLink.astro";
+import CtaLink from "@components/CtaLink.astro";
 import { Image } from "astro:assets";
 
 import imageBuitre from "@assets/buitre.webp";
@@ -12,7 +12,6 @@ import imageZorro from "@assets/zorro.webp";
 import imageLiron from "@assets/liron.webp";
 import imageArdilla from "@assets/ardilla.webp";
 import imageFaedo from "@assets/paseo-faedo.webp";
-import imageFagus from "@assets/fagus.webp";
 import imageEncina from "@assets/encina.webp";
 import imageRoble from "@assets/roble.webp";
 import imageHaya from "@assets/haya.webp";
@@ -30,10 +29,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 const bioSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  headline: title,
+  "@type": "WebPage",
+  name: title,
   description: description,
-  image: imageFaedo.src,
+  url: canonical,
+  image: new URL(imageFaedo.src, Astro.site).toString(),
   author: {
     "@type": "Organization",
     name: "Faedo de Ciñera",
@@ -85,11 +85,6 @@ const epipactisHelleborine = {
   alt: "Epipactis Helleborine",
 };
 
-const fagus = {
-  src: imageFagus,
-  alt: "Fagus",
-};
-
 const encina = {
   src: imageEncina,
   alt: "Encina",
@@ -106,16 +101,15 @@ const haya = {
 };
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    image={imageFaedo.src}
-    url={canonical}
-    type="article"
-    jsonLd={bioSchema}
-  />
+<Layout
+  title={title}
+  description={description}
+  image={imageFaedo.src}
+  url={canonical}
+  type="article"
+  jsonLd={bioSchema}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -130,7 +124,7 @@ const haya = {
         Flora y Fauna del Faedo de Ciñera
       </h1>
     </header>
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         El <strong>Faedo de Ciñera</strong> se encuentra en un enclave privilegiado
         que marca la transición entre dos regiones biogeográficas: la mediterránea
@@ -138,7 +132,7 @@ const haya = {
         excepcional, albergando especies de ambos ecosistemas.
       </p>
 
-      <h2>Flora y Fauna del Faedo de Ciñera</h2>
+      <h2>Un refugio de biodiversidad en la montaña leonesa</h2>
 
       <p>
         El Faedo de Ciñera crece en un lugar privilegiado, justo donde se
@@ -197,9 +191,9 @@ const haya = {
         entre los árboles singulares de España. Su fruto, el fayuco, alimenta a
         aves, ardillas y pequeños mamíferos que viven bajo su sombra.
       </p>
-              <CalloutLink href="/haya-fagus">
+              <CtaLink centered href="/haya-fagus">
                 La historia del Haya Fagus de 500 años
-              </CalloutLink>
+              </CtaLink>
 
       <h2>El Roble, también llamado Rebollo o Melojo (Quercus pyrenaica)</h2>
 
@@ -328,9 +322,9 @@ const haya = {
         />
         
       </div>
-              <CalloutLink href="/blog/arboles-del-faedo-de-cinera">
+              <CtaLink centered href="/blog/arboles-del-faedo-de-cinera">
                 Los árboles del Faedo de Ciñera
-              </CalloutLink>
+              </CtaLink>
 
       <h2>Fauna del Faedo de Ciñera</h2>
 
@@ -344,7 +338,7 @@ const haya = {
       </p>
       
 
-      <h2>En el arroyo: el misterioso Desmán Ibérico</h2>
+      <h2 id="desman">En el arroyo: el misterioso Desmán Ibérico</h2>
 
       <p>
         Bajo las aguas limpias del arroyo Villar, donde el rumor del agua
@@ -376,9 +370,9 @@ const haya = {
         crustáceos, siempre en aguas claras, frías y oxigenadas. Es un animal
         esquivo, pero saber que habita aquí añade magia y orgullo al Faedo.
       </p>
-        <CalloutLink href="/blog/desman-iberico-faedo-de-cinera">
+        <CtaLink centered href="/blog/desman-iberico-faedo-de-cinera">
           El desmán ibérico: todo sobre este singular mamífero acuático
-        </CalloutLink>
+        </CtaLink>
 
       <h2>En el bosque: los sonidos del hayedo</h2>
 
@@ -456,9 +450,9 @@ const haya = {
         Sus poblaciones se están recuperando en las hoces cercanas, aunque sigue
         protegido como especie de interés especial.
       </p>
-        <CalloutLink href="/blog/guia-ornitologica-faedo-de-cinera">
+        <CtaLink centered href="/blog/guia-ornitologica-faedo-de-cinera">
           Ver Guía ornitológica del Faedo
-        </CalloutLink>
+        </CtaLink>
 
       <h2>Un bosque que respira vida</h2>
 
@@ -477,7 +471,7 @@ const haya = {
         respira vida en cada rincón, donde agua, piedra, luz y silencio se
         mezclan en perfecta armonía.
       </p>
-    </div>
+    </PageContent>
 
     <ExploreMore variant="explore" />
   </div>

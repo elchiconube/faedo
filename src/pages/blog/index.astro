@@ -6,7 +6,11 @@ import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort((a,b) => +b.data.date - +a.data.date);
 ---
-<Layout title="Blog: senderismo en León" description="Artículos SEO sobre la Ruta del Faedo de Ciñera, consejos y senderismo en León">
+<Layout
+  title="Blog del Faedo de Ciñera: rutas y naturaleza"
+  description="Artículos sobre el Faedo de Ciñera: rutas, naturaleza, patrimonio y consejos para preparar tu visita a este hayedo de León."
+  showFooterContent={false}
+>
   <Breadcrumbs items={[{ href: '/', label: 'Inicio' }, { href: '/blog', label: 'Blog' }]} />
   
   <div>

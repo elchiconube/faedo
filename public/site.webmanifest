@@ -1,6 +1,9 @@
 {
   "name": "Faedo de Ciñera",
   "short_name": "Faedo",
+  "description": "Guía del Faedo de Ciñera en León: naturaleza, patrimonio, mapa, GPX y consejos para la visita",
+  "start_url": "/",
+  "lang": "es-ES",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +18,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#047857",
+  "theme_color": "#349981",
   "background_color": "#ffffff",
   "display": "standalone"
 }

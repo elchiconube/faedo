@@ -1,9 +1,9 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import Seo from "@components/Seo.astro";
-import CalloutLink from "@components/CalloutLink.astro";
+import CtaLink from "@components/CtaLink.astro";
 import { Image } from "astro:assets";
 
 import imageFaedo from "@assets/paseo-faedo.webp";
@@ -45,14 +45,10 @@ const caliza = {
 ---
 
 <Layout
-  title="Todo sobre el Faedo de Ciñera"
+  title="Historia y naturaleza del Faedo de Ciñera"
   description="Hayedo, fauna, flora, patrimonio minero y geología del Faedo de Ciñera (León). 400 millones de años de historia natural y cultural."
+  showFooterContent={false}
 >
-  <Seo
-    slot="head"
-    title="Todo sobre el Faedo de Ciñera"
-    description="Hayedo, fauna, flora, patrimonio minero y geología del Faedo de Ciñera (León). 400 millones de años de historia natural y cultural."
-  />
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -62,10 +58,10 @@ const caliza = {
   <div>
     <header class="text-center max-w-2xl mx-auto mt-5">
       <h1 class="mb-2 text-emerald-800 text-balance">
-        Todo sobre el Faedo de Ciñera
+        Historia y naturaleza del Faedo de Ciñera
       </h1>
     </header>
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         El <strong>Faedo de Ciñera</strong> es mucho más que un hayedo: es un espacio
         donde confluyen 400 millones de años de historia geológica, un ecosistema
@@ -89,9 +85,9 @@ const caliza = {
           src={faedo.src}
           alt={faedo.alt}
         />
-        <CalloutLink href="/blog/origen-nombre-faedo">
+        <CtaLink centered href="/blog/origen-nombre-faedo">
           Más información sobre la historia del nombre "Faedo"
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -111,9 +107,9 @@ const caliza = {
           la humedad y la sombra. Las hayas crean un característico sombrío denso
           que hace del Faedo un lugar especialmente mágico.
         </p>
-        <CalloutLink href="/ruta/faedo-de-cinera">
+        <CtaLink centered href="/ruta/faedo-de-cinera">
           Descubre la ruta del Faedo.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -142,9 +138,9 @@ const caliza = {
             alt={fagus.alt}
           />
         </div>
-        <CalloutLink href="/haya-fagus">
+        <CtaLink centered href="/haya-fagus">
           Todo sobre el haya Fagus.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -154,9 +150,9 @@ const caliza = {
           resultado de su posición fronteriza entre dos regiones biogeográficas:
           la mediterránea y la eurosiberiana.
         </p>
-        <CalloutLink href="/flora-fauna">
+        <CtaLink centered href="/flora-fauna">
           La flora y fauna del Faedo.
-        </CalloutLink>
+        </CtaLink>
         <h3>Los Tres Árboles Protagonistas</h3>
         <p>
           El bosque alberga tres especies arbóreas principales que representan
@@ -177,9 +173,9 @@ const caliza = {
             en posiciones intermedias.
           </li>
         </ul>
-        <CalloutLink href="/blog/arboles-del-faedo-de-cinera">
+        <CtaLink centered href="/blog/arboles-del-faedo-de-cinera">
           Aprende a identificar cada árbol durante tu visita.
-        </CalloutLink>
+        </CtaLink>
 
         <h3>Fauna Destacada</h3>
         <p>
@@ -231,9 +227,9 @@ const caliza = {
           />
         </div>
 
-        <CalloutLink href="/flora-fauna">
+        <CtaLink centered href="/flora-fauna">
           Página completa de la flora y fauna del Faedo.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -268,9 +264,9 @@ const caliza = {
           Las <strong>capas de carbón</strong> de la Formación Pastora (310 millones
           de años) fueron el origen de la minería de Ciñera.
         </p>
-        <CalloutLink href="/geologia">
+        <CtaLink centered href="/geologia">
           Historia geológica del Faedo.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -305,9 +301,9 @@ const caliza = {
           fue el corazón económico de Ciñera durante casi 70 años. Su castillete
           de 31,5 metros sigue en pie como símbolo del patrimonio industrial.
         </p>
-        <CalloutLink href="/pozo-ibarra">
+        <CtaLink centered href="/pozo-ibarra">
           Ficha completa del Pozo Ibarra.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -332,9 +328,9 @@ const caliza = {
           para una versión detallada y sugerencias educativas para contar durante
           la visita al Faedo con niños.
         </p>
-        <CalloutLink href="/haeda">
+        <CtaLink centered href="/haeda">
           Resumen del cuento de Haeda.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -361,9 +357,9 @@ const caliza = {
             >Un pueblo unido por su bosque</strong
           >. Y eso, en sí mismo, es mágico.
         </p>
-        <CalloutLink href="/premio-2007">
+        <CtaLink centered href="/premio-2007">
           Más información sobre el premio al Faedo como bosque mejor cuidado de España.
-        </CalloutLink>
+        </CtaLink>
       </section>
 
       <section>
@@ -400,7 +396,7 @@ const caliza = {
           espacio único.
         </p>
       </section>
-    </div>
+    </PageContent>
     <ExploreMore variant="explore" />
   </div>
 </Layout>

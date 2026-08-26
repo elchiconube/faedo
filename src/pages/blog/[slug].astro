@@ -1,7 +1,7 @@
 ---
 import Layout from "../../components/Layout.astro";
+import PageContent from "../../components/PageContent.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import Seo from "../../components/Seo.astro";
 import { getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
 import { SITE_LOGO, SITE_URL } from "../../consts";
@@ -21,7 +21,6 @@ const blogLd = {
   headline: data.title,
   description: data.excerpt,
   datePublished: data.date.toISOString(),
-  dateModified: data.date.toISOString(),
   mainEntityOfPage: canonical,
   image: data.coverImage?.src
     ? new URL(data.coverImage.src, Astro.site).toString()
@@ -47,14 +46,14 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout title={data.title} description={data.excerpt}>
-  <Seo
-    slot="head"
-    title={data.title}
-    description={data.excerpt}
-    type="article"
-    jsonLd={blogLd}
-  />
+<Layout
+  title={data.title}
+  description={data.excerpt}
+  image={data.coverImage?.src}
+  type="article"
+  jsonLd={blogLd}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -128,8 +127,8 @@ export async function getStaticPaths() {
         )
       }
     </div>
-    <div class="pt-12 mx-auto mt-12 border-t prose max-w-none border-gray-200">
+    <PageContent padded={false} class="mx-auto mt-12 max-w-none border-t border-gray-200 pt-12">
       <Content />
-    </div>
+    </PageContent>
   </article>
 </Layout>

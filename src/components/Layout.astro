@@ -4,8 +4,6 @@ import {
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_LOCALE,
-  SITE_URL,
-  SITE_IMAGE,
   SITE_LOGO,
 } from "../consts";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
@@ -18,6 +16,7 @@ import Guia from "./Guia.astro";
 import GoogleReviews from "./GoogleReviews.astro";
 import { Image } from "astro:assets";
 import logoFaedoDigital from "@assets/logo-faedo-digital.webp";
+import Seo from "./Seo.astro";
 
 const {
   title = SITE_TITLE,
@@ -25,14 +24,11 @@ const {
   url = undefined,
   image = undefined,
   type = "website",
+  robots = undefined,
+  canonical = true,
+  jsonLd = undefined,
+  showFooterContent = true,
 } = Astro.props;
-
-const canonicalURL = (
-  url ?? new URL(Astro.url.pathname, Astro.site)
-).toString();
-const ogImage = image
-  ? new URL(image, Astro.site).toString()
-  : new URL(SITE_IMAGE, Astro.site).toString();
 
 // Navegación principal
 const navItems = [
@@ -85,32 +81,16 @@ const navItems = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#349981" />
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="alternate" hreflang={SITE_LOCALE} href={canonicalURL} />
-    <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="Faedo de Ciñera, senderismo León, rutas León, hayedo, Pola de Gordón, naturaleza León, rutas familias"
+    <Seo
+      title={title}
+      description={description}
+      url={url}
+      image={image}
+      type={type}
+      robots={robots}
+      canonical={canonical}
+      jsonLd={jsonLd}
     />
-    <title>{title}</title>
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:site_name" content={SITE_NAME} />
-    <meta property="og:type" content={type} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content={SITE_LOCALE} />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonicalURL} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -137,7 +117,7 @@ const navItems = [
       href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.setAttribute('media', 'all')"
     />
     <noscript>
       <link
@@ -145,25 +125,20 @@ const navItems = [
         rel="stylesheet"
       />
     </noscript>
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: SITE_NAME,
-        description: SITE_DESCRIPTION,
-        url: Astro.site?.toString(),
-        inLanguage: SITE_LOCALE,
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${Astro.site}?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
-      })}
-    />
+    {canonical && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          description: SITE_DESCRIPTION,
+          url: Astro.site?.toString(),
+          inLanguage: SITE_LOCALE,
+        })}
+      />
+    )}
     <slot name="head" />
     <GoogleSiteVerification />
     <GoogleAnalytics />
@@ -271,12 +246,12 @@ const navItems = [
         }
       });
     </script>
-    <main class="flex-1 content">
+    <main id="contenido" class="flex-1">
       <slot />
     </main>
 
-    <GoogleReviews />
-    <Guia />
+    {showFooterContent && <GoogleReviews />}
+    {showFooterContent && <Guia />}
 
     <footer class="border-t border-gray-100" transition:persist>
       <div

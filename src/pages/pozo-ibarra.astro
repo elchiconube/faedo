@@ -1,8 +1,8 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageMineria from "@assets/pozo-ibarra.webp";
 import imageInauguracion from "@assets/innauguracion-pozo-ibarra-cinera.webp";
@@ -16,12 +16,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 const landmarkSchema = {
   "@context": "https://schema.org",
-  "@type": "LandmarksOrHistoricalBuildings",
+  "@type": "TouristAttraction",
   name: "Pozo Ibarra",
   alternateName: "la torre Eiffel de Ciñera",
   description:
     "Castillete minero de 31,5 metros en Ciñera (León), activo de 1930 a 1996. Declarado Bien de Interés Cultural con categoría de Conjunto Etnológico en 2011.",
-  image: imageMineria.src,
+  image: new URL(imageMineria.src, Astro.site).toString(),
   geo: {
     "@type": "GeoCoordinates",
     latitude: 42.882043,
@@ -64,16 +64,14 @@ const landmarkSchema = {
 };
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    image={imageMineria.src}
-    url={canonical}
-    type="place"
-    jsonLd={landmarkSchema}
-  />
+<Layout
+  title={title}
+  description={description}
+  image={imageMineria.src}
+  url={canonical}
+  jsonLd={landmarkSchema}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -87,7 +85,7 @@ const landmarkSchema = {
         Pozo Ibarra: Historia Minera del Faedo de Ciñera
       </h1>
     </header>
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         El <strong>Pozo Ibarra</strong> es una histórica explotación de carbón
         en <strong>Ciñera</strong> (municipio de Pola de Gordón,
@@ -414,7 +412,7 @@ const landmarkSchema = {
           patrimonio minero de la comarca de Gordón.
         </p>
       </div>
-    </div>
+    </PageContent>
 
     <ExploreMore variant="explore" />
   </div>

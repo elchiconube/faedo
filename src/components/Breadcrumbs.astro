@@ -17,20 +17,19 @@ const breadcrumbSchema = {
   }))
 };
 ---
-<nav aria-label="Migas de pan" class="max-w-4xl mx-auto py-2 px-4 text-sm" item-scope item-type="https://schema.org/BreadcrumbList">
+<nav aria-label="Migas de pan" class="max-w-4xl mx-auto py-2 px-4 text-sm">
   <ol class="flex flex-wrap gap-1 text-emerald-700">
     {items.map((item: Crumb, index: number) => {
       const isLast = index === items.length - 1;
       return (
-        <li item-prop="itemListElement" item-scope item-type="https://schema.org/ListItem" class="flex items-center gap-1">
+        <li class="flex items-center gap-1">
           {isLast ? (
-            <span class="font-semibold" item-prop="name" aria-current="page">{item.label}</span>
+            <span class="font-semibold" aria-current="page">{item.label}</span>
           ) : (
-            <a href={item.href} item-prop="item" class="hover:underline">
-              <span class="font-semibold" item-prop="name">{item.label}</span>
+            <a href={item.href} class="hover:underline">
+              <span class="font-semibold">{item.label}</span>
             </a>
           )}
-          <meta item-prop="position" content={String(index + 1)} />
           {!isLast && <span aria-hidden="true" class="mx-1">/</span>}
         </li>
       );
@@ -39,5 +38,5 @@ const breadcrumbSchema = {
 </nav>
 
 <!-- JSON-LD Schema para breadcrumbs -->
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 

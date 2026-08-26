@@ -181,7 +181,7 @@ Diversas voces en Ciñera y León reclaman la **conservación y musealización**
 
 ## La Conexión con el Faedo
 
-Curiosamente, la Bocamina Menos 50 y el [Faedo de Ciñera](/blog/por-que-se-llama-faedo) están conectados de formas inesperadas:
+Curiosamente, la Bocamina Menos 50 y el [Faedo de Ciñera](/blog/origen-nombre-faedo) están conectados de formas inesperadas:
 
 ### Conexiones Evidentes:
 - **Ubicación**: Ambos en el término municipal de Ciñera
@@ -257,7 +257,7 @@ Ambos son patrimonios de Ciñera. Ambos merecen ser recordados.
 **Explora más sobre Ciñera:**
 - [El Faedo de Ciñera: Ruta completa](/ruta/faedo-de-cinera)
 - [El Haya Fagus de 500 años](/haya-fagus)
-- [Por qué se llama 'Faedo': Etimología](/blog/por-que-se-llama-faedo)
+- [Por qué se llama 'Faedo': Etimología](/blog/origen-nombre-faedo)
 - [Flora y fauna del Faedo](/flora-fauna)
 
 *¿Tienes familiares que trabajaron en las minas de Ciñera? ¿Recuerdos de la época minera? La memoria oral es un patrimonio que debemos preservar entre todos. Comparte tus historias.*

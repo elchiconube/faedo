@@ -1,8 +1,8 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageBruja from "@assets/bruja.webp";
 
@@ -16,7 +16,7 @@ const jsonLd = {
   name: title,
   description,
   inLanguage: "es-ES",
-  image: imageBruja.src,
+  image: new URL(imageBruja.src, Astro.site).toString(),
   mainEntityOfPage: canonical,
   author: { "@type": "Person", name: "Tradición oral" },
   publisher: {
@@ -26,16 +26,15 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    image={imageBruja.src}
-    url={canonical}
-    type="article"
-    jsonLd={jsonLd}
-  />
+<Layout
+  title={title}
+  description={description}
+  image={imageBruja.src}
+  url={canonical}
+  type="article"
+  jsonLd={jsonLd}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -50,7 +49,7 @@ const jsonLd = {
         El cuento de Haeda del Faedo de Ciñera
       </h1>
     </header>
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         La leyenda de Haeda es un relato popular que conecta mágicamente el
         bosque del Faedo con el carbón de Ciñera. Una historia de sacrificio y
@@ -158,7 +157,7 @@ const jsonLd = {
           > en 1993.
         </p>
       </div>
-    </div>
+    </PageContent>
 
     <ExploreMore variant="explore" />
   </div>

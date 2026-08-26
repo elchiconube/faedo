@@ -17,11 +17,14 @@ export function slugifyTag(tag: string): string {
  * Obtiene todos los tags únicos de una colección de posts
  */
 export function getAllTags(posts: any[]): string[] {
-  const tagSet = new Set<string>();
+  const tagsBySlug = new Map<string, string>();
   posts.forEach(post => {
-    post.data.tags?.forEach((tag: string) => tagSet.add(tag));
+    post.data.tags?.forEach((tag: string) => {
+      const slug = slugifyTag(tag);
+      if (!tagsBySlug.has(slug)) tagsBySlug.set(slug, tag);
+    });
   });
-  return Array.from(tagSet).sort();
+  return Array.from(tagsBySlug.values()).sort();
 }
 
 /**

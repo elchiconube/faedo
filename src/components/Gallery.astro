@@ -28,30 +28,30 @@ import imageEntradaFaedo from "@assets/entrada-faedo.webp"
 import imagePaseoFaedo from "@assets/paseo-faedo.webp"
 
 const gallery = [
-  imagePueblo,
-  imageFagus,
-  imageEntradaFaedo,
-  imagePozoIbarra2,
-  imageBocamina3,
-  imagePuentePalos,
-  imagePozoIbarra3,
-  imageCastillete,
-  imagePaseoFaedo,
-  imageValle2,
-  imageFagus2,
-  imageMarmitas2,
-  imageFadeo5,
-  imageBocamina,
-  imagePuentePalos2,
-  imageMarmitas,
-  imageFadeo6,
-  imageFagus3,
-  imageBruja,
-  imageBocamina2,
-  imageCamino,
-  imageValle,
-  imageMineria,
-  imageMarmitas3
+  { src: imagePueblo, alt: "Vista del pueblo de Ciñera, inicio de la ruta del Faedo" },
+  { src: imageFagus, alt: "Haya Fagus, árbol centenario del Faedo de Ciñera" },
+  { src: imageEntradaFaedo, alt: "Entrada al hayedo del Faedo de Ciñera" },
+  { src: imagePozoIbarra2, alt: "Entorno natural junto al Pozo Ibarra en Ciñera" },
+  { src: imageBocamina3, alt: "Interior de la Bocamina Menos 50 de Ciñera" },
+  { src: imagePuentePalos, alt: "Puente artesanal de madera en la ruta del Faedo" },
+  { src: imagePozoIbarra3, alt: "Instalaciones históricas del Pozo Ibarra" },
+  { src: imageCastillete, alt: "Castillete minero del Pozo Ibarra en Ciñera" },
+  { src: imagePaseoFaedo, alt: "Sendero entre las hayas del Faedo de Ciñera" },
+  { src: imageValle2, alt: "Valle de Gordón visto desde la ruta del Faedo" },
+  { src: imageFagus2, alt: "Tronco de la haya Fagus en el Faedo de Ciñera" },
+  { src: imageMarmitas2, alt: "Marmitas de Gigante formadas por el Arroyo Villar" },
+  { src: imageFadeo5, alt: "Bosque de hayas del Faedo de Ciñera" },
+  { src: imageBocamina, alt: "Entrada rehabilitada de la Bocamina Menos 50" },
+  { src: imagePuentePalos2, alt: "Detalle del puente artesanal construido por mineros" },
+  { src: imageMarmitas, alt: "Pozas naturales de las Hoces del Villar" },
+  { src: imageFadeo6, alt: "Luz entre las hayas centenarias del Faedo" },
+  { src: imageFagus3, alt: "Copa de la haya Fagus en el bosque de Ciñera" },
+  { src: imageBruja, alt: "Figura de Haeda en las leyendas del Faedo de Ciñera" },
+  { src: imageBocamina2, alt: "Museo minero de la Bocamina Menos 50" },
+  { src: imageCamino, alt: "Camino acondicionado hacia el Faedo de Ciñera" },
+  { src: imageValle, alt: "Paisaje de la montaña leonesa alrededor de Ciñera" },
+  { src: imageMineria, alt: "Patrimonio minero histórico de Ciñera" },
+  { src: imageMarmitas3, alt: "Arroyo Villar entre rocas calizas" },
 ]
 
 ---
@@ -68,12 +68,12 @@ const gallery = [
         <button 
           data-image-index={index}
           class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-gray-100 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-4 focus:ring-emerald-500"
-          aria-label={`Ver imagen ${index + 1} de ${gallery.length}: ${image.alt || 'Faedo de Ciñera'}`}
+          aria-label={`Ver imagen ${index + 1} de ${gallery.length}: ${image.alt}`}
           type="button"
         >
           <Image
-            src={image}
-            alt={`Faedo de Ciñera foto ${index + 1}`}
+            src={image.src}
+            alt={image.alt}
             class="w-full h-full object-cover group-hover:scale-110 group-focus:scale-110 transition-transform duration-500"
             loading="lazy"
           />

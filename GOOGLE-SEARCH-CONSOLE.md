@@ -124,7 +124,7 @@ Para acelerar la indexación:
    - `https://faedo.es/ruta/faedo-de-cinera`
    - `https://faedo.es/blog/mejor-epoca-visitar-faedo-de-cinera`
    - `https://faedo.es/blog/faedo-de-cinera-con-ninos`
-   - `https://faedo.es/blog/como-llegar-faedo-de-cinera`
+   - `https://faedo.es/guia-visitantes`
    - `https://faedo.es/faq`
 
 3. Para cada URL, haz clic en **"Solicitar indexación"**

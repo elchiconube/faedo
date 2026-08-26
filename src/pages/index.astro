@@ -1,5 +1,6 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Hero from "@components/Hero.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import ExploreMore from "@components/ExploreMore.astro";
@@ -8,12 +9,12 @@ import AlojamientoRecomendado from "@components/AlojamientoRecomendado.astro";
 ---
 
 <Layout
-  title="Ruta del Faedo de Ciñera (León) - Guía Completa de Senderismo"
-  description="Descubre la ruta del Faedo de Ciñera: hayedo centenario en León con mapa interactivo, GPX descargable, consejos prácticos y guía completa. Senderismo fácil ideal para familias."
+  title="Faedo de Ciñera: hayedo centenario en León"
+  description="Descubre el Faedo de Ciñera, un hayedo centenario de la montaña leonesa con naturaleza, patrimonio minero e información para preparar tu visita."
 >
   <Hero
-    title="El Faedo de Ciñera"
-    subtitle="Un hayedo centenario en León con rutas faciles ideal para familias."
+    title="Faedo de Ciñera"
+    subtitle="Un hayedo centenario en la montaña de León"
     ctaLabel="Ver la ruta"
     ctaHref="/ruta/faedo-de-cinera"
   />
@@ -24,7 +25,7 @@ import AlojamientoRecomendado from "@components/AlojamientoRecomendado.astro";
       description="Senderismo fácil de unos 4,5 km por un hayedo centenario en León, ideal para familias."
       icon="ph:tree"
     />
-    <div class="prose prose-slate max-w-4xl mx-auto">
+    <PageContent padded={false} class="mx-auto max-w-4xl">
       <p>
         La <strong>ruta del Faedo de Ciñera</strong> es un recorrido circular de
         unos <strong>4,5 kilómetros</strong> por un hayedo centenario en el
@@ -65,7 +66,7 @@ import AlojamientoRecomendado from "@components/AlojamientoRecomendado.astro";
         estimados y consejos prácticos para hacer el Faedo con seguridad y sin
         prisas.
       </p>
-    </div>
+    </PageContent>
   </section>
 
   <PromoLienzo />

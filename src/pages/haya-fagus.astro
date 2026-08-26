@@ -1,8 +1,8 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageFagus from "@assets/fagus.webp";
 import imageFagus2 from "@assets/fagus-2.webp";
@@ -15,11 +15,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
 const landmarkSchema = {
   "@context": "https://schema.org",
-  "@type": "LandmarksOrHistoricalBuildings",
+  "@type": "TouristAttraction",
   name: "Haya Fagus de Ciñera",
   description:
     "Árbol centenario de 500 años, uno de los 100 árboles más singulares de España",
-  image: imageFagus.src,
+  image: new URL(imageFagus.src, Astro.site).toString(),
   geo: {
     "@type": "GeoCoordinates",
     latitude: 42.8862,
@@ -34,16 +34,14 @@ const landmarkSchema = {
 };
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    image={imageFagus.src}
-    url={canonical}
-    type="place"
-    jsonLd={landmarkSchema}
-  />
+<Layout
+  title={title}
+  description={description}
+  image={imageFagus.src}
+  url={canonical}
+  jsonLd={landmarkSchema}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -58,7 +56,7 @@ const landmarkSchema = {
         El Haya Fagus: Árbol de 500 Años
       </h1>
     </header>
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         Me llamo <strong>Fagus</strong> y tengo 500 años. Soy una de las hayas más
         ancianas de España, con 6,32m de perímetro y 23m de altura. Incluido en "Árboles,
@@ -117,7 +115,7 @@ const landmarkSchema = {
           sirven de alimento a <strong>corzos y jabalíes</strong>
           durante el invierno. ¡Anímate a madrugar la próxima vez! Disfrutarás al
           ver al{' '}
-          <a href="/flora-fauna#desman">desmán de los pirineos</a> en su baño matutino.
+          <a href="/flora-fauna#desman">desmán ibérico</a> en su baño matutino.
         </p>
 
         <Image
@@ -184,7 +182,7 @@ const landmarkSchema = {
           >, aproximadamente a 20 minutos caminando desde el inicio en Ciñera.
         </p>
       </div>
-    </div>
+    </PageContent>
 
     <ExploreMore variant="explore" />
   </div>

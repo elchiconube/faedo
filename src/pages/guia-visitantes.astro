@@ -1,12 +1,11 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Seo from "@components/Seo.astro";
 import ExploreMore from "@components/ExploreMore.astro";
 import RutaBloque from "@components/RutaBloque.astro";
 import RutaInfoItem from "@components/RutaInfoItem.astro";
 import ExtLink from "@components/ExtLink.astro";
-import PreparaVisita from "@components/PreparaVisita.astro";
 import { Icon } from "astro-icon/components";
 
 const alojamientos = [
@@ -153,17 +152,35 @@ const alojamientos = [
     phones: ["987 588 003"],
   },
 ];
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const destinationSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  name: "Ciñera y el Faedo de Ciñera",
+  description:
+    "Guía para visitar el Faedo de Ciñera, con rutas, alojamientos y servicios cercanos.",
+  url: canonical,
+  touristType: ["Senderistas", "Familias", "Turismo de naturaleza"],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 42.884014,
+    longitude: -5.636232,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ciñera",
+    addressRegion: "León",
+    addressCountry: "ES",
+  },
+};
 ---
 
 <Layout
   title="Guía para visitantes del Faedo de Ciñera"
   description="Toda la información sobre la ruta, alojamientos, restaurantes, itinerarios recomendados para visitar el Faedo de Ciñera (León)"
+  jsonLd={destinationSchema}
 >
-  <Seo
-    slot="head"
-    title="Guía para visitantes del Faedo de Ciñera"
-    description="Toda la información sobre la ruta, alojamientos, restaurantes, itinerarios recomendados para visitar el Faedo de Ciñera (León)"
-  />
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -177,8 +194,7 @@ const alojamientos = [
         Guía para visitantes del Faedo de Ciñera
       </h1>
     </header>
-    <PreparaVisita class="mt-6 mb-2" />
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         Esta guía te ayudará a planificar tu visita al <strong
           >Faedo de Ciñera</strong
@@ -203,7 +219,7 @@ const alojamientos = [
         más populares:
       </p>
 
-        <RutaBloque title="Ruta del Faedo (Circular – 6 km)">
+        <RutaBloque title="Ruta del Faedo (Circular – 4,5 km)">
           <RutaInfoItem
             slot="info"
             icon="ph:map-pin"
@@ -212,7 +228,7 @@ const alojamientos = [
           <RutaInfoItem
             slot="info"
             icon="ph:ruler"
-            text="Distancia: 6 km (circular)"
+            text="Distancia: 4,5 km (circular)"
           />
           <RutaInfoItem
             slot="info"
@@ -242,7 +258,7 @@ const alojamientos = [
             <strong>mirador del beso</strong> y seguir hacia el{" "}
             <strong>castillete del Pozo Ibarra</strong>, declarado Bien de
             Interés Cultural en 2011. La ruta completa tiene unos{" "}
-            <strong>6 km</strong>, es circular y fácil, perfecta para disfrutar
+            <strong>4,5 km</strong>, es circular y fácil, perfecta para disfrutar
             sin prisas. Más información en{" "}
             <a href="/ruta/faedo-de-cinera">Ruta del Faedo de Ciñera</a>
           </p>
@@ -657,7 +673,7 @@ const alojamientos = [
             >
           </li>
           <li>
-            <a href="/blog/como-llegar-faedo-de-cinera"
+            <a href="/ruta/faedo-de-cinera#como-llegar"
               >Cómo llegar al Faedo de Ciñera</a
             >
           </li>
@@ -666,7 +682,6 @@ const alojamientos = [
               >Ruta del Faedo con niños</a
             >
           </li>
-          <li><a href="/eventos">Eventos y actividades</a></li>
           <li>
             <a href="/premio-2007"
               >Premio "Bosque mejor cuidado de España" 2007</a
@@ -684,7 +699,7 @@ const alojamientos = [
             >es un pequeño refugio del alma</strong
           >.
         </p>
-    </div>
+    </PageContent>
     <ExploreMore variant="planifica" />
   </div>
 </Layout>

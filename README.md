@@ -61,15 +61,13 @@ Guía completa de senderismo del Faedo de Ciñera que incluye:
 ├── src/
 │   ├── assets/                   # Imágenes optimizadas por Astro (56 archivos)
 │   │   ├── *.webp               # Fotos del Faedo, hayas, paisajes
-│   │   ├── *.mp4                # Videos hero y galería
+│   │   ├── *.mp4                # Vídeo del hero
 │   │   └── *.svg                # Iconos y gráficos
 │   ├── components/               # Componentes reutilizables
 │   │   ├── Cards/               # Tarjetas especializadas
-│   │   │   ├── POICard.astro    # Puntos de interés
 │   │   │   └── PostCard.astro   # Artículos de blog
 │   │   ├── Breadcrumbs.astro    # Migas de pan con schema
 │   │   ├── Cards.astro          # Grid de tarjetas
-│   │   ├── FAQ.astro            # Preguntas frecuentes
 │   │   ├── Gallery.astro        # Galería de imágenes (24 fotos)
 │   │   ├── GoogleAnalytics.astro
 │   │   ├── GoogleSiteVerification.astro
@@ -77,15 +75,12 @@ Guía completa de senderismo del Faedo de Ciñera que incluye:
 │   │   ├── Hero.astro           # Hero con video
 │   │   ├── Layout.astro         # Layout principal
 │   │   ├── MapLeaflet.astro     # Mapa interactivo Leaflet
-│   │   ├── MediaGrid.astro      # Grid de videos/imágenes
-│   │   ├── ScrollRevealText.astro
 │   │   ├── SectionHeader.astro
 │   │   └── Seo.astro            # Meta tags y schemas
 │   ├── content/                  # Content Collections
 │   │   ├── blog/                # 12 artículos del blog
 │   │   │   ├── arboles-del-faedo-de-cinera.md
 │   │   │   ├── bocamina-menos-cincuenta.md
-│   │   │   ├── como-llegar-faedo-de-cinera.md
 │   │   │   ├── desman-iberico-faedo-de-cinera.md
 │   │   │   ├── faedo-de-cinera-con-ninos.md
 │   │   │   ├── guia-ornitologica-faedo-de-cinera.md

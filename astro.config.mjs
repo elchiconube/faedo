@@ -12,6 +12,14 @@ export default defineConfig({
       status: 301,
       destination: '/pozo-ibarra',
     },
+    '/blog/por-que-se-llama-faedo': {
+      status: 301,
+      destination: '/blog/origen-nombre-faedo',
+    },
+    '/blog/bocamina-menos-50': {
+      status: 301,
+      destination: '/blog/bocamina-menos-cincuenta',
+    },
   },
   image: {
     service: {
@@ -28,6 +36,7 @@ export default defineConfig({
     mdx(),
     icon(),
     sitemap({
+      filter: (page) => !page.includes('/blog/tag/'),
       i18n: {
         defaultLocale: 'es',
         locales: {

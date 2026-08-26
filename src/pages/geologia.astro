@@ -1,8 +1,8 @@
 ---
 import Layout from "@components/Layout.astro";
+import PageContent from "@components/PageContent.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ExploreMore from "@components/ExploreMore.astro";
-import Seo from "@components/Seo.astro";
 import { Image } from "astro:assets";
 import imageCaliza from "@assets/piedra-caliza.webp";
 import imageMarmitas from "@assets/marmitas-2.webp";
@@ -13,15 +13,14 @@ const description =
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    image={imageCaliza.src}
-    url={canonical}
-    type="article"
-  />
+<Layout
+  title={title}
+  description={description}
+  image={imageCaliza.src}
+  url={canonical}
+  type="article"
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },
@@ -36,7 +35,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         Geología del Faedo de Ciñera
       </h1>
     </header>
-    <div class="prose max-w-4xl mx-auto py-8 px-4">
+    <PageContent>
       <p class="lead">
         Hace unos <strong>400 millones de años</strong>, la actual comarca
         gordonesa constituía el fondo de un mar de poca profundidad, salpicado
@@ -297,7 +296,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
           Cantábrica.
         </p>
       </div>
-    </div>
+    </PageContent>
 
     <ExploreMore variant="explore" />
   </div>

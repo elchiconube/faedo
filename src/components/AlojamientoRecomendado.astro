@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import CtaLink from "@components/CtaLink.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 
 interface Props {
@@ -81,29 +82,14 @@ const {
           {description}
         </p>
 
-        <a
+        <CtaLink
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
           title={ctaLabel}
-          class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] w-fit items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all"
-          data-umami-event="alojamiento-recomendado-click"
+          eventName="alojamiento-recomendado-click"
+          class="w-fit"
         >
-          <span class="z-10 pr-2">{ctaLabel}</span>
-          <span
-            class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
-            aria-hidden="true"
-          >
-            <span class="mr-3.5 flex items-center justify-center">
-              <Icon
-                name="ph:arrow-up-right"
-                class="h-5 w-5 text-primary-50"
-                aria-hidden="true"
-              />
-            </span>
-          </span>
-          <span class="sr-only"> (se abre en una pestaña nueva)</span>
-        </a>
+          {ctaLabel}
+        </CtaLink>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@ const shouldLoadGA = GA_MEASUREMENT_ID && GA_MEASUREMENT_ID.startsWith('G-');
 {shouldLoadGA && (
   <>
     <!-- Google tag (gtag.js) - Optimizado para performance -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
     <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}

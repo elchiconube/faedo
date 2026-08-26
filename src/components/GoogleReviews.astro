@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import CtaLink from "@components/CtaLink.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 
 const googleMapsUrl = "https://maps.app.goo.gl/6QfokhH8pfW8JwMx8";
@@ -180,23 +181,12 @@ const initials = (name: string) =>
     </ul>
 
     <div class="mt-7 px-4 text-center">
-      <a
+      <CtaLink
         href={googleMapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group font-wittgenstein relative inline-flex h-[calc(48px+8px)] max-w-full items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-white no-underline transition-all"
-        data-umami-event="google-reviews-cta-click"
+        eventName="google-reviews-cta-click"
       >
-        <span class="z-10 pr-2">Ver todas las reseñas en Google Maps</span>
-        <span
-          class="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-primary-700 transition-[width] duration-300 ease-in-out group-hover:w-[calc(100%-8px)]"
-          aria-hidden="true"
-        >
-          <span class="mr-3.5 flex items-center justify-center">
-            <Icon name="ph:arrow-up-right" class="h-5 w-5 text-primary-50" />
-          </span>
-        </span>
-      </a>
+        Ver todas las reseñas en Google Maps
+      </CtaLink>
     </div>
   </div>
 </section>

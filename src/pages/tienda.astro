@@ -1,7 +1,6 @@
 ---
 import Layout from "@components/Layout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Seo from "@components/Seo.astro";
 import ExploreMore from "@components/ExploreMore.astro";
 import ProductoCuadro from "@components/ProductoCuadro.astro";
 
@@ -75,7 +74,9 @@ const jsonLd = [
         name: "40×80 cm",
         price: "89.95",
         priceCurrency: "EUR",
-        url: `${canonical}#40x80`,
+        url: PAYMENT_LINK_40X80,
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
         seller: { "@id": `${canonical}#store` },
       },
       {
@@ -83,7 +84,9 @@ const jsonLd = [
         name: "70×100 cm",
         price: "129.95",
         priceCurrency: "EUR",
-        url: `${canonical}#70x100`,
+        url: PAYMENT_LINK_70X100,
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
         seller: { "@id": `${canonical}#store` },
       },
     ],
@@ -91,16 +94,14 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={title} description={description}>
-  <Seo
-    slot="head"
-    title={title}
-    description={description}
-    image={productImage}
-    url={canonical}
-    type="website"
-    jsonLd={jsonLd}
-  />
+<Layout
+  title={title}
+  description={description}
+  image={productImage}
+  url={canonical}
+  jsonLd={jsonLd}
+  showFooterContent={false}
+>
   <Breadcrumbs
     items={[
       { href: "/", label: "Inicio" },

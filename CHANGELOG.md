@@ -5,7 +5,7 @@
 ### ⚡ Optimizaciones de Performance
 
 #### **Imágenes Optimizadas**
-- ✅ Migración a `<Image>` de Astro en `MediaGrid.astro`
+- ✅ Uso de `<Image>` de Astro en imágenes editoriales y componentes activos
 - ✅ Configuración de Sharp en `astro.config.mjs`
 - ✅ Responsive images con múltiples tamaños (widths)
 - ✅ Lazy loading en imágenes below-the-fold
