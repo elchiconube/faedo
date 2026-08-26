@@ -33,7 +33,8 @@ if (images.length === 0) {
 const defaultVariant = variants[0];
 ---
 
-<article class="grid items-start gap-8 lg:grid-cols-2 lg:gap-12" data-product>
+<article data-product>
+  <div class="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
   <div data-product-slider>
     <div class="relative">
     <div class="w-full overflow-hidden rounded-2xl" data-slider-viewport>
@@ -41,15 +42,28 @@ const defaultVariant = variants[0];
         {
           images.map((image, index) => (
             <div class="w-full shrink-0 grow-0 basis-full" data-slider-slide>
-              <img
-                src={image.src}
-                alt={image.alt}
-                width="1236"
-                height="864"
-                class="h-72 w-full object-cover sm:h-96 lg:h-[28rem]"
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
-              />
+              <button
+                type="button"
+                class="group relative block h-full w-full cursor-zoom-in overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                data-lightbox-open
+                data-image-index={index}
+                aria-label={`Ver imagen ampliada ${index + 1} de ${images.length}`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width="1236"
+                  height="864"
+                  class="h-72 w-full object-cover sm:h-96 lg:h-[28rem]"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  data-lightbox-src={image.src}
+                />
+                <span
+                  class="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/15"
+                  aria-hidden="true"
+                ></span>
+              </button>
             </div>
           ))
         }
@@ -244,6 +258,70 @@ const defaultVariant = variants[0];
       />
     </p>
   </div>
+  </div>
+
+  <div
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/95 p-2 sm:p-4"
+    data-product-lightbox
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visor de imágenes del producto"
+  >
+    <button
+      type="button"
+      class="absolute top-2 right-2 rounded-full p-2 text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:top-4 sm:right-4"
+      data-lightbox-close
+      aria-label="Cerrar visor de imágenes"
+    >
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    {
+      images.length > 1 && (
+        <>
+          <button
+            type="button"
+            class="absolute top-1/2 left-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:left-4"
+            data-lightbox-prev
+            aria-label="Imagen anterior"
+          >
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="absolute top-1/2 right-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-4"
+            data-lightbox-next
+            aria-label="Imagen siguiente"
+          >
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+        </>
+      )
+    }
+
+    <div class="flex h-full max-h-[90vh] w-full max-w-7xl items-center justify-center">
+      <img
+        src={images[0].src}
+        alt={images[0].alt}
+        class="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
+        data-lightbox-image
+      />
+    </div>
+
+    {
+      images.length > 1 && (
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/50 px-4 py-2 text-sm text-white">
+          <span data-lightbox-counter aria-live="polite">1 / {images.length}</span>
+        </div>
+      )
+    }
+  </div>
 </article>
 
 <script>
@@ -283,7 +361,31 @@ const defaultVariant = variants[0];
       const dots = slider?.querySelectorAll<HTMLButtonElement>("[data-slider-dot]") ?? [];
       const prev = slider?.querySelector<HTMLButtonElement>("[data-slider-prev]");
       const next = slider?.querySelector<HTMLButtonElement>("[data-slider-next]");
+      const openButtons =
+        product.querySelectorAll<HTMLButtonElement>("[data-lightbox-open]");
+      const lightbox = product.querySelector<HTMLElement>("[data-product-lightbox]");
+      const lightboxImage =
+        product.querySelector<HTMLImageElement>("[data-lightbox-image]");
+      const lightboxCounter =
+        product.querySelector<HTMLElement>("[data-lightbox-counter]");
+      const lightboxClose =
+        product.querySelector<HTMLButtonElement>("[data-lightbox-close]");
+      const lightboxPrev =
+        product.querySelector<HTMLButtonElement>("[data-lightbox-prev]");
+      const lightboxNext =
+        product.querySelector<HTMLButtonElement>("[data-lightbox-next]");
+
+      const gallery = Array.from(openButtons).map((button) => {
+        const img = button.querySelector("img");
+        return {
+          src: img?.dataset.lightboxSrc || img?.src || "",
+          alt: img?.alt || "",
+        };
+      });
+
       let index = 0;
+      let lightboxIndex = 0;
+      let lightboxOpen = false;
 
       const goTo = (nextIndex: number) => {
         if (!track || !viewport || slides.length === 0) return;
@@ -300,12 +402,80 @@ const defaultVariant = variants[0];
         });
       };
 
+      const updateLightbox = () => {
+        if (!lightboxImage || gallery.length === 0) return;
+
+        lightboxImage.src = gallery[lightboxIndex].src;
+        lightboxImage.alt = gallery[lightboxIndex].alt;
+        if (lightboxCounter) {
+          lightboxCounter.textContent = `${lightboxIndex + 1} / ${gallery.length}`;
+        }
+      };
+
+      const openLightbox = (nextIndex: number) => {
+        if (!lightbox || gallery.length === 0) return;
+
+        lightboxIndex = (nextIndex + gallery.length) % gallery.length;
+        updateLightbox();
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        document.body.style.overflow = "hidden";
+        lightboxOpen = true;
+        setTimeout(() => lightboxClose?.focus(), 100);
+      };
+
+      const closeLightbox = () => {
+        if (!lightbox) return;
+
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        document.body.style.overflow = "";
+        lightboxOpen = false;
+        openButtons[lightboxIndex]?.focus();
+      };
+
+      const showLightboxPrev = () => {
+        if (gallery.length === 0) return;
+        lightboxIndex = (lightboxIndex - 1 + gallery.length) % gallery.length;
+        updateLightbox();
+        goTo(lightboxIndex);
+      };
+
+      const showLightboxNext = () => {
+        if (gallery.length === 0) return;
+        lightboxIndex = (lightboxIndex + 1) % gallery.length;
+        updateLightbox();
+        goTo(lightboxIndex);
+      };
+
       prev?.addEventListener("click", () => goTo(index - 1));
       next?.addEventListener("click", () => goTo(index + 1));
       dots.forEach((dot, dotIndex) => {
         dot.addEventListener("click", () => goTo(dotIndex));
       });
       window.addEventListener("resize", () => goTo(index));
+
+      openButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const imageIndex = Number(button.dataset.imageIndex ?? index);
+          openLightbox(imageIndex);
+        });
+      });
+
+      lightboxClose?.addEventListener("click", closeLightbox);
+      lightboxPrev?.addEventListener("click", showLightboxPrev);
+      lightboxNext?.addEventListener("click", showLightboxNext);
+      lightbox?.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (!lightboxOpen) return;
+
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") showLightboxPrev();
+        if (event.key === "ArrowRight") showLightboxNext();
+      });
 
       product.dataset.initialized = "true";
     });
