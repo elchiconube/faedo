@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Canela LCG Web';
+  src: url('/font/font.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Variables CSS globales */
 :root {
   /* Fuentes personalizadas */
-  --font-heading: 'Wittgenstein', serif;
+  --font-heading: 'Canela LCG Web', serif;
+  --font-ui: 'Wittgenstein', serif;
   --font-body: 'Figtree', sans-serif;
   --font-size-base: 17px;
 }
@@ -27,7 +36,8 @@
   --spacing-custom: 10px;
   
   /* Font families para Tailwind */
-  --font-family-heading: 'Wittgenstein', serif;
+  --font-family-heading: 'Canela LCG Web', serif;
+  --font-family-ui: 'Wittgenstein', serif;
   --font-family-body: 'Figtree', sans-serif;
   
   /* Font size base */
@@ -67,7 +77,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.1;
 }
 
@@ -82,6 +92,11 @@ p a:not(.cta-link) {
 
 p a:not(.cta-link):focus-visible {
   @apply outline outline-2 outline-offset-2 outline-primary-400;
+}
+
+.cta-link {
+  font-family: var(--font-ui);
+  font-weight: 500;
 }
 
 .content li a {
@@ -127,10 +142,19 @@ p a:not(.cta-link):focus-visible {
     padding-inline: 1rem;
   }
   
-  /* Clases de peso para Wittgenstein */
-  .font-wittgenstein {
+  .font-heading {
     font-family: var(--font-heading);
+    font-weight: 300;
+  }
+
+  .font-wittgenstein {
+    font-family: var(--font-ui);
     font-weight: 400;
+  }
+
+  .font-logo {
+    font-family: var(--font-heading);
+    font-weight: 300;
   }
     
   /* Clases de peso para Figtree */
